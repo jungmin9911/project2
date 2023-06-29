@@ -2,15 +2,21 @@ package com.example.world.dto;
 
 import java.sql.Timestamp;
 
+import javax.validation.constraints.NotEmpty;
+
 import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
 public class MemberVo {
 	
+	@NotEmpty(message="id를 입력하세요")
 	private String id;
-	private String pwd;
-	private String name;
+	@NotEmpty(message="비밀번호를 입력하세요")
+    private String pwd;     
+	@NotEmpty(message="이름을 입력하세요")
+    private String name;
+	@NotEmpty(message="이메일을 입력하세요")
 	private String email;
 	private String zip_num;
 	private String address1;
@@ -18,6 +24,7 @@ public class MemberVo {
 	private String phone;
 	private String useyn;
 	private Timestamp indate;
+    private String provider;
 	
 	
 	
