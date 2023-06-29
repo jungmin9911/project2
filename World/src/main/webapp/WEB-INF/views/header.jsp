@@ -72,7 +72,7 @@
 				    </button>
 				    <div class="dropdown-content">
 						<a href="notice">공지사항</a>
-						<a href="world.do?command=qna&changMenu=1">Q&amp;A</a>
+						<a href="qna">Q&amp;A</a>
 				    </div>
 				</div>
 			</div>

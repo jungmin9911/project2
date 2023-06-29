@@ -54,7 +54,7 @@
         });
         
 function go_(){
-	location.href = "world.do?command=adminProductList";
+	location.href = "adminProductList";
 }
 
 function go_search(comm){
@@ -62,7 +62,7 @@ function go_search(comm){
 		alert("검색버튼 사용시에는 검색어 입력이 필수입니다");
 	 	return;
 	} 
-	var url = "world.do?command=" + comm + "&page=1";   // 검색어로 검색한 결과의 1페이지로 이동
+	var url = comm+"?page=1";   // 검색어로 검색한 결과의 1페이지로 이동
 	document.frm.action = url;
 	document.frm.submit();
 	
@@ -70,12 +70,26 @@ function go_search(comm){
 
 function go_total(comm ){
 	document.frm.key.value = "";
-	document.frm.action = "world.do?command=" + comm + "&page=1";
+	document.frm.action = comm + "?page=1";
 	document.frm.submit();
 }
 
+///////////////////////////////////////////////////////////////
 
+function passCheck( lqseq ){
+	var url = "passCheck?lqseq=" + lqseq;
+	var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
+    window.open(url, "passCheck", opt);
+}
 
+function enabled() {
+	if(document.qna.check.checked==true) {
+		document.qna.pass.disabled = false;
+	} else {
+		document.qna.pass.disabled = true;
+		document.qna.pass.value="";
+	}
+}
 
 
 

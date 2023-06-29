@@ -33,9 +33,9 @@
 		</form>
 		<div class="buttons" style="margin-top:25px;">
 			<input type="button"  value="목록보기" class="purpleBtn" style="border:none;"
-				onclick="location.href='world.do?command=qnaList'">
+				onclick="location.href='qnaList'">
 			<input type="button"  value="돌아가기"  class="purpleBtn" style="border:none;"
-				onclick="location.href='world.do?command=index'">
+				onclick="location.href='qna'">
 		</div>
 	</div>
 </div>

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.world.dao.IMemberDao;
-import com.example.world.dto.MemberVo;
+import com.example.world.dto.MemberVO;
 
 @Service
 public class MemberService {
@@ -12,19 +12,19 @@ public class MemberService {
 	@Autowired
 	IMemberDao mdao;
 
-	public MemberVo getMember(String id) {
+	public MemberVO getMember(String id) {
 		return mdao.getMember(id);
 	}
 	
-	public void joinKakao(MemberVo mvo) {
+	public void joinKakao(MemberVO mvo) {
 		mdao.joinKakao( mvo );	
 		}
 
-	public void insertMember(MemberVo membervo) {
+	public void insertMember(MemberVO membervo) {
 		mdao.insertMember(membervo);
 		}
 
-	public void updateMember( MemberVo membervo) {
+	public void updateMember( MemberVO membervo) {
 		mdao.updateMember( membervo );
 		}
 
