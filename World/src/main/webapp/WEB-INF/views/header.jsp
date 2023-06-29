@@ -9,7 +9,7 @@
 <script src="script/jquery-3.6.4.js"></script>
 <script src="script/script.js"></script>
 <script src="notice/event02.js"></script>  
-<script src="member/member.js"></script>
+<script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +19,7 @@
 			<ul>
 				<c:choose>
 					<c:when test ="${empty loginUser}">
-						<li><a href="world.do?command=loginForm">login</a></li>
+						<li><a href="loginForm">login</a></li>
 						<li><a href="world.do?command=contract">회원가입</a></li>
 						<li><a href="world.do?command=admin">관리자</a></li>
 					</c:when>
@@ -44,8 +44,8 @@
 						<span style="">즐길거리</span>
 					</button>
 					<div class="dropdown-content">
-						<a href="world.do?command=attractionForm">어트렉션</a>
-						<a href="world.do?command=parade">퍼레이드</a>
+						<a href="/attractionForm">어트렉션</a>
+						<a href="/parade">퍼레이드</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -62,8 +62,8 @@
 						<span>이용가이드</span>
 					</button>
 					<div class="dropdown-content">
-						<a href="world.do?command=guide">운영/운휴</a>
-						<a href="world.do?command=howCome">오시는 길</a>
+						<a href="guide">운영/운휴</a>
+						<a href="howCome">오시는 길</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -71,7 +71,7 @@
 						<span>소통서비스</span>
 				    </button>
 				    <div class="dropdown-content">
-						<a href="world.do?command=notice&changMenu=1">공지사항</a>
+						<a href="notice">공지사항</a>
 						<a href="qna">Q&amp;A</a>
 				    </div>
 				</div>

@@ -13,7 +13,7 @@
 	</div>
 	<div class="event09">
 		<div class="event10">
-	   		<input type="button" value="목 록" class="btn" onclick="location.href='world.do?command=notice'">
+	   		<input type="button" value="목 록" class="btn" onclick="location.href='notice'">
 		</div>
 	</div>
 </div>

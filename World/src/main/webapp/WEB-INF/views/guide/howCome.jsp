@@ -17,9 +17,18 @@ h2 {font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif; 
   }
 </script><br><br>
 <h2>오시는 길</h2><br><br>
-<div class="image-box">
-  <img src="images/map.jpg" alt="지도 이미지">
- </div><br>
+<div id="daumRoughmapContainer1688018805148" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1688018805148",
+		"key" : "2fcvr",
+		"mapWidth" : "640",
+		"mapHeight" : "360"
+	}).render();
+</script>
   <div class="button-box">
     <input type="button" value="네이버 지도 보러가기" class="submit" onClick="goToNaverMap()">
   </div><br>

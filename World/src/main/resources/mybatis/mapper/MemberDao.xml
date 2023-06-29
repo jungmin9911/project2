@@ -3,5 +3,36 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.ezen.AmusementPark.dao.IMemberDao">
+<mapper namespace="com.example.world.dao.IMemberDao">
+
+
+	<select id="getMember" resultType="com.example.world.dto.MemberVo">
+		select * from Lmember where id=#{param1}
+	</select>
+	
+	<insert id="joinKakao" parameterType="com.example.world.dto.MemberVo">
+		insert into member( id, email, name, provider )
+		values( #{id}, #{email}, #{name}, #{provider} )
+	</insert>
+	
+	<insert id="insertMember" parameterType="com.example.world.dto.MemberVo">
+		insert into member( id, email, name, pwd, zip_num, address1, address2,  phone )
+		values( #{id}, #{email}, #{name},#{pwd}, #{zip_num}, #{address1}, #{address2}, 
+		 #{phone} )
+	</insert>
+	
+	<update id="updateMember" parameterType ="com.example.world.dto.MemberVo">
+		Update member set pwd=#{pwd}, name=#{name}, zip_num= #{zip_num}, 
+		address1=#{address1},	 address2=#{address2},	
+		email=#{email}, phone=#{phone} where id = #{id}
+	</update>
+	
+	
+	<update id="withDrawalMember">
+		update member set useyn='N' where id=#{param1}
+	</update>
+	
+
+
+
 </mapper>
