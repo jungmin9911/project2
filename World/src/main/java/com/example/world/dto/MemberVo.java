@@ -1,6 +1,9 @@
 package com.example.world.dto;
 
 import java.sql.Timestamp;
+
+import javax.validation.constraints.NotEmpty;
+
 import lombok.Data;
 
 @Data
