@@ -49,8 +49,8 @@
 					<li><a href="world.do?command=attractionForm">어트렉션</a></li>
 					<li><a href="world.do?command=parade">퍼레이드</a></li>
 					<li><a href="world.do?command=reserve">예매하기</a></li>
-					<li><a href="world.do?command=guide">이용가이드</a></li>
-					<li><a href="world.do?command=notice">공지사항</a></li>
+					<li><a href="guide">이용가이드</a></li>
+					<li><a href="notice">공지사항</a></li>
 					<li><a href="world.do?command=qna">Q&amp;A</a></li>
 				</ul>		
 			</div>
