@@ -51,7 +51,7 @@ public class NoticeService {
 		}
 		
 		Paging paging = new Paging();
-		paging.setBeginPage(page);
+		paging.setPage(page);
 		
 		int count = ndao.getAllCount("notice", "title", key);
 		paging.setTotalCount(count);

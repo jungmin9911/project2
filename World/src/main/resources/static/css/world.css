@@ -159,7 +159,7 @@ margin: 0 auto;   border-bottom: 2px solid #e1e1e1; font-size:150%;}
 margin: 0 auto;   border-bottom: 2px solid #e1e1e1; font-size:150%;}
 .next_day{position:relative;  padding-right:550px; float: right;width:20px; height: 30px;  }
 .operation_time_box{ position:relative; width:100%; height:200px; background-size : contain; 
-background-image : url('../images/timeVisual_bg_on.jpg'); margin: 0 auto; border-bottom: 2px solid #e1e1e1;
+background-image : url('/World/src/main/webapp/images/timeVisual_bg_on.jpg'); margin: 0 auto; border-bottom: 2px solid #e1e1e1;
  font-weight: bold; text-align: center; float:left; color:white;}
 .time_box_title{ position:relative;  width:100% ; font-size : 150%;height:50px; margin: 50px 0 0 0; }
 .time_box_time{ position:relative;  width:100%;  font-size : 300%;height:150px; margin: 0 auto; }
