@@ -62,8 +62,8 @@
 						<span>이용가이드</span>
 					</button>
 					<div class="dropdown-content">
-						<a href="world.do?command=guide">운영/운휴</a>
-						<a href="world.do?command=howCome">오시는 길</a>
+						<a href="guide">운영/운휴</a>
+						<a href="howCome">오시는 길</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -71,7 +71,7 @@
 						<span>소통서비스</span>
 				    </button>
 				    <div class="dropdown-content">
-						<a href="world.do?command=notice&changMenu=1">공지사항</a>
+						<a href="notice">공지사항</a>
 						<a href="world.do?command=qna&changMenu=1">Q&amp;A</a>
 				    </div>
 				</div>
