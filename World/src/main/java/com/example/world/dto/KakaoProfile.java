@@ -36,9 +36,7 @@ public class KakaoProfile {
 			public class Profile{
 				private String nickname;
 				private String profile_image_url;
-				public String getNickname() {
-					return nickname;
-				}
+				
 				public void setNickname(String nickname) {
 					this.nickname = nickname;
 				}
@@ -48,6 +46,11 @@ public class KakaoProfile {
 				public void setProfile_image_url(String profile_image_url) {
 					this.profile_image_url = profile_image_url;
 				}
+				public String getNickname() {
+					
+					return nickname;
+				}
+			
 				
 			}
 		}
