@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
+<link href="order/order.css" rel="stylesheet">  
+<script src="order/order.js"></script>
+
+
 
 <div class="bigBox">
 	<p class="bigBox1">
@@ -10,7 +14,7 @@
 	
 	<p class="bigBox2">
 		<span> 자유이용권 | 패스트 패스이용권 </span>
-	</p>
+	</p><br>
 	
 	<div class="bigBoxx">
 		<div class="bigBox3">

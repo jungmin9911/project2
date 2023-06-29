@@ -1,33 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@ include file="../header.jsp" %>
-<style>
-.ar{position: absolute; left:300px; color:blue;}
-</style>
-
+<script src="member/member.js"></script>
 <div id=logina>
 
    <div id="login">
    <h2>로그인</h2>
    <hr>
    </div>
-   <h2>회원아이디와 비밀번호로 로그인 하세요.</h2>
+   <h2 style="color:gray">회원아이디와 비밀번호로 로그인 하세요.</h2>
    <br><br>
    <form method="post" name="loginFrm">
    <!-- <input type="hidden" name="command" value="login">  action="world.do"-->
    <div id=input>
-      <input name="id" placeholder="아이디" size="40" type="text"><br>
+      <input name="id" placeholder="&nbsp;아이디" size="40" type="text" style="width:550px ;background:white;"><br>
    </div>
    <div id=input>
-      <input name="pwd" placeholder="비밀번호" size="40" type="password"><br>
+      <input name="pwd" placeholder="&nbsp;비밀번호" size="40" type="password" style="width:550px"><br>
    </div>
    <div class="ar">&nbsp;&nbsp;&nbsp;${param.message}</div>
    <div class="ar">&nbsp;&nbsp;&nbsp;${message}</div>
    <div class="menu1">
       <ul>
-          <li><a href="#">아이디 찾기 | </a></li>
-             <li><a href="#">비밀번호 찾기</a></li>
+          <li onclick="findId();"  style="cursor:pointer;">아이디 찾기 |</li>
+          <li onclick="findPwd();" style="cursor:pointer;">비밀번호 찾기</li>
       </ul>
    </div>
    <div id="buttons">
