@@ -118,25 +118,23 @@
 			<li>실내에서 쾌적하게</li>
 		</ul>
 	</div>
-	<h1>Best Attraction</h1>
+	<h2 style="font-size:30px; text-align:center; line-height:80px;">인기 어트랙션</h2>
 	<div id="mainimg">
-			<c:forEach items="${bestList}" var = "AttractionVO">
-				<div class="img">
-				<a href="attractionDetail?aseq=${AttractionVO.aseq}">			
-						<img src="images/attraction_images/${AttractionVO.image}"/>
-						<h2>${AttractionVO.atname }</h2>
-				</a>
+		<c:forEach var="AttractionVO" items="${bestList}" begin="0" end="2">
+			<a href="world.do?command=attractionDetailForm&aseq=${AttractionVO.aseq}">
+				<div id="att_list">
+					<img src="images/attraction_images/${AttractionVO.image}"/>
+					<h3>${AttractionVO.atname}</h3>
 				</div>
-			</c:forEach>
+			</a>
+		</c:forEach>
 	</div>
-
-	</div>
-	<div class="tag">
-		<ul>
-			<li><a href='world.do?command=attractionForm'>더 많은 어트렉션 보기</a></li>
-			<li><a href='world.do?command=guide'>운휴 정보 보러 가기</a></li>
-		</ul>
-	</div>
+</div>
+<div class="tag">
+	<ul>
+		<li><a href='world.do?command=attractionForm'>더 많은 어트렉션 보기</a></li>
+		<li><a href='world.do?command=guide'>운휴 정보 보러 가기</a></li>
+	</ul>
 </div>
 
 
