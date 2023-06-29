@@ -14,8 +14,8 @@ a{ text-decoration-line: none; color: inherit;}
 
 
 #sub_menu{position:relative; width:1350px; height:120px; margin:0 auto; padding:20px 20px 0 20px; border-bottom:1px solid lightgray;}
-.logo {position:relative; width:107px; height:100%; margin:0 auto; float:left;}
-.category {position:relative; width:1100px; height:100%; float:left; padding:0 100px;}
+.logo {position:relative; width:207px; height:100%; margin:0 auto; float:left;}
+.category {position:relative; width:1100px; height:100%; float:left; padding:0 50px;}
 
 .dropdown {position:relative; width:200px; display:inline-block;}
 .dropbtn {width:100%; font-weight:bold; padding:30px; padding-bottom:30px; text-align:center; cursor:pointer; 
