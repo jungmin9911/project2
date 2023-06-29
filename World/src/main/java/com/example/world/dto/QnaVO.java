@@ -14,7 +14,8 @@ public class QnaVO {
 	private String rep;
 	private String id;
 	private Timestamp indate;
-	
+	private String passcheck;
+	private String pass;
 	
 	
 	

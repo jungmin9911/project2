@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
-public class MemberVo {
+public class MemberVO {
 	
 	@NotEmpty(message="id를 입력하세요")
 	private String id;

@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.world.dto.KakaoProfile;
 import com.example.world.dto.KakaoProfile.KakaoAccount;
 import com.example.world.dto.KakaoProfile.KakaoAccount.Profile;
-import com.example.world.dto.MemberVo;
+import com.example.world.dto.MemberVO;
 import com.example.world.dto.OAuthToken;
 import com.example.world.service.MemberService;
 import com.google.gson.Gson;
@@ -44,7 +44,7 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute("dto") @Valid MemberVo membervo, BindingResult result, Model model,
+	public String login(@ModelAttribute("dto") @Valid MemberVO membervo, BindingResult result, Model model,
 			HttpServletRequest request) {
 		String url = "member/login";
 		if (result.getFieldError("id") != null)
@@ -53,7 +53,7 @@ public class MemberController {
 			model.addAttribute("message", result.getFieldError("pwd").getDefaultMessage());
 		else {
 
-			MemberVo mvo = ms.getMember(membervo.getId());
+			MemberVO mvo = ms.getMember(membervo.getId());
 			if (mvo == null)
 				model.addAttribute("message", "ID가 없습니다");
 			else if (mvo.getPwd() == null)
@@ -146,9 +146,9 @@ public class MemberController {
 		Profile pf = ac.getProfile();
 		System.out.println(pf.getNickname());
 
-		MemberVo mvo = ms.getMember(kakaoProfile.getId());
+		MemberVO mvo = ms.getMember(kakaoProfile.getId());
 		if (mvo == null) {
-			mvo = new MemberVo();
+			mvo = new MemberVO();
 			mvo.setId(kakaoProfile.getId());
 			mvo.setEmail(ac.getEmail());
 			mvo.setName(pf.getNickname());
@@ -174,7 +174,7 @@ public class MemberController {
 
 	@RequestMapping("idCheckForm")
 	public String id_check_form(@RequestParam("id") String id, Model model) {
-		MemberVo mvo = ms.getMember(id);
+		MemberVO mvo = ms.getMember(id);
 		int result = 0;
 		if (mvo == null)
 			result = -1;
@@ -187,7 +187,7 @@ public class MemberController {
 
 	@RequestMapping(value = "join", method=RequestMethod.POST)
 	public String join(
-					@ModelAttribute("dto") @Valid MemberVo membervo,
+					@ModelAttribute("dto") @Valid MemberVO membervo,
 					BindingResult result, Model model, HttpServletRequest request, 
 					@RequestParam("reid") String reid, @RequestParam("pwdCheck") String pwdCheck) {
 		
@@ -220,7 +220,7 @@ public class MemberController {
 	public String member_Edit_Form(Model model, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
-		MemberVo mvo = (MemberVo)session.getAttribute("loginUser");
+		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
 		model.addAttribute("dto", mvo);
 		
 		return "member/memberUpdateForm";
@@ -228,7 +228,7 @@ public class MemberController {
 
 	
 	@RequestMapping(value = "memberUpdate",  method=RequestMethod.POST)
-	public String memberUpdate(@ModelAttribute("dto") @Valid MemberVo membervo,
+	public String memberUpdate(@ModelAttribute("dto") @Valid MemberVO membervo,
 			BindingResult result, Model model, HttpServletRequest request,
 			@RequestParam(value="pwdCheck", required=false) String pwdCheck ) {
 		
@@ -270,7 +270,7 @@ public class MemberController {
 	public String withdrawal( HttpServletRequest request , Model model) {
 		
 		HttpSession session = request.getSession();
-		MemberVo mvo = (MemberVo)session.getAttribute("loginUser");
+		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
 		ms.withdrawalMember( mvo.getId() );
 		model.addAttribute("message" , "회원탈퇴가 정상적으로 처리되었습니다");
 		return "member/login";
