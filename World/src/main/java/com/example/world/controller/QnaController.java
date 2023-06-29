@@ -53,23 +53,19 @@ public class QnaController {
 	}
 	
 	@RequestMapping("/qnaView")
-	public ModelAndView qna_view( HttpServletRequest request, @RequestParam("lqseq") int Lqseq) {
+	public ModelAndView qna_view( HttpServletRequest request, @RequestParam("lqseq") int lqseq) {
 	    ModelAndView mav = new ModelAndView();
-		mav.addObject("qnaVO", qs.getQna(Lqseq) );
+		mav.addObject("qnaVO", qs.getQna(lqseq) );
 		mav.setViewName("qna/qnaView");
 		return mav;
 	}
 	
-	
-	
-	
-	//
-	
+
 	
 	@RequestMapping("/passCheck")
-	public ModelAndView passCheck( @RequestParam("lqseq") int qseq ) {
+	public ModelAndView passCheck( @RequestParam("lqseq") int lqseq ) {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("qseq", qseq);
+		mav.addObject("lqseq", lqseq);
 		mav.setViewName("qna/checkPass");
 		
 		return mav;
@@ -78,11 +74,11 @@ public class QnaController {
 	
 	@RequestMapping(value="/qnaCheckPass", method=RequestMethod.POST)
 	public String qnaCheckPass( 
-			@RequestParam("qseq") int qseq, 
+			@RequestParam("lqseq") int lqseq, 
 			@RequestParam("pass") String pass, Model model ) {
 
-		QnaVO qvo = qs.getQna(qseq);
-		model.addAttribute("qseq" , qseq);
+		QnaVO qvo = qs.getQna(lqseq);
+		model.addAttribute("lqseq" , lqseq);
 		
 		if( qvo.getPass().equals(pass) ) {
 			return "qna/checkPassSuccess";
