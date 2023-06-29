@@ -12,6 +12,6 @@ public interface IAttractionDao {
 
 	ArrayList<AttractionVO> getBestattraction();
 
-	List<AttractionVO> getAttraction(int pseq);
+	AttractionVO getAttraction(int pseq);
 
 }

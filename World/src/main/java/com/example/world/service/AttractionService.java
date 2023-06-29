@@ -15,10 +15,9 @@ public class AttractionService {
 	@Autowired
 	IAttractionDao atdao;
 
-	public List<AttractionVO> getAttraction(int pseq) {
+	public AttractionVO getAttraction(int pseq) {
 		
 		return atdao.getAttraction(pseq);
-		
 		
 		
   }
