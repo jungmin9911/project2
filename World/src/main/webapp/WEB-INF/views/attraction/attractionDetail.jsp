@@ -71,7 +71,7 @@
 		<a href="world.do?command=guide" class="grayBtn">이번 달 운휴 달력 보러가기</a>
 	</p>
 	<div class="btnArea">
-		<a href="world.do?command=attractionForm" class="purpleBtn">목록</a>
+		<a href="/attractionForm" class="purpleBtn">목록</a>
 	</div>
 </div>
 </form>

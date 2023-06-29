@@ -44,8 +44,8 @@
 						<span style="">즐길거리</span>
 					</button>
 					<div class="dropdown-content">
-						<a href="world.do?command=attractionForm">어트렉션</a>
-						<a href="world.do?command=parade">퍼레이드</a>
+						<a href="/attractionForm">어트렉션</a>
+						<a href="/parade">퍼레이드</a>
 					</div>
 				</div>
 				<div class="dropdown">
