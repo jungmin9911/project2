@@ -275,7 +275,7 @@ public class MemberController {
 		model.addAttribute("message" , "회원탈퇴가 정상적으로 처리되었습니다");
 		return "member/login";
 	}
-	
+
 }
 
 
