@@ -2,11 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
+<style>
+.answer {display: none;}
+
+</style>
 
 <script>
-
 function toggleAnswer(answerId) {
     var answer = document.getElementById(answerId);
+    var allAnswers = document.getElementsByClassName("answer");
+
+    for (var i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].id !== answerId) {
+            allAnswers[i].style.display = "none";
+        }
+    }
+
     if (answer.style.display === "none") {
         answer.style.display = "table-row";
     } else {
@@ -16,26 +27,21 @@ function toggleAnswer(answerId) {
 </script>
 
 
-
 <article>
-<h2 style="font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif;font-size: 60px;color: #000;text-align: center; ">QnA</h2><br>
+<h2 style="font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif;font-size: 60px;color: #000;text-align: center; padding-top: 50px;">QnA</h2><br>
 <div style="position: relative; text-align: center;">
   <img src="images/qna_image.jpg" style="opacity: 0.5;">
   <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%);">
     <p style="font-size: 24px; color: white;"><h3 style="font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif;font-size: 30px;color: #000;text-align: center; padding-top: 50px;"> 더 궁금하신 사항이 있으면 <br>이용문의를 이용하시기 바랍니다.
 <div id="buttons" style="float:center">
-<input type="button" value="이용문의" class="submit" onclick="location.href='world.do?command=qnaWrite'" style="display: inline-block; font-size: 18px;font-weight:bold; background: #CCFF99;color: black; border: 2px solid #fff; border-radius: 30px; padding: 14px 58px; margin-top: 40px;">
+<input type="button" value="이용문의" class="submit" onclick="location.href='world.do?command=qnaList&changMenu=1'" style="display: inline-block; font-size: 18px;font-weight:bold; background: #CCFF99;color: black; border: 2px solid #fff; border-radius: 30px; padding: 14px 58px; margin-top: 40px;">
 </h3></p>
   </div>
  <br><br><br>
  <div id="board-search">
         <div class="container">
             <div class="search-window"> 
- 				<div class="search-wrap">
-					<label for="search" class="blind">공지사항 내용 검색</label>
-					<input id="search" type="search" name="" placeholder="검색어를 입력해주세요." value="">
-					<button type="submit" class="btn btn-dark">검색</button>
-				</div>
+ 		
 			</div>
 		</div>
 </div>
@@ -57,7 +63,7 @@ function toggleAnswer(answerId) {
                     <td><img src=images/Q.jpg style="width: 60px; height: 55px; border-radius: 50%; border:1px solid blue"></td>
                     <th><a href="#!" onclick="toggleAnswer('answer1')"> 매직패스 사전예매는 어떻게 하나요? </a></th>      
                 </tr>   
-                <tr id="answer1" style="display:none">
+                <tr id="answer1" class="answer">
                		 <td></td>
                 	<th style="font-size:18px; font-weight:normal">매직패스 프리미엄 사전 예매는 롯데월드 앱에서만 가능하며<br>
 매일 자정, 당일을 포함한 3일간의 예매가 가능합니다.<br>
@@ -75,7 +81,7 @@ function toggleAnswer(answerId) {
                     <td><img src=images/Q.jpg style="width: 60px; height: 55px; border-radius: 50%; border:1px solid blue"></td>
                     <th><a href="#!" onclick="toggleAnswer('answer2')"> 어드벤처를 나갔다가 다시 들어올 수 있나요? </a></th>             
                 </tr>
-                <tr id="answer2" style="display:none">
+                <tr id="answer2" class="answer">
                		 <td></td>
                 	<th style="font-size:18px; font-weight:normal">롯데월드 어드벤처에서는 파크 입장 후 퇴장하시면 원칙적으로 재입장이 불가능합니다.<br><br>
 단, 재입장을 도와드리는 몇가지 사항에 대해 안내해 드립니다.<br><br>
@@ -87,7 +93,7 @@ function toggleAnswer(answerId) {
                     <td><img src=images/Q.jpg style="width: 60px; height: 55px; border-radius: 50%; border:1px solid blue"></td>
                     <th><a href="#!" onclick="toggleAnswer('answer3')"> 공연에 대해 궁금한 것은 어디에 물어보나요?</a></th>  
                 </tr>
-                  <tr id="answer3" style="display:none">
+                  <tr id="answer3" class="answer">
                		 <td></td>
                 	<th style="font-size:18px; font-weight:normal">공연 및 공연참여와 관련된 질문은 공연참여사무실로 연락주시면 안내 및 상담이 가능합니다.<br><br>
 ※ 공연참여사무실 : 02-411-4339(운영시간 12:00~20:00)<br><br>
@@ -97,7 +103,7 @@ function toggleAnswer(answerId) {
                     <td><img src=images/Q.jpg style="width: 60px; height: 55px; border-radius: 50%; border:1px solid blue"></td>
                     <th><a href="#!" onclick="toggleAnswer('answer4')"> 어린이, 청소년이 어른티켓으로 이용할 수 있나요? </a></th>
               </tr> 
-              <tr id="answer4" style="display:none">
+              <tr id="answer4" class="answer">
                		 <td></td>
                 	<th style="font-size:18px; font-weight:normal">어린이(36개월이상~만 12세), 청소년(만 13세~만 18세) 손님은 어른(만 19세 이상)티켓 사용이 가능합니다.<br><br>
 참고로, 만 36개월 미만인 유아손님의 경우 무료입장이 가능하니 참고부탁드립니다.<br>
@@ -108,7 +114,7 @@ function toggleAnswer(answerId) {
                       <a href="#!" onclick="toggleAnswer('answer5')" >티켓의 QR코드를 캡쳐해서 이용 가능한가요?</a>                     
                     </th>                
                 </tr>
-                <tr id="answer5" style="display:none">
+                <tr id="answer5" class="answer">
                		 <td></td>
                 	<th style="font-size:18px; font-weight:normal">캡쳐 된 티켓의 QR코드는 입장 및 매직패스 사용이 어렵습니다.<br><br>
 다른 분께 티켓을 보내실 경우 마이티켓에서 보내고자 하는 티켓의 '선물하기' 버튼을 활용해 티켓을 전송해주시기 바랍니다.<br><br>
@@ -117,7 +123,7 @@ function toggleAnswer(answerId) {
                     <td><img src=images/Q.jpg style="width: 60px; height: 55px; border-radius: 50%; border:1px solid blue"></td>
                     <th><a href="#!" onclick="toggleAnswer('answer6')">홈페이지 로그인이 되지 않아요</a></th>                   
                 </tr>
-                <tr id="answer6" style="display:none">
+                <tr id="answer6" class="answer">
                		 <td></td>
                 	<th style="font-size:18px; font-weight:normal">1. 로그인이 되지 않을 때 쿠키설정을 확인해주시기 바랍니다.<br><br>
     인터넷 익스플로러 브라우저 사용 시 '쿠키 처리 방식'이 '허용'으로 되어 있어야 로그인이 가능합니다.<br><br>
@@ -129,7 +135,7 @@ function toggleAnswer(answerId) {
                     <td><img src=images/Q.jpg style="width: 60px; height: 55px; border-radius: 50%; border:1px solid blue"></td>
                     <th><a href="#!" onclick="toggleAnswer('answer7')">롯데월드에서 사용가능한 상품권은 뭐가있나요?</a></th>                   
                 </tr>
-                 <tr id="answer7" style="display:none">
+                 <tr id="answer7" class="answer">
                		 <td></td>
                 	<th style="font-size:18px; font-weight:normal">롯데월드 어드벤처에서 사용 가능한 상품권은 총 3가지 입니다.<br><br>
 - 롯데백화점 상품권<br><br>

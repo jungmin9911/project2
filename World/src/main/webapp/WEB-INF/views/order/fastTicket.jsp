@@ -5,88 +5,82 @@
 <link href="order/order.css" rel="stylesheet">  
 <script src="order/order.js"></script>
 
-
-
-
 <style>
 	.container {position:relative; width:100%;} 
 </style>
- 
- <form name="formm" method="post">
 
-<div id =" wrap" style=" width:100%; height:100%; background: lightgray;">
-
-	<div id = "order_box">
+<article>
+<form name="formm" method="post">
+	<div class="order_box2">
+		<div id="calendar"  class="calendar">
+			<input type="hidden" id="calendar" name="visitdate">
+		</div>
 		<div class="order_box_select2">
-			<div class="order_box_title" style="margin-top:7px;">
-				<h2>패스트패스 예매</h2>
-				<!--  인원선택 -->
+			<div class="order_box_title">패스트패스 예매</div>
 			<div class="order_box_date">
-				<div class="order_box_date_text" style="margin-top:10px;">
-					<div id="selectedDate" class="selected-date"></div>
+				<div class="order_box_date_text">방문일자/인원 선택</div>
+				<div class="order_box_date_select" onclick="showCalendar()">
+					<img src="images/ticket_images/calendar.png" style="width:40px; height:40px;">
 				</div>
-				<div class="order_box_date_date" style="margin-top:10px;">
-					<div class="calendarImage" onclick="showCalendar()">
-						<img src="images/ticket_images/calendar.png" style="width:40px; height:40px;">
-					</div>
-					<div id="calendar"  class="calendar">
-						<input type="hidden" id="calendar" name="visitdate">
-					</div>	
+				<!-- 달력 선택 날짜 표기 -->
+				<div id="calendarPopup" class="calendar-popup"></div>
+				<div class="order_box_date_date">
+					<input type="text"  id="selectedDate" name="visitdate2" >
 				</div>
 			</div>
-			
-			<!--  달력 선택 날짜 표기 -->
-			<div class="order_selectdate">
-				<h2>인원 선택/방문일자</h2>
-			</div>
-			
 			<!-- 수량 표시 -->
 			<div class="order_quantity">
 				<div class="order_quantity_text">
-				<h3>어른</h3>
-				<p>만19세이상</p>
+					<p style="font-weight:bold">어른</p>
+					<p style="font-size:14px; color:gray;">만19세이상</p>
 				</div>
 				<div class="order_quantity_box">	
-					<button onclick="increase(event, 'result')" style="width:30px;">+</button><br>
-					<input type="text" size="1" style="text-align:center;"name="p1" id="result" value="0"><br>
-					<button onclick="decrease(event, 'result')" style="width:30px;">-</button>
-				</div>	 
-				<div class="order_quantity_text">
-				<h3>청소년</h3>
-				<p>만13세~만18세</p>
+					<input type="text" name="p1" id="result" value="0" class="order_quantity_count">
 				</div>
-				<div class="order_quantity_box">
-					<button onclick="increase(event, 'result2')" style="width:30px;">+</button><br>
-					<input type="text" size="1" style="text-align:center;" name="p2" id="result2" value="0"><br>
-					<button onclick="decrease(event, 'result2')" style="width:30px;">-</button>
-				 </div>
-					
+				<div class="order_quantity_box_button">	
+					<button onclick="decrease(event, 'result')" class="order_quantity_count_button" style="border-right:1px solid black;">-</button>
+					<button onclick="increase(event, 'result')" class="order_quantity_count_button">+</button>
+				</div>
+				<div class="quantityArg"></div>
+				<div class="order_quantity_text">
+					<p style="font-weight:bold">청소년</p>
+					<p style="font-size:14px; color:gray;">만13세~만18세</p>
+				</div>
+				<div class="order_quantity_box">	
+					<input type="text" name="p2" id="result2" value="0" class="order_quantity_count">
+				</div>
+				<div class="order_quantity_box_button">	
+					<button onclick="decrease(event, 'result2')" class="order_quantity_count_button" style="border-right:1px solid black;">-</button>
+					<button onclick="increase(event, 'result2')" class="order_quantity_count_button">+</button>
+				</div>	
 			</div>
-			
-		<!--  어트랙션 선택 -->
-		<div>
-		     <c:forEach items="${aseqList}"  var="attractionVO">
-	              <label><input onclick="count_check(this);"
-	              	type="checkbox" name="attraction" value= "${attractionVO.atname}">
-	              	${attractionVO.atname}
-	              	<img style="width:50px; height:50px; "src="images/attraction_images/${attractionVO.image}"/>
-	              	</label>
-	              	
-	         </c:forEach>
-		</div>
-			
-			
-			
-		<!-- 안내 -->
+			<!--  어트랙션 선택 -->
+			<div class="check_wrapp">
+				<c:forEach items="${aseqList}" var="attractionVO" >
+					<div class="rect">
+						<div class="check_btn">
+							<input type="checkbox" value="${attractionVO.atname}" name="attraction" 
+								class="check_btnbtn" onclick="count_check(this);"/>
+						</div>
+						<div class="check_atname">${attractionVO.atname}</div>
+			            <img src="images/attraction_images/${attractionVO.image}" class="check_image"/>
+			        </div>	
+	         	</c:forEach>
+			</div>
+			<div id="reserve_buttons" class="order_box_button">
+	       	<!-- 	<input type="button" value="구매하기" onClick="location.href='world.do?command=cartList'">  -->
+	        	<input type="button" value="장바구니" class="purpleButton" onclick="go_cart('1')"> 
+	       	</div>
+			<!-- 안내 -->
 			<div id="board-list">
 		        <div class="container">
 		            <table class="board-table" style="font-size:20px">  
 		                <tr>
-		                    <th><a href="#!" onclick="toggleAnswer('answer1')">&nbsp;&nbsp;&nbsp;취소/환불</a></th>      
+		                    <th><a href="#!" onclick="toggleAnswer('answer1')">취소/환불</a></th>      
 		                </tr>   
 		                <tr id="answer1" style="display:none">
 		               		 
-		                	<th style="font-size:15px; font-weight:normal;background:#F7F7F7;"><br>
+		                	<th style="font-size:15px; font-weight:normal;background:#F7F7F7;">
 								<b>예매취소 안내</b> <br>
 								<b>온라인 예매 시 선택한 날짜에만 방문 및 이용이 가능하며, 미사용시에 해당날짜가 지나면 자동 취소 됩니다.</b><br>
 								(사용 후에는 취소가 불가능합니다.)<br>
@@ -99,11 +93,11 @@
 								</th>
 		               	</tr>
 		               	 <tr>
-		                    <th><a href="#!" onclick="toggleAnswer('answer2')">&nbsp;&nbsp;&nbsp;이용안내 </a></th>             
+		                    <th><a href="#!" onclick="toggleAnswer('answer2')">이용안내</a></th>             
 		                </tr>
 		                <tr id="answer2" style="display:none">
 		               		 
-		                	<th style="font-size:15px; font-weight:normal; background:#F7F7F7"><br>
+		                	<th style="font-size:15px; font-weight:normal; background:#F7F7F7">
 								<b>이용 안내</b><br>
 								<b> 1. 어드벤처 예매페이지 및 모바일APP을 통한 티켓예매 </b><br>
 								<b> 2. 카카오 알림톡(또는 문자메시지)으로 웹티켓 URL 발송 </b><br>
@@ -115,21 +109,8 @@
 					</table>
 		       </div>
 	       </div>
-	       
-	    <!--  버튼 -->
-	    
-	       	<div id="reserve_buttons" style = "padding-top:40px;">
-	       		<input type="button" value="구매하기" onClick="go_cart();">
-	       	</div>
-	                	
 		</div>
 	</div>
-</div>
-</div>
 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
+</article>
 <%@ include file="../footer.jsp" %>>
