@@ -2,10 +2,10 @@ package com.example.world.dto;
 
 import java.sql.Timestamp;
 
-import lombok.Getter;
-import lombok.Setter;
-@Getter
-@Setter
+import lombok.Data;
+
+
+@Data
 public class QnaVO {
 	private Integer lqseq; 
 	private String title;
