@@ -12,9 +12,4 @@ public class NoticeVO {
 	private String  ncontent;
 	private String id;
 	private Timestamp indate;
-	
-	
-		
-	
-	
 }

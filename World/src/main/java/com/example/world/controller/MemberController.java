@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.world.dto.KakaoProfile;
 import com.example.world.dto.KakaoProfile.KakaoAccount;
+import com.example.world.dto.KakaoProfile.KakaoAccount.Profile;
 import com.example.world.dto.MemberVo;
 import com.example.world.dto.OAuthToken;
 import com.example.world.service.MemberService;
