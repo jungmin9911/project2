@@ -24,6 +24,6 @@
 	
 	<insert id="insertQna" parameterType="com.example.world.dto.QnaVO">
 		insert into Lqna (Lqseq, title, content, id, passcheck, pass) 
-		values(Lqna_seq.nextval, #{title}, #{content}, #{id}, #{passcheck}, #{pass} )
+		values(Lqna_lqseq.nextval, #{title}, #{content}, #{id}, #{passcheck}, #{pass} )
 	</insert>
 </mapper>
