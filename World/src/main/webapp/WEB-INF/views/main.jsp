@@ -122,7 +122,7 @@
 	<div id="mainimg">
 			<c:forEach items="${bestList}" var = "AttractionVO">
 				<div class="img">
-				<a href="attractionDetail?pseq=${AttractionVO.pseq}">			
+				<a href="attractionDetail?aseq=${AttractionVO.aseq}">			
 						<img src="images/attraction_images/${AttractionVO.image}"/>
 						<h2>${AttractionVO.atname }</h2>
 				</a>
