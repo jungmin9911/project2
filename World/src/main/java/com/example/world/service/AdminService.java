@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.world.dao.IAdminDao;
 
-
-
 @Service
 public class AdminService {
 
