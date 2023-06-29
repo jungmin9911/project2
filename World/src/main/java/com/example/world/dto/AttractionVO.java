@@ -1,10 +1,10 @@
 package com.example.world.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class AttractionVO {
 		private Integer aseq;
 		private Integer pnum;

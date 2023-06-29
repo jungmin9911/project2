@@ -1,13 +1,9 @@
 package com.example.world.dto;
 
 import java.sql.Timestamp;
+import lombok.Data;
 
-import javax.validation.constraints.NotEmpty;
-
-import lombok.Getter;
-import lombok.Setter;
-@Getter
-@Setter
+@Data
 public class MemberVo {
 	
 	@NotEmpty(message="id를 입력하세요")
@@ -25,8 +21,5 @@ public class MemberVo {
 	private String useyn;
 	private Timestamp indate;
     private String provider;
-	
-	
-	
 	
 }

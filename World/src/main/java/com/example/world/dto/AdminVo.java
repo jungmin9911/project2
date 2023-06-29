@@ -1,10 +1,10 @@
 package com.example.world.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class AdminVo {
 
 	private String id;
