@@ -15,9 +15,9 @@ public class AttractionService {
 	@Autowired
 	IAttractionDao atdao;
 
-	public AttractionVO getAttraction(int pseq) {
+	public AttractionVO getAttraction(int aseq) {
 		
-		return atdao.getAttraction(pseq);
+		return atdao.getAttraction(aseq);
 		
 		
   }
@@ -26,6 +26,13 @@ public class AttractionService {
 	public ArrayList<AttractionVO> getBestattraction() {
 		
 		return atdao.getBestattraction();
+	}
+
+
+	public List<AttractionVO> getAseqList() {
+		
+		
+		 return atdao.getAseqList();
 	}
   
 }

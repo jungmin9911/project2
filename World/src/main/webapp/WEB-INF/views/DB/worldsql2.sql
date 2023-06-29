@@ -152,7 +152,7 @@ select * from
 where  rownum <=3;
 
 
-select * from best_at_view;
+select * from rest_at_view;
 select * from attraction;
 
 --------운영 운휴
