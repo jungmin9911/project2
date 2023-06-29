@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 <script src="member/member.js"></script>
 <div id=logina>
@@ -27,8 +26,11 @@
       </ul>
    </div>
    <div id="buttons">
-      <input type="submit" value="로그인" class="submit" onclick="return loginCheck()">
+      <input type="submit" value="로그인" class="submit" onclick="loginCheck()">
       <input type="button" value="회원가입" class="cancel" onclick="go_contract()">
+      <br>
+      <hr style="border:0; height:1px; background: white;">
+	  <a href="kakaostart"><img src="/images/kakao.png"    style="width:400px; margin:30px 0 0 0;"></a>
    </div><br><br>
    <div id=content> 회원정보와 관련된 문의사항이 있으시면 고객만족센터에 연락하세요.<br>
    고객만족센터 : 1899-8900</div>

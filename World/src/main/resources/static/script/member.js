@@ -25,7 +25,7 @@ function loginCheck(){
 		document.loginFrm.pwd.focus();
 		return false;
 		}else{
-	document.loginFrm.action = "world.do?command=login";
+	document.loginFrm.action = "login";
 	document.loginFrm.submit();
 			return true;
 		}

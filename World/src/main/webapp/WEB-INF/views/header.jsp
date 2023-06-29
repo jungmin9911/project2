@@ -9,7 +9,7 @@
 <script src="script/jquery-3.6.4.js"></script>
 <script src="script/script.js"></script>
 <script src="notice/event02.js"></script>  
-<script src="member/member.js"></script>
+<script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +19,7 @@
 			<ul>
 				<c:choose>
 					<c:when test ="${empty loginUser}">
-						<li><a href="world.do?command=loginForm">login</a></li>
+						<li><a href="loginForm">login</a></li>
 						<li><a href="world.do?command=contract">회원가입</a></li>
 						<li><a href="world.do?command=admin">관리자</a></li>
 					</c:when>
