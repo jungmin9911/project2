@@ -20,7 +20,7 @@
 		</div>
 		<div class="update_buttons">
 			<input class="btn" type="button" value="공지수정" onclick="go_mod_savent()">
-			<input class="btn" type="reset" value="취소" onClick="location.href='world.do?command=adminnoticeDetail&nseq=${noticeVO.nseq}'" >
+			<input class="btn" type="reset" value="취소" onClick="adminnoticeDetail&nseq=${noticeVO.nseq}" >
 		</div>
 	</form>		
 </div>

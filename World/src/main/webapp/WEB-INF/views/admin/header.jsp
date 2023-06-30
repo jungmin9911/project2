@@ -19,24 +19,24 @@
 	<header>
 		<nav id ="top_menu">
 			<ul>
-				<li><a href="world.do?command=logout">logout</a></li>
+				<li><a href="adminLogout">logout</a></li>
 				<li>${loginAdmin.name}(${loginAdmin.id})</li>
 			</ul>
 		</nav>
 		
 		<div id="sub_menu">
 			<div class="logo">
-				<a href="world.do?command=adminMain">
+				<a href="adminMain">
 					<img src="images/mainlogo.jpg"/>
 				</a>
 			</div>
 			
 			<div class="category">
 				<ul class="category_top_menu">	
-					<li><a href="world.do?command=adminattractionForm&changMenu=1">어트렉션 관리</a></li>
-					<li><a href="world.do?command=adminnotice&changMenu=1">공지사항 관리</a></li>
-					<li><a href="world.do?command=adminmember&changMenu=1">회원 관리</a></li>
-					<li><a href="world.do?command=adminqna&changMenu=1">Q & A 관리</a></li>
+					<li><a href="adminAttraction">어트랙션 관리</a></li>
+					<li><a href="adminNotice">공지사항 관리</a></li>
+					<li><a href="adminMember">회원 관리</a></li>
+					<li><a href="adminQna">Q & A 관리</a></li>
 				</ul>		
 			</div>
 		</div>
