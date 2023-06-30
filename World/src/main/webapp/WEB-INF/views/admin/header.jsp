@@ -37,6 +37,7 @@
 					<li><a href="adminNotice">공지사항 관리</a></li>
 					<li><a href="adminMember">회원 관리</a></li>
 					<li><a href="adminQna">Q & A 관리</a></li>
+					<li><a href="adminBannerList">배너관리</a></li>
 				</ul>		
 			</div>
 		</div>

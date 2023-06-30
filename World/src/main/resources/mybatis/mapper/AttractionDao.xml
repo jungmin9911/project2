@@ -20,5 +20,10 @@
 	<select id="getrestattraction" resultType="com.example.world.dto.AttractionVO">
         select * from  rest_at_view
     </select>
+	
+	<select id="getBannerList" resultType="com.example.world.dto.BannerVO">
+		select * from banner where order_seq &lt;=8  order by order_seq
+	</select>
+
 
 </mapper>

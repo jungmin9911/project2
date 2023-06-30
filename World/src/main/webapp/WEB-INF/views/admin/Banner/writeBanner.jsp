@@ -22,7 +22,7 @@ $(function(){
 	            if( data.STATUS == 1 ){  	// 동적으로 div태그 달아주기.
 	            	$("#filename").append("<div>"+data.FILENAME+"</div>");
 	            	$("#image").val(data.FILENAME);
-	            	$("#filename").append("<img src='product_images/"+data.FILENAME+"' height='150'/>");
+	            	$("#filename").append("<img src='images/"+data.FILENAME+"' height='150'/>");
 	            }
 	        },
 	        error: function() {				alert("실패");			}

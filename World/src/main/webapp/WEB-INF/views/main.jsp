@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+<script type=text/javaScript>
+    $(function(){
+    	var num=0;
+    	setInterval(function(){
+            $('#imgss').animate({ left : num * -2000 },1000);
+                num++;
+                if(num==8)num=0;
+        }, 2000);
+    });
+</script>
 
 <style>
     @keyframes fadeInUp {

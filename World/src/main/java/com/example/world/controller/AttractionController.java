@@ -30,24 +30,20 @@ public class AttractionController {
 		ModelAndView mav =new ModelAndView();
 		ArrayList<AttractionVO> bestList = ats.getBestattraction();
 		mav.addObject("bestList",  bestList );
-		//mav.addObject("size", ats.getBannerList().size() );
+		mav.addObject("bannerList", ats.getBannerList() );
+		mav.addObject("size", ats.getBannerList().size() );
 		mav.setViewName("main");
 		
 		return mav;
 	}
 
-	
 	@RequestMapping("/attractionDetail")
 	public String attractionDetail(@RequestParam("aseq") int aseq, Model model) {
 		AttractionVO attractionvo = ats.getAttraction(aseq);
         model.addAttribute("AttractionVO", attractionvo);
 
         return "attraction/attractionDetail";
-	}
-	
-	
-	
-	
+	}	
 	
 	@RequestMapping("/attractionForm")
     public String attractionForm(Model model) {
@@ -61,7 +57,7 @@ public class AttractionController {
 	 public String parade() {
 		
 	        return "parade/parade";
-	    }
+	 }
 	
 	
 }
