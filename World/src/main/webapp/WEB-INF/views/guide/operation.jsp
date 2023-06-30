@@ -36,7 +36,7 @@
 		<h2 class="toto" style="font-size:30px; text-align:center; line-height:100px;">오늘의 운휴시설</h2> 
 		<div id="rest_box">
 			<c:forEach var="AttractionVO" items="${aseqList}">
-				<a href="attractionDetailForm?aseq=${AttractionVO.aseq}">
+				<a href="attractionDetail?aseq=${AttractionVO.aseq}">
 					<div id="att_list">
 						<img src="images/attraction_images/${AttractionVO.image}"/>
 						<h3 class="nn">${AttractionVO.atname}</h3>

@@ -43,7 +43,7 @@
 </div>
 
 <div id="mainTodayArea" >
-	<a href="world.do?command=guide" target='_blank'>
+	<a href="guide" target='_blank'>
  		<img src="images/icons/mainTodayArea_tit_icon.png"/>&nbsp;&nbsp;&nbsp;오늘의 파크 운영시간&nbsp;&nbsp;10:00 ~ 21:00
 	</a>
 </div>
@@ -134,7 +134,7 @@
 	<h2 style="font-size:30px; text-align:center; line-height:80px;">인기 어트랙션</h2>
 	<div id="mainimg">
 		<c:forEach var="AttractionVO" items="${bestList}" begin="0" end="2">
-			<a href="attractionDetailForm&aseq=${AttractionVO.aseq}">
+			<a href="attractionDetail?aseq=${AttractionVO.aseq}">
 				<div id="att_list">
 					<img src="images/attraction_images/${AttractionVO.image}"/>
 					<h3>${AttractionVO.atname}</h3>
@@ -144,8 +144,8 @@
 	</div>
 	<div class="tag">
 	<ul>
-		<li><a href='world.do?command=attractionForm'>더 많은 어트랙션 보기</a></li>
-		<li><a href='world.do?command=guide'>운휴 정보 보러 가기</a></li>
+		<li><a href='attractionForm'>더 많은 어트랙션 보기</a></li>
+		<li><a href='guide'>운휴 정보 보러 가기</a></li>
 	</ul>
 </div>
 </div>

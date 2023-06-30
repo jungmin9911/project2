@@ -16,10 +16,7 @@ public class AttractionService {
 	IAttractionDao atdao;
 
 	public AttractionVO getAttraction(int aseq) {
-		
 		return atdao.getAttraction(aseq);
-		
-		
   }
   
 

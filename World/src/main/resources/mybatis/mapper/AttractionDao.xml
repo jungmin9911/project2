@@ -14,7 +14,7 @@
 	</select>
 	 
 	<select id="getAseqList" resultType="com.example.world.dto.AttractionVO">
-        select aseq from attraction
+        select * from attraction
     </select>
 
 
