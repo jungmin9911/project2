@@ -74,7 +74,7 @@ function go_deletent(nseq){ //공지 삭제
 
 function go_modnt(nseq){ // 공지 수정폼으로 이동
 	var url="adminUpdateNoticeForm&nseq="+nseq;
-	window.open(url, "go_modnt", opt);
+	window.location.href = url;
 }
 
 function go_mod_savent(){ // 공지 수정 버튼 클릭
