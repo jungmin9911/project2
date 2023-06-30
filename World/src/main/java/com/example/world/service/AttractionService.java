@@ -33,5 +33,9 @@ public class AttractionService {
 		
 		return atdao.getrestattraction();
 	}
+
+	public ArrayList<AttractionVO> getBannerList() {
+		return atdao.getBannerList();
+	}
   
 }
