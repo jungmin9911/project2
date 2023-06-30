@@ -16,14 +16,14 @@
 	</insert>
 	
 	<insert id="insertMember" parameterType="com.example.world.dto.MemberVO">
-		insert into Lmember( id, email, name, pwd, zip_num, address1, address2,  phone )
-		values( #{id}, #{email}, #{name},#{pwd}, #{zip_num}, #{address1}, #{address2}, 
+		insert into Lmember( id, email, name, pwd, zip_num, address1, address2,  address3, phone )
+		values( #{id}, #{email}, #{name},#{pwd}, #{zip_num}, #{address1}, #{address2}, #{address3},
 		 #{phone} )
 	</insert>
 	
 	<update id="updateMember" parameterType ="com.example.world.dto.MemberVO">
 		Update Lmember set pwd=#{pwd}, name=#{name}, zip_num= #{zip_num}, 
-		address1=#{address1},	 address2=#{address2},	
+		address1=#{address1},	 address2=#{address2},	 address3=#{address3},
 		email=#{email}, phone=#{phone} where id = #{id}
 	</update>
 	

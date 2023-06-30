@@ -1,7 +1,6 @@
 package com.example.world.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +30,7 @@ public class AttractionController {
 		ModelAndView mav =new ModelAndView();
 		ArrayList<AttractionVO> bestList = ats.getBestattraction();
 		mav.addObject("bestList",  bestList );
+		mav.addObject("size", ats.getBannerList().size() );
 		mav.setViewName("main");
 		
 		return mav;
