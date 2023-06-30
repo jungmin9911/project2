@@ -7,7 +7,7 @@ function go_next(){
 		// 동의 안함이 선택되었다면
 		alert('회원 약관에 동의 하셔야 회원으로 가입이 가능합니다');
 	}else{
-		document.contractFrm.action = "world.do?command=joinForm";
+		document.contractFrm.action = "/joinForm";
 		document.contractFrm.submit();
 		// contractFrm 폼에  action 도 없고 submit 버튼도 없는 것을 스크립트 명령으로 action 값을 설정하고 
 		// submit() 메서드로 이동까지 실행합니다
@@ -71,7 +71,7 @@ function idcheck(){
 		documnet.joinForm.id.focus();
 		return;
 	}
-	var url = "world.do?command=idCheckForm&id=" + document.joinForm.id.value;
+	var url = "idCheckForm?id=" + document.joinForm.id.value;
 	var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
 	window.open(url, "IdCheck", opt);	
 }

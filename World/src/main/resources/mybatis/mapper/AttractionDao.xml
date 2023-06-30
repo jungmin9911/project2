@@ -15,7 +15,7 @@
 	 
 	<select id="getAseqList" resultType="com.example.world.dto.AttractionVO">
         select * from attraction
-    </select>
+  </select>
 
 	<select id="getrestattraction" resultType="com.example.world.dto.AttractionVO">
         select * from attraction rest_at_view

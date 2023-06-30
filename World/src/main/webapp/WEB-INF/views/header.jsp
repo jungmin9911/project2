@@ -20,8 +20,8 @@
 				<c:choose>
 					<c:when test ="${empty loginUser}">
 						<li><a href="loginForm">login</a></li>
-						<li><a href="world.do?command=contract">회원가입</a></li>
-						<li><a href="world.do?command=admin">관리자</a></li>
+						<li><a href="/contract">회원가입</a></li>
+						<li><a href="/admin">관리자</a></li>
 					</c:when>
 					<c:otherwise>
 						<li><a href="world.do?command=cartList&changMenu=1">마이페이지</a></li>
@@ -53,7 +53,7 @@
 						<span>예매하기</span>
 					</button>
 					<div class="dropdown-content">
-			        	<a href="world.do?command=reserve">예매</a>
+			        	<a href="reserve">예매</a>
 			        	<a href="event01">이달의 혜택</a>
 					</div>
 				</div>

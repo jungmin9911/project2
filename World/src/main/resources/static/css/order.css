@@ -2,7 +2,7 @@
 
 /* reserve */
 .reserve{position:relative; width:100%; height:100%; margin:0 auto;}
-.order_box{position:relative; width:1900px; height:930px; margin:0 auto; padding:70px; background-image:url('../images/reserve_imgs2.png');}
+.order_box{position:relative; width:1900px; height:930px; margin:0 auto; padding:70px; background-image:url('../images/ticket_images/reserve_imgs2.png');}
 .order_box_select{position:relative; width:910px; height:655px; margin:0 auto; background-color:#f7f7f7; border:1px solid lightgray;}
 .order_box_title{position:relative; width:100%; height:80px; margin:0 auto; background-color:white; font-size:30px; padding-top:17px;
 		text-align:center; font-weight:bold; box-shadow:0 4px 4px -4px black;}

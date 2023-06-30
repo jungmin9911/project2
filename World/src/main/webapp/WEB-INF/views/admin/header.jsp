@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>World admin</title>
-<script src="admin/script/admin.js"></script>
+<script src="script/admin.js"></script>
 <script src="script/jquery-3.6.4.js"></script>
 <script src="script/script.js"></script>
 <link href="admin/css/admincss.css" rel="stylesheet"> 
