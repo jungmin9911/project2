@@ -47,10 +47,20 @@
                 
                 </thead>
                
-
+<!-- <a href="qnaView?lqseq=${qnaVO.lqseq}">${qnaVO.title}</a> -->
 		<c:forEach items="${qnaList}"  var="qnaVO">
 			<tr ><td> ${qnaVO.lqseq}</td>    
-	    		<td><a href="world.do?command=qnaView&lqseq=${qnaVO.lqseq}">${qnaVO.title}</a></td>      
+	    		<td>
+	    			<c:choose>
+						<c:when test="${qnaVO.passcheck == 'Y'}">
+							<a href="#" onClick="passCheck('${qnaVO.lqseq}')">${qnaVO.title}</a>
+								&nbsp;<img src="/images/key.png" style="width:20px;vertical-align: middle">
+						</c:when>
+						<c:otherwise>
+							<a href="qnaView?lqseq=${qnaVO.lqseq}">${qnaVO.title}</a>
+						</c:otherwise>
+					</c:choose>
+	    		</td>      
 	       		<td><fmt:formatDate value="${qnaVO.indate}" type="date"/></td>
 	       		<td><c:choose>
 					<c:when test="${qnaVO.rep=='N'}"> no </c:when>
@@ -67,7 +77,7 @@
 </form>
 
 	<jsp:include page="../paging/page.jsp">
-		<jsp:param name="command" value="world.do?command=qnaList" />
+		<jsp:param name="command" value="qnaList" />
 	</jsp:include>
 
 
@@ -76,9 +86,9 @@
 
 <div id="buttons">
    <input type="button"  value="등록하기"  class="submit" 
-      onClick="location.href='world.do?command=qnaWriteForm'"> 
+      onClick="location.href='qnaWriteForm'"> 
    <input type="button"   value="취소"  class="cancel"    
-      onclick="location.href='world.do?command=index'">  
+      onclick="location.href='qnaList'">  
 </div>
 <div  class="clear"></div><br>
 

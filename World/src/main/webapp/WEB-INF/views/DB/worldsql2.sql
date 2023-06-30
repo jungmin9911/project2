@@ -152,7 +152,7 @@ select * from
 where  rownum <=3;
 
 
-select * from best_at_view;
+select * from rest_at_view;
 select * from attraction;
 
 --------운영 운휴
@@ -160,4 +160,19 @@ create or replace view rest_at_view
 as
 select aseq, atname, image from attraction where aresult='Y';
 select * from rest_at_view;
+
+
+---------------------------------------------------------------------
+alter table Lqna add pass varchar2(30);
+
+alter table Lqna add passCheck char(1) default 'N';
+
+update Lqna set passCheck='N';
+delete Lqna where lqseq=41;
+
+insert into lqna(lqseq, title, content, id, passCheck, pass) values
+(Lqna_lqseq.nextval, '결제가 안되네요..', 'ㅜㅜ', 'one','Y', '1234');
+
+select * from Lqna;
+
 

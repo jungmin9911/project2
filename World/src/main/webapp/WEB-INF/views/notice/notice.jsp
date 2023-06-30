@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-
-
 <form name="frm" method="post">
 <section class="notice">
   <div class="page-title">
@@ -36,10 +34,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${noticeList}"  var="noticeVO">
+                <c:forEach items="${notice}" var="noticeVO">
 	                <tr>
 	                    <td>${noticeVO.nseq}</td>
-	                    <th><a href="world.do?command=noticeDetail&nseq=${noticeVO.nseq}">${noticeVO.title}</a></th>
+	                    <th><a href="noticeDetail?nseq=${noticeVO.nseq}">${noticeVO.title}</a></th>
 	                    <td><fmt:formatDate value="${noticeVO.indate}" type="date"/></td>
 	                </tr>
 	          	</c:forEach>
@@ -48,14 +46,11 @@
             </table>
         </div>
     </div>
-
 </section>
 </form>
 <jsp:include page="../paging/page.jsp">
-	<jsp:param name="command" value="world.do?command=notice" />
+	<jsp:param name="command" value="notice" />
 </jsp:include>
-
 <br><br><br><br><br><br><br>
- 
 
 <%@ include file="../footer.jsp" %>

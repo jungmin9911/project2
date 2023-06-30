@@ -7,8 +7,14 @@
 	<div class="qnaBox">
 		<h2> 1:1 고객 게시판 </h2>
 		<h3>고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>
-		<form class="fix02" name="qna" method="post" action='world.do?command=qnaWrite'>
+		<form class="fix02" name="qna" method="post" action='qnaWrite'>
 			<input type="hidden" name="command" value="qnaWrite">
+			
+			<label>Secret mode</label>
+    		<input name="check" type="checkbox" value="secret" onchange="enabled()">
+    			&nbsp;비밀글로 하기&nbsp;&nbsp;
+    		<input name="pass" type="password" size="15" disabled="disabled"><br>
+			
 	    	<table class="fix03">
 				<tr>
 					<th>제목</th>

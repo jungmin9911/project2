@@ -14,8 +14,8 @@ a{ text-decoration-line: none; color: inherit;}
 
 
 #sub_menu{position:relative; width:1350px; height:120px; margin:0 auto; padding:20px 20px 0 20px; border-bottom:1px solid lightgray;}
-.logo {position:relative; width:107px; height:100%; margin:0 auto; float:left;}
-.category {position:relative; width:1100px; height:100%; float:left; padding:0 100px;}
+.logo {position:relative; width:207px; height:100%; margin:0 auto; float:left;}
+.category {position:relative; width:1100px; height:100%; float:left; padding:0 50px;}
 
 .dropdown {position:relative; width:200px; display:inline-block;}
 .dropbtn {width:100%; font-weight:bold; padding:30px; padding-bottom:30px; text-align:center; cursor:pointer; 
@@ -159,7 +159,7 @@ margin: 0 auto;   border-bottom: 2px solid #e1e1e1; font-size:150%;}
 margin: 0 auto;   border-bottom: 2px solid #e1e1e1; font-size:150%;}
 .next_day{position:relative;  padding-right:550px; float: right;width:20px; height: 30px;  }
 .operation_time_box{ position:relative; width:100%; height:200px; background-size : contain; 
-background-image : url('../images/timeVisual_bg_on.jpg'); margin: 0 auto; border-bottom: 2px solid #e1e1e1;
+background-image : url('/World/src/main/webapp/images/timeVisual_bg_on.jpg'); margin: 0 auto; border-bottom: 2px solid #e1e1e1;
  font-weight: bold; text-align: center; float:left; color:white;}
 .time_box_title{ position:relative;  width:100% ; font-size : 150%;height:50px; margin: 50px 0 0 0; }
 .time_box_time{ position:relative;  width:100%;  font-size : 300%;height:150px; margin: 0 auto; }

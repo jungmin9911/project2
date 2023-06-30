@@ -23,7 +23,7 @@
 		<div class="operation_date_box">
 				<c:set var="now" value="<%=new java.util.Date() %>"></c:set>
 				<h2 style="text-align:center;">
-					<fmt:formatDate value="${now }"></fmt:formatDate>
+					<fmt:formatDate value="${now}"></fmt:formatDate>
 				</h2>
 		</div>
 		
@@ -36,7 +36,7 @@
 		<h2 class="toto" style="font-size:30px; text-align:center; line-height:100px;">오늘의 운휴시설</h2> 
 		<div id="rest_box">
 			<c:forEach var="AttractionVO" items="${aseqList}">
-				<a href="world.do?command=attractionDetailForm&aseq=${AttractionVO.aseq}">
+				<a href="attractionDetail?aseq=${AttractionVO.aseq}">
 					<div id="att_list">
 						<img src="images/attraction_images/${AttractionVO.image}"/>
 						<h3 class="nn">${AttractionVO.atname}</h3>

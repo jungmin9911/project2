@@ -9,11 +9,13 @@
 		select * from best_at_view
 	</select>
 
-	<select id="attractionDetail" resultType="com.example.world.dto.AttractionVO">
-		
+	<select id="getAttraction" resultType="com.example.world.dto.AttractionVO">
+		select * from attraction where aseq = #{aseq}
 	</select>
-	
-
+	 
+	<select id="getAseqList" resultType="com.example.world.dto.AttractionVO">
+        select * from attraction
+    </select>
 
 
 </mapper>
