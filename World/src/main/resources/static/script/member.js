@@ -113,7 +113,7 @@ function go_update(){
 	    alert("이메일을 입력해 주세요.");
 	    document.joinForm.phone.focus();
 	}else {
-	    document.joinForm.action = "world.do";
+	    document.joinForm.action = "memberUpdate";
 	    document.joinForm.submit();
 	}
 }

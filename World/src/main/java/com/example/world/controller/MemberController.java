@@ -8,6 +8,8 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.http.HttpServletRequest;
@@ -23,12 +25,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.example.world.dto.Cart2VO;
 import com.example.world.dto.KakaoProfile;
 import com.example.world.dto.KakaoProfile.KakaoAccount;
 import com.example.world.dto.KakaoProfile.KakaoAccount.Profile;
 import com.example.world.dto.MemberVO;
 import com.example.world.dto.OAuthToken;
+import com.example.world.dto.Paging;
 import com.example.world.service.MemberService;
 import com.google.gson.Gson;
 
@@ -87,17 +92,16 @@ public class MemberController {
 	@RequestMapping("/kakaoLogin")
 	public String loginKakao(HttpServletRequest request) throws UnsupportedEncodingException, IOException {
 
-		// 카카오 아이디, 비번 인증 + 아이디 이메일 제공 동의 후 전송되는 암호화 코드
+		
 		String code = request.getParameter("code");
-		// 전송된 암호화코드를 이용해서 토큰을 요청
-		// 토큰 요청 주소 url 설정 및 파라미터
+		
 		String endpoint = "https://kauth.kakao.com/oauth/token";
 		URL url = new URL(endpoint); // import java.net.URL;
 		String bodyData = "grant_type=authorization_code&";
 		bodyData += "client_id=fb58d066fb2ae98931cb969be61cf039&";
 		bodyData += "redirect_uri=http://localhost:8070/kakaoLogin&";
 		bodyData += "code=" + code;
-		// Stream 연결 및 토큰 수신
+		
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection(); // import java.net.HttpURLConnection;
 		conn.setRequestMethod("POST");
 		conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
@@ -114,14 +118,14 @@ public class MemberController {
 		}
 		
 
-		// 위 토큰내용을 본따 만든 클래스에 gson 파싱으로 옮겨 담습니다( sb -> OAuthToken )
+		
 		Gson gson = new Gson();
 		OAuthToken oAuthToken = gson.fromJson(sb.toString(), OAuthToken.class);
 
-		// oAuthToken을 이용해서 사용자 정보를 요청 수신
+		
 		String endpoint2 = "https://kapi.kakao.com/v2/user/me";
 		URL url2 = new URL(endpoint2);
-		// import java.net.HttpURLConnection;
+		
 		HttpsURLConnection conn2 = (HttpsURLConnection) url2.openConnection();
 		conn2.setRequestProperty("Authorization", "Bearer " + oAuthToken.getAccess_token());
 		conn2.setDoOutput(true);
@@ -134,7 +138,7 @@ public class MemberController {
 		}
 	
 
-		// 전달받은 회원정보를 kakaoProfile 객체에 담습니다.( sb2 -> kakaoProfile )
+		
 		Gson gson2 = new Gson();
 		KakaoProfile kakaoProfile = gson2.fromJson(sb2.toString(), KakaoProfile.class);
 
@@ -214,14 +218,14 @@ public class MemberController {
 	
 	
 	
-	@RequestMapping("/memberEditForm")
+	@RequestMapping("/editForm")
 	public String member_Edit_Form(Model model, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
 		model.addAttribute("dto", mvo);
 		
-		return "member/memberUpdateForm";
+		return "member/updateForm";
 	}
 
 	
@@ -230,9 +234,9 @@ public class MemberController {
 			BindingResult result, Model model, HttpServletRequest request,
 			@RequestParam(value="pwdCheck", required=false) String pwdCheck ) {
 		
-		String url = "member/memberUpdateForm";
+		String url = "member/updateForm";
 		
-		if( membervo.getProvider().equals("") ) {
+		if( membervo.getProvider()==null) {
 			
 			if( result.getFieldError("pwd")!=null ) 
 				request.setAttribute("message", "비밀번호를 입력하세요");
@@ -303,6 +307,23 @@ public class MemberController {
 		return "member/findId";	
  	}
 	
+	@RequestMapping("/cartList")
+	public ModelAndView cartList(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		MemberVO cvo = (MemberVO)session.getAttribute("loginUser");
+		if(cvo==null)
+			mav.setViewName("redirect:/login");
+		else {
+			HashMap<String, Object> result =  ms.getCartList( request );
+			mav.addObject("cartList",  (List<Cart2VO>)result.get("cartList")  );
+			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
+			mav.setViewName("mypage/cartList");
+			// Controller 는 Service 가 작업해서 보내준 결과들을 mav 에 잘 넣어서 목적지로 이동만 합니다.
+		}
+		return mav;	
+	}
 	
 }
 
