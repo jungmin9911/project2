@@ -19,17 +19,19 @@ public class AttractionService {
 		return atdao.getAttraction(aseq);
   }
   
-
 	public ArrayList<AttractionVO> getBestattraction() {
 		
 		return atdao.getBestattraction();
 	}
 
+	public List<AttractionVO> getAseqList() {
+		 return atdao.getAseqList();
+	}
 
-	public List<AttractionVO> getAttractionList() {
+
+	public List<AttractionVO> getrestattraction() {
 		
-		
-		 return atdao.getAttractionList();
+		return atdao.getrestattraction();
 	}
   
 }

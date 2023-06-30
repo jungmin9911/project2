@@ -8,13 +8,16 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.world.dto.AttractionVO;
 import com.example.world.dto.MemberVO;
 import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
+import com.example.world.service.AttractionService;
 import com.example.world.service.NoticeService;
 
 @Controller
@@ -23,9 +26,17 @@ public class NoticeController {
 	@Autowired
 	NoticeService ns;
 	
+
+	@Autowired
+	AttractionService ats;
+	
 	//운영운휴
 	@RequestMapping("/guide")
-	public String guide() {
+	public String guide(Model model) {
+			
+		List<AttractionVO> aseqList = ats.getrestattraction();
+        model.addAttribute("aseqList", aseqList);
+			
 		return "guide/operation";
 	}
 	

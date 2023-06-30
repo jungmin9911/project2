@@ -274,6 +274,18 @@ public class MemberController {
 		return "member/login";
 	}
 
+	
+	@RequestMapping("/selectId")
+	public String selectId() {
+		return "member/findid";	
+	}
+	/*
+	 * HttpServletRequest request , Model model,
+			@RequestParam("name") String name,
+			@RequestParam("phone") String phone
+	 */
+	
+	
 }
 
 
