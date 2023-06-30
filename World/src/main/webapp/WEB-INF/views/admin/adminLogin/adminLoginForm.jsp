@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ include file="../../header.jsp" %>
-<script src="admin/script/admin.js"></script>
+<script src="script/admin.js"></script>
 <div id=logina>
 
    <div id="login">
@@ -28,7 +27,7 @@
       </ul>
    </div>
    <div id="buttons">
-      <input type="submit" value="로그인" class="submit" onclick="return adminloginCheck()">
+      <input type="submit" value="로그인" class="submit" onclick="adminloginCheck()">
    </div><br><br>
    <div id=content> 문의사항이 있으시면 고객만족센터에 연락하세요.<br>
    고객만족센터 : 1899-8900</div>
