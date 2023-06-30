@@ -9,4 +9,9 @@ import com.example.world.dao.IQnaDao;
 public class QnaService {
 	@Autowired
 	IQnaDao qdao;
+
+	public Object getQna(int qseq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

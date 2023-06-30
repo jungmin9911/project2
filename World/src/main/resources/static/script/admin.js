@@ -7,7 +7,7 @@ function adminloginCheck(){  //관리자 로그인시 아이디 비번 입력 �
 		  	alert("비밀번호를 입력하세요.");
 		   	return false;
 		}else{
-	document.frm.action = "world.do?command=adminlogin";
+	document.frm.action = "adminlogin";
 	document.frm.submit();
 			return true;
 		}  
