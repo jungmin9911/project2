@@ -1,7 +1,7 @@
 package com.example.world.dto;
 
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +20,7 @@ public class TicketVO {
 	private String tatname2;
 	private String tatname3;
 	private Timestamp indate;	
-	private Date visitdate;
+	private LocalDate visitdate;
 	private Integer price1;
 	private Integer price2;
 	private Integer result;

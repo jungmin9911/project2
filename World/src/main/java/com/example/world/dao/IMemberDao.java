@@ -22,5 +22,6 @@ public interface IMemberDao {
 	HashMap<String, Object> getCartList(HttpServletRequest request);
 	int getAllCount(String string, String string2, String key);
 	List<Cart2VO> listCart(Paging paging, String key);
+	MemberVO selectId(String name, String phone);
 
 }

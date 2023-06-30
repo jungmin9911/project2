@@ -93,6 +93,9 @@ CREATE TABLE Lmember
 	PRIMARY KEY (id)
 );
 
+ALTER TABLE Lmember ADD address3 varchar2(1000);
+
+
 select*from Lqna
 
 CREATE TABLE Lqna

@@ -84,5 +84,10 @@ public class MemberService {
 		result.put("key", key);
 		
 		return result;
+  }
+
+    public MemberVO selectId(String name, String phone) {
+		
+		return mdao.selectId(name,phone);
 	}
 }

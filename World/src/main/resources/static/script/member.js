@@ -32,7 +32,7 @@ function loginCheck(){
 }
 
 function go_contract(){
-	document.loginFrm.action = "world.do?command=contract";
+	document.loginFrm.action = "/contract";
 	document.loginFrm.submit();
 }
 
@@ -58,7 +58,7 @@ function go_save(){
 		alert("전화번호를  입력해 주세요.");	    
 	    document.joinForm.phone.focus();
 	}else{
-		document.joinForm.action = "world.do";
+		document.joinForm.action = "/join";
 	    document.joinForm.submit();
 	    }
 	
@@ -133,7 +133,7 @@ function find_Id() {
       alert("전화번호를 입력해 주세요.");
       document.formm.phone.focus();
    } else {
-      document.formm.action = "world.do";
+      document.formm.action = "re";
       document.formm.submit();
    }
 }
@@ -149,7 +149,7 @@ function find_Pwd() {
       alert("전화번호를 입력해 주세요.");
       document.formm.phone.focus();
    } else {
-      document.formm.action = "world.do";
+      document.formm.action = "re";
       document.formm.submit();
    }
 }

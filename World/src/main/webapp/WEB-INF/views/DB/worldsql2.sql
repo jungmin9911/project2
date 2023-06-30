@@ -178,3 +178,9 @@ select * from rest_at_view
 alter table Lmember add provider varchar2(50) ;
 
 update Lmember set provider='';
+
+select * from Lmember;
+select * from Lmember where name='김나리' and phone='017-777-7777'
+
+select * from Lmember where
+

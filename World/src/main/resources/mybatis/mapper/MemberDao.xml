@@ -4,35 +4,33 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="com.example.world.dao.IMemberDao">
-
-
+  
 	<select id="getMember" resultType="com.example.world.dto.MemberVO">
 		select * from Lmember where id=#{param1}
 	</select>
 	
 	<insert id="joinKakao" parameterType="com.example.world.dto.MemberVO">
-		insert into member( id, email, name, provider )
+		insert into Lmember( id, email, name, provider )
 		values( #{id}, #{email}, #{name}, #{provider} )
 	</insert>
 	
 	<insert id="insertMember" parameterType="com.example.world.dto.MemberVO">
-		insert into Lmember( id, email, name, pwd, zip_num, address1, address2,  phone )
-		values( #{id}, #{email}, #{name},#{pwd}, #{zip_num}, #{address1}, #{address2}, 
+		insert into Lmember( id, email, name, pwd, zip_num, address1, address2,  address3, phone )
+		values( #{id}, #{email}, #{name},#{pwd}, #{zip_num}, #{address1}, #{address2}, #{address3},
 		 #{phone} )
 	</insert>
 	
 	<update id="updateMember" parameterType ="com.example.world.dto.MemberVO">
 		Update Lmember set pwd=#{pwd}, name=#{name}, zip_num= #{zip_num}, 
-		address1=#{address1},	 address2=#{address2},	
+		address1=#{address1},	 address2=#{address2},	 address3=#{address3},
 		email=#{email}, phone=#{phone} where id = #{id}
 	</update>
 	
-	
 	<update id="withDrawalMember">
-		update member set useyn='N' where id=#{param1}
+		update Lmember set useyn='N' where id=#{param1}
 	</update>
 	
-<select id="getAllCount"  resultType="_int">
+  <select id="getAllCount"  resultType="_int">
 		select count(*) from  ${param1}   where   ${param2}   like  '%'||#{param3}||'%'
 	</select>
 	
@@ -45,5 +43,8 @@
 		) where rn &lt;= #{param1.endNum} 
 	</select>
 
+	<select id="selectId" resultType="com.example.world.dto.MemberVO">
+		select * from Lmember where name=#{param1} and phone=#{param2}
+	</select>
 
 </mapper>
