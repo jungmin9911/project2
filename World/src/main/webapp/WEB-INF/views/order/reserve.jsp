@@ -17,7 +17,7 @@
 						어린이 30,000원<br>
 					</p>
 					<input type="button" value="예매하기" class="order_box_text_button" 
-						onclick="location.href='/passTicket">
+						onclick="location.href='/passTicket'">
 				</div>
 			</div>
 			<div class="order_box_text">

@@ -1,4 +1,4 @@
-    $(function(){
+/*    $(function(){
         $('#remote ul li').click(function(){
             var idx = $(this).index();
             var dist = idx*-2020;
@@ -51,7 +51,21 @@
                     }); 
                 }
             });
-        });
+        });*/
+        
+        
+ /* Banner*/
+    $(function(){
+    	var num=0;
+    	setInterval(function(){
+            $('#imgs').animate({ left : num * -405 },1000);
+                num++;
+                if(num==5)num=0;
+        }, 2000);
+    });
+
+
+       
         
 function go_(){
 	location.href = "adminProductList";
