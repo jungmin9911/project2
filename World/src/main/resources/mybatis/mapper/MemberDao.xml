@@ -16,13 +16,13 @@
 	</insert>
 	
 	<insert id="insertMember" parameterType="com.example.world.dto.MemberVO">
-		insert into member( id, email, name, pwd, zip_num, address1, address2,  phone )
+		insert into Lmember( id, email, name, pwd, zip_num, address1, address2,  phone )
 		values( #{id}, #{email}, #{name},#{pwd}, #{zip_num}, #{address1}, #{address2}, 
 		 #{phone} )
 	</insert>
 	
 	<update id="updateMember" parameterType ="com.example.world.dto.MemberVO">
-		Update member set pwd=#{pwd}, name=#{name}, zip_num= #{zip_num}, 
+		Update Lmember set pwd=#{pwd}, name=#{name}, zip_num= #{zip_num}, 
 		address1=#{address1},	 address2=#{address2},	
 		email=#{email}, phone=#{phone} where id = #{id}
 	</update>
@@ -32,7 +32,18 @@
 		update member set useyn='N' where id=#{param1}
 	</update>
 	
-
+<select id="getAllCount"  resultType="_int">
+		select count(*) from  ${param1}   where   ${param2}   like  '%'||#{param3}||'%'
+	</select>
+	
+	<select id="listCart" resultType="com.example.world.dto.Cart2VO">
+		select * from ( 
+		select * from(
+			select rownum as rn, p.* from 
+			((select * from cart2   where cseq like '%'||#{param2}||'%'   order by cseq desc) p )
+		) where rn &gt;= #{param1.startNum} 
+		) where rn &lt;= #{param1.endNum} 
+	</select>
 
 
 </mapper>
