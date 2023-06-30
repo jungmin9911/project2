@@ -13,9 +13,9 @@
 		select * from attraction where aseq = #{aseq}
 	</select>
 	 
-	<select id="getAttractionList" resultType="com.example.world.dto.AttractionVO">
-        select *  from attraction
-    </select>
+	<select id="getAseqList" resultType="com.example.world.dto.AttractionVO">
+        select * from attraction
+  </select>
 
 
 </mapper>

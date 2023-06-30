@@ -1,24 +1,29 @@
 package com.example.world.dto;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
-@Data
+@Getter
+@Setter
 public class TicketVO {
-	private Integer ptseq;
-	private Integer apassprice;
-	private Integer cpassprice;
-	private Integer tpassprice;
-	private Integer cfastprice;
-	private Integer afastprice;
-	private Timestamp visitdate;
-	private Integer aquantity;
-	private Integer tquantity;
-	private Integer cquantity;
-	private Timestamp indate;
 	
+	private Integer cseq;
+	private String id;  
+	private Integer kind;  
+	private Integer p1;
+	private Integer p2;
+	private String tatname1;
+	private String tatname2;
+	private String tatname3;
+	private Timestamp indate;	
+	private Date visitdate;
+	private Integer price1;
+	private Integer price2;
+	private Integer result;
 	
 	
 	

@@ -1,5 +1,8 @@
 package com.example.world.controller;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.world.service.AdminService;
 
+
 @Controller
 public class AdminController {
 
@@ -18,51 +22,52 @@ public class AdminController {
 	AdminService as;
 	
 	@RequestMapping("/admin")
-	 public String adminPage() {
-		
-        return "admin/adminLogin/adminLoginForm";
-    }
+	public String admin() {
+		return "admin/adminLogin/adminLoginForm";
+	}
 	
-	@RequestMapping("adminLogin")
+	@RequestMapping("/adminlogin")
 	public ModelAndView admin_login(
-						@RequestParam(value="LworkId", required=false) String LworkId,
-						@RequestParam(value="LworkPwd", required=false) String LworkPwd, 
+						@RequestParam(value="id", required=false) String workId,
+						@RequestParam(value="pwd", required=false) String workPwd, 
 						HttpServletRequest request ) {
 		ModelAndView mav = new ModelAndView();
-		if( LworkId == null ) {
+		if( workId == null ) {
 			mav.addObject("msg" , "아이디를 입력하세요");
-			mav.setViewName("admin/adminLoginForm");
+			mav.setViewName("admin/adminLogin/adminLoginForm");
 			return mav;
-		}else if( LworkId.equals("") ) {
+		}else if( workId.equals("") ) {
 			mav.addObject("msg" , "아이디를 입력하세요");
-			mav.setViewName("admin/adminLoginForm");
+			mav.setViewName("admin/adminLogin/adminLoginForm");
 			return mav;
-		}else if( LworkPwd == null) {
+		}else if( workPwd == null) {
 			mav.addObject("msg" , "패쓰워드를 입력하세요");
-			mav.setViewName("admin/adminLoginForm");
+			mav.setViewName("admin/adminLogin/adminLoginForm");
 			return mav;
-		}else if( LworkPwd.equals("")) {
+		}else if( workPwd.equals("")) {
 			mav.addObject("msg" , "패쓰워드를 입력하세요");
-			mav.setViewName("admin/adminLoginForm");
+			mav.setViewName("admin/adminLogin/adminLoginForm");
 			return mav;
 		}
 		
-		int result = as.workerCheck( LworkId, LworkPwd );
+		int result = as.workerCheck( workId, workPwd );
 		
 		if(result == 1) {
 	    		HttpSession session = request.getSession();
-	    		session.setAttribute("workId", LworkId);
+	    		session.setAttribute("workId", workId);
 	    		mav.setViewName("redirect:/adminMain");
 		} else if (result == 0) {
 	        	mav.addObject("message", "비밀번호를 확인하세요.");
-	        	mav.setViewName("admin/adminLoginForm");
+	        	mav.setViewName("admin/adminLogin/adminLoginForm");
 		} else if (result == -1) {
 	    		mav.addObject("message", "아이디를 확인하세요.");
-	    		mav.setViewName("admin/adminLoginForm");
+	    		mav.setViewName("admin/adminLogin/adminLoginForm");
 		}	
 		
 		return mav;
+	}	
+	@RequestMapping("/adminMain")
+	public String adminMain() {
+		return "admin/adminLogin/adminMain";
 	}
-
-	
-}
+	}

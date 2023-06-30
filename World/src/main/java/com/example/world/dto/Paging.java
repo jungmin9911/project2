@@ -29,4 +29,5 @@ public class Paging {
 		endNum = page*displayRow;
 		System.out.println(beginPage+" "+ endPage+" "+startNum+" "+endNum);
     }  
+
 }

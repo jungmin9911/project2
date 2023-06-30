@@ -4,15 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.world.dao.IAdminDao;
+import com.example.world.dto.AdminVo;
 
 @Service
 public class AdminService {
 
 	@Autowired
-	IAdminDao idao;
+	IAdminDao adao;
 
-	public int workerCheck(String lworkId, String lworkPwd) {
-		
+	public int workerCheck(String workId, String workPwd) {
 		System.out.println("id : " + workId);
 		String pwd = adao.getPwd( workId );
 		System.out.println("pwd : " + pwd);
@@ -24,4 +24,5 @@ public class AdminService {
 		
 		return result;
 	}
+
 }

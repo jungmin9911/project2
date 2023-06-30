@@ -43,7 +43,7 @@
 </div>
 
 <div id="mainTodayArea" >
-	<a href="world.do?command=guide" target='_blank'>
+	<a href="guide" target='_blank'>
  		<img src="images/icons/mainTodayArea_tit_icon.png"/>&nbsp;&nbsp;&nbsp;오늘의 파크 운영시간&nbsp;&nbsp;10:00 ~ 21:00
 	</a>
 </div>

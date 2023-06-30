@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
-<link href="order/order.css" rel="stylesheet">  
-<script src="order/order.js"></script>
+<link href="script/order.css" rel="stylesheet">  
+<script src="script/order.js"></script>
 
 <style>
 	.container {position:relative; width:100%;} 
@@ -63,7 +63,7 @@
 								class="check_btnbtn" onclick="count_check(this);"/>
 						</div>
 						<div class="check_atname">${attractionVO.atname}</div>
-			            <img src="images/attraction_images/${attractionVO.image}" class="check_image"/>
+			            <img src="../../images/attraction_images/${attractionVO.image}" class="check_image"/>
 			        </div>	
 	         	</c:forEach>
 			</div>

@@ -72,7 +72,7 @@ public class QnaController {
 	}
 	
 	
-	@RequestMapping(value="/qnaCheckPass", method=RequestMethod.POST)
+	@RequestMapping(value="/checkPass", method=RequestMethod.POST)
 	public String qnaCheckPass( 
 			@RequestParam("lqseq") int lqseq, 
 			@RequestParam("pass") String pass, Model model ) {

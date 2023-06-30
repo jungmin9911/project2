@@ -53,8 +53,8 @@
 						<span>예매하기</span>
 					</button>
 					<div class="dropdown-content">
-			        	<a href="world.do?command=reserve">예매</a>
-			        	<a href="world.do?command=event01">이달의 혜택</a>
+			        	<a href="/reserve">예매</a>
+			        	<a href="/event01">이달의 혜택</a>
 					</div>
 				</div>
 				<div class="dropdown">
