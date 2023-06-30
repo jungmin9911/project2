@@ -134,7 +134,7 @@
 	<h2 style="font-size:30px; text-align:center; line-height:80px;">인기 어트랙션</h2>
 	<div id="mainimg">
 		<c:forEach var="AttractionVO" items="${bestList}" begin="0" end="2">
-			<a href="attractionDetailForm&aseq=${AttractionVO.aseq}">
+			<a href="attractionDetail?aseq=${AttractionVO.aseq}">
 				<div id="att_list">
 					<img src="images/attraction_images/${AttractionVO.image}"/>
 					<h3>${AttractionVO.atname}</h3>
@@ -144,8 +144,8 @@
 	</div>
 	<div class="tag">
 	<ul>
-		<li><a href='world.do?command=attractionForm'>더 많은 어트랙션 보기</a></li>
-		<li><a href='world.do?command=guide'>운휴 정보 보러 가기</a></li>
+		<li><a href='/attractionForm'>더 많은 어트랙션 보기</a></li>
+		<li><a href='guide'>운휴 정보 보러 가기</a></li>
 	</ul>
 </div>
 </div>
@@ -158,7 +158,7 @@
 	<h3>꿈과 환상의 나라로 어서오세요!</h3>
 	<div id="main_view_">              
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale">
 		        	<img src="images/parade1.jpg" width="250" height="170" >
 		        </div>
@@ -166,19 +166,19 @@
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale"><img src="images/parade2.jpg" width="250" height="170" ></div>
 		        <div class="title">레니의 대모험~<br>드래곤 성을 찾아서~</div>
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale"><img src="images/parade3.jpg" width="250" height="170" ></div>
 		        <div class="title">문라이트 퍼레이드</div>
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale"><img src="images/parade4.jpg" width="250" height="170" ></div>
 		        <div class="title">타임 오디세이</div>
 		    </a>

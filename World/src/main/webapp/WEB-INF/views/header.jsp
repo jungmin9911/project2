@@ -20,8 +20,8 @@
 				<c:choose>
 					<c:when test ="${empty loginUser}">
 						<li><a href="loginForm">login</a></li>
-						<li><a href="world.do?command=contract">회원가입</a></li>
-						<li><a href="world.do?command=admin">관리자</a></li>
+						<li><a href="/contract">회원가입</a></li>
+						<li><a href="/admin">관리자</a></li>
 					</c:when>
 					<c:otherwise>
 						<li><a href="world.do?command=cartList&changMenu=1">마이페이지</a></li>

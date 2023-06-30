@@ -29,10 +29,10 @@ public class AttractionService {
 	}
 
 
-	public List<AttractionVO> getAseqList() {
+	public List<AttractionVO> getAttractionList() {
 		
 		
-		 return atdao.getAseqList();
+		 return atdao.getAttractionList();
 	}
   
 }
