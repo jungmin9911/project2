@@ -144,7 +144,7 @@
 	</div>
 	<div class="tag">
 	<ul>
-		<li><a href='attractionForm'>더 많은 어트랙션 보기</a></li>
+		<li><a href='/attractionForm'>더 많은 어트랙션 보기</a></li>
 		<li><a href='guide'>운휴 정보 보러 가기</a></li>
 	</ul>
 </div>
@@ -158,7 +158,7 @@
 	<h3>꿈과 환상의 나라로 어서오세요!</h3>
 	<div id="main_view_">              
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale">
 		        	<img src="images/parade1.jpg" width="250" height="170" >
 		        </div>
@@ -166,19 +166,19 @@
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale"><img src="images/parade2.jpg" width="250" height="170" ></div>
 		        <div class="title">레니의 대모험~<br>드래곤 성을 찾아서~</div>
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale"><img src="images/parade3.jpg" width="250" height="170" ></div>
 		        <div class="title">문라이트 퍼레이드</div>
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="/parade">
 		        <div class="scale"><img src="images/parade4.jpg" width="250" height="170" ></div>
 		        <div class="title">타임 오디세이</div>
 		    </a>

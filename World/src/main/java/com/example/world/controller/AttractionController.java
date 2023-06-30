@@ -48,8 +48,8 @@ public class AttractionController {
 	@RequestMapping("/attractionForm")
     public String attractionForm(Model model) {
 		
-        List<AttractionVO> aseqList = ats.getAseqList();
-        model.addAttribute("aseqList", aseqList);
+        List<AttractionVO> attractionList = ats.getAttractionList();
+        model.addAttribute("attractionList", attractionList);
         return "attraction/attractionForm";
     }
 	

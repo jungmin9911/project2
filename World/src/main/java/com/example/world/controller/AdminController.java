@@ -71,4 +71,3 @@ public class AdminController {
 		return "admin/adminLogin/adminMain";
 	}
 	}
-

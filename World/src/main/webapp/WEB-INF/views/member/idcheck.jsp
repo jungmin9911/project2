@@ -25,7 +25,7 @@ form .cancel {background:#6f23f9;}
 </head>
 <body>
 	<h2>아이디 중복 확인</h2>
-	<form method="post" name="idCheckForm" action="world.do">
+	<form method="post" name="idCheckForm" action="idCheckForm">
 		<div id="middle">
 		<input type="hidden" name="command" value="idCheckForm"/>
 		아이디 : <input type="text" name="id" class="text" value="${id}"/>

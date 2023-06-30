@@ -167,7 +167,7 @@ public class MemberController {
 
 	@RequestMapping("/joinForm")
 	public String join_form() {
-		return "member/joinForm";
+		return "member/join";
 	}
 
 	@RequestMapping("idCheckForm")
