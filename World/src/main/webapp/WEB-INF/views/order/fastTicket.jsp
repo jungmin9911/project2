@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
-<link href="script/order.css" rel="stylesheet">  
+<link href="css/order.css" rel="stylesheet">  
 <script src="script/order.js"></script>
 
 <style>

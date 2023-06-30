@@ -8,7 +8,7 @@
 <title>World</title>
 <script src="script/jquery-3.6.4.js"></script>
 <script src="script/script.js"></script>
-<script src="notice/event02.js"></script>  
+<script src="script/event02.js"></script>  
 <script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
 </head>
