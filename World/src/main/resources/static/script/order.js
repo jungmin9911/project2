@@ -47,12 +47,12 @@ function go_cart(num){
 			return ;
 		}
 		else{
-		document.formm.action ="world.do?command=passTicketInsert&kind="+num;
+		document.formm.action ="/passTicketInsert&kind="+num;
 		document.formm.submit();
 		} 			
 	}
 	else {
-		document.formm.action ="world.do?command=passTicketInsert&kind="+num;
+		document.formm.action ="passTicketInsert&kind="+num;
 		document.formm.submit();
 	}
 }

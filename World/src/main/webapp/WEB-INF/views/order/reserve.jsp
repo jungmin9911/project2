@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-<link href="order/order.css" rel="stylesheet">  
-<script src="order/order.js"></script>
+<link href="css/order.css" rel="stylesheet">
+<script src="script/order.js"></script>
 <article>
 <div class="reserve">
 	<div class="order_box">
 		<div class="order_box_select">
 			<div class="order_box_title">예매</div>
 			<div class="order_box_text">
-				<img src="images/reserve_imgs_free.png"/>
+				<img src="images/ticket_images/reserve_imgs_free.png"/>
 				<div class="order_box_text_content">★자유이용권★<br>
 					<p style="line-height:23px; font-size:16px;">
 						어른 53,000원<br>
@@ -17,11 +17,11 @@
 						어린이 30,000원<br>
 					</p>
 					<input type="button" value="예매하기" class="order_box_text_button" 
-						onclick="location.href='world.do?command=passTicket'">
+						onclick="location.href='/passTicket?kind=1'">
 				</div>
 			</div>
 			<div class="order_box_text">
-				<img src="images/reserve_imgs_pass.png"/>
+				<img src="images/ticket_images/reserve_imgs_pass.png"/>
 				<div class="order_box_text_content">★패스트패스★<br>
 					<p style="line-height:23px; font-size:16px;">
 						어른 110,000원<br>
@@ -29,7 +29,7 @@
 						어린이 70,000원<br>
 					</p>
 					<input type="button" value="예매하기" class="order_box_text_button" 
-						onclick="location.href='world.do?command=fastTicket'">
+						onclick="location.href='/fastTicket?kind=2' ">
 				</div>
 			</div>
 		</div>
