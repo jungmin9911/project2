@@ -13,7 +13,7 @@
 				회원님의 동의없이 제 3자에게 제공되지 않으며, 철저히 보호되고 있사오니 안심하고 이용하시기	바랍니다.
 			</div>
 			<div class="text2">
-				<textarea cols="152" rows="13">제 1 장 총 칙
+				<textarea cols="152" rows="13" readonly>제 1 장 총 칙
 
 
 제 1 조 (목적)

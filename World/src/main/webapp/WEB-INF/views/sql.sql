@@ -3,6 +3,8 @@ select * from cart2;
 
 select * from attraction;
 
+select * from LMEMBER;
+
 select*from cart2;
 
 
