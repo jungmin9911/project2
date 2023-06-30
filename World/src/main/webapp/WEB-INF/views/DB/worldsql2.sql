@@ -174,5 +174,5 @@ insert into lqna(lqseq, title, content, id, passCheck, pass) values
 (Lqna_lqseq.nextval, '결제가 안되네요..', 'ㅜㅜ', 'one','Y', '1234');
 
 select * from Lqna;
-
+select * from rest_at_view
 

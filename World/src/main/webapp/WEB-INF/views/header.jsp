@@ -8,7 +8,7 @@
 <title>World</title>
 <script src="script/jquery-3.6.4.js"></script>
 <script src="script/script.js"></script>
-<script src="notice/event02.js"></script>  
+<script src="script/event02.js"></script>  
 <script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
 </head>
@@ -54,7 +54,7 @@
 					</button>
 					<div class="dropdown-content">
 			        	<a href="world.do?command=reserve">예매</a>
-			        	<a href="world.do?command=event01">이달의 혜택</a>
+			        	<a href="event01">이달의 혜택</a>
 					</div>
 				</div>
 				<div class="dropdown">

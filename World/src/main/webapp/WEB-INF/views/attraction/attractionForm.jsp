@@ -12,7 +12,7 @@
 	<div class="att_back">
 		<c:forEach var="AttractionVO" items="${aseqList}">
 			<div id="att_list">
-				<a href="attractionDetailForm?aseq=${AttractionVO.aseq}">
+				<a href="attractionDetail?aseq=${AttractionVO.aseq}">
 					<img src="images/attraction_images/${AttractionVO.image}"/>
 					<h3>${AttractionVO.atname}</h3>
 				</a>

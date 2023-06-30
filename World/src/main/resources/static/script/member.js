@@ -168,13 +168,13 @@ function checkPwd() {
 }
 
 function findId() {
-   let url = "world.do?command=selectId";
+   let url = "selectId";
    let opt = "toolbar=no, menubar=no, resizable=no, scrollbars=no, width=550, height=300, top=300, left=300";
    window.open(url, "아이디(ID) 찾기", opt);
 }
 
 function findPwd() {
-   let url = "world.do?command=selectPwd";
+   let url = "selectPwd";
    let opt = "toolbar=no, menubar=no, resizable=no, scrollbars=no, width=550, height=400, top=300, left=300";
    window.open(url, "비밀번호 찾기", opt);
 }

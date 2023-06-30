@@ -43,7 +43,7 @@
 </div>
 
 <div id="mainTodayArea" >
-	<a href="world.do?command=guide" target='_blank'>
+	<a href="guide" target='_blank'>
  		<img src="images/icons/mainTodayArea_tit_icon.png"/>&nbsp;&nbsp;&nbsp;오늘의 파크 운영시간&nbsp;&nbsp;10:00 ~ 21:00
 	</a>
 </div>
@@ -58,28 +58,28 @@
 		<div class="boxArea">                               <!-- 세번째상자 -->
 			<div class="box-tr">
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 						<span class="imggg"><img src="images/card.png" width="248" height="198"/></span>
 						<span class="price1">월드카드로 최대 10만원 캐시백 혜택 챙겨요! 40000원</span>		
 					</a>
 				</div>
 						
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 						<span class="imggg"><img src="images/point.jpg" width="248" height="198"/></span>
 						<span class="price1">월드 최대 30% 할인 + 이용금액 100% 캐시백까지</span>
 					</a>
 				</div>
 
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 						<span class="imggg"><img src="images/npay.jpg" width="248" height="198"/></span>
 						<span class="price1">가정의달은, 꼭 네이버페이로 39,900원</span>
 					</a>
 				</div>
 
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 						<span class="imggg"><img src="images/family.jpg" width="248" height="198"/></span>
 						<span class="price1">패밀리 패키지(어른+어린이) 70,000원</span>
 					</a>
@@ -89,28 +89,28 @@
 				
 			<div class="box-tr">
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 						<span class="imggg"><img src="images/friend.png" width="248" height="198"/></span>
 						<span class="price1">프랜드 패키지(어른+어른) 90,000원</span>
 					</a>
 				</div>
 
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 						<span class="imggg"><img src="images/fastfast.jpg" width="248" height="198"/></span>
 						<span class="price1">패스트패스 100,000원</span>
 					</a>
 				</div>
 
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 				 		<span class="imggg"><img src="images/springspring.jpg" width="248" height="198"/></span>
 						<span class="price1">스프링데이 30,000원</span>			
 					</a>
 				</div>
 
 				<div class="box-td">
-					<a href="world.do?command=event01">
+					<a href="event01">
 						<span class="imggg"><img src="images/76419_59366_5741.jpg" width="248" height="198"/></span>
 						<span class="price1">교복 패키지 50,000원</span>
 					</a>
@@ -134,7 +134,7 @@
 	<h2 style="font-size:30px; text-align:center; line-height:80px;">인기 어트랙션</h2>
 	<div id="mainimg">
 		<c:forEach var="AttractionVO" items="${bestList}" begin="0" end="2">
-			<a href="attractionDetailForm&aseq=${AttractionVO.aseq}">
+			<a href="attractionDetail&aseq=${AttractionVO.aseq}">
 				<div id="att_list">
 					<img src="images/attraction_images/${AttractionVO.image}"/>
 					<h3>${AttractionVO.atname}</h3>
@@ -144,8 +144,8 @@
 	</div>
 	<div class="tag">
 	<ul>
-		<li><a href='world.do?command=attractionForm'>더 많은 어트랙션 보기</a></li>
-		<li><a href='world.do?command=guide'>운휴 정보 보러 가기</a></li>
+		<li><a href='attractionForm'>더 많은 어트랙션 보기</a></li>
+		<li><a href='guide'>운휴 정보 보러 가기</a></li>
 	</ul>
 </div>
 </div>
@@ -158,7 +158,7 @@
 	<h3>꿈과 환상의 나라로 어서오세요!</h3>
 	<div id="main_view_">              
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="parade">
 		        <div class="scale">
 		        	<img src="images/parade1.jpg" width="250" height="170" >
 		        </div>
@@ -166,19 +166,19 @@
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="parade">
 		        <div class="scale"><img src="images/parade2.jpg" width="250" height="170" ></div>
 		        <div class="title">레니의 대모험~<br>드래곤 성을 찾아서~</div>
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="parade">
 		        <div class="scale"><img src="images/parade3.jpg" width="250" height="170" ></div>
 		        <div class="title">문라이트 퍼레이드</div>
 		    </a>
 		</div>       
 		<div id="parade">
-		   <a href="world.do?command=parade">
+		   <a href="parade">
 		        <div class="scale"><img src="images/parade4.jpg" width="250" height="170" ></div>
 		        <div class="title">타임 오디세이</div>
 		    </a>
