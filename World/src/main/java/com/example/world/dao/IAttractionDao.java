@@ -14,8 +14,8 @@ public interface IAttractionDao {
 
 	AttractionVO getAttraction(int aseq);
 
-	List<AttractionVO> getAttractionList();
-
 	List<AttractionVO> getrestattraction();
+
+	List<AttractionVO> getAseqList();
 
 }

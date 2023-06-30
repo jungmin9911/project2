@@ -39,10 +39,10 @@ public class AttractionController {
 	
 	@RequestMapping("/attractionDetail")
 	public String attractionDetail(@RequestParam("aseq") int aseq, Model model) {
-		    AttractionVO attractionvo = ats.getAttraction(aseq);
+		AttractionVO attractionvo = ats.getAttraction(aseq);
         model.addAttribute("AttractionVO", attractionvo);
 
-        return mav;
+        return "attraction/attractionDetail";
 	}
 	
 	
@@ -52,8 +52,8 @@ public class AttractionController {
 	@RequestMapping("/attractionForm")
     public String attractionForm(Model model) {
 		
-        List<AttractionVO> attractionList = ats.getAttractionList();
-        model.addAttribute("attractionList", attractionList);
+        List<AttractionVO> aseqList = ats.getAseqList();
+        model.addAttribute("aseqList", aseqList);
         return "attraction/attractionForm";
     }
 	
@@ -62,13 +62,6 @@ public class AttractionController {
 		
 	        return "parade/parade";
 	    }
-	
-	@RequestMapping("/event01")
-	 public String event01() {
-		
-	        return "notice/event01";
-	    }
-	
 	
 	
 }
