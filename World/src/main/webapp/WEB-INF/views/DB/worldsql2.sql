@@ -176,3 +176,8 @@ insert into lqna(lqseq, title, content, id, passCheck, pass) values
 select * from Lqna;
 select * from rest_at_view
 
+
+select * from Lmember;
+select * from Lmember where name='김나리' and phone='017-777-7777'
+
+select * from Lmember where

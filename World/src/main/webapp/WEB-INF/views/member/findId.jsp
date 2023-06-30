@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>아이디(ID) 찾기</title>
-<script src="member/member.js"></script>
+<script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
 </head>
 <body>
@@ -28,12 +28,13 @@
       <br />
       <div class="founf">
       <input type="button" value="찾기" class="button" onclick="find_Id();" /></div>
-   </form>
-   </div>
-   <br />
+      <h2>${message}</h2>
    <c:if test="${not empty Lmember}">
       <h2>회원님의 아이디는 '${Lmember.id}' 입니다.</h2>
    </c:if>
+   </form>
+   </div>
+   
 </div>
 </body>
 </html>

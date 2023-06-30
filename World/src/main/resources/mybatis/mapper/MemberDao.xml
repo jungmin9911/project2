@@ -11,27 +11,30 @@
 	</select>
 	
 	<insert id="joinKakao" parameterType="com.example.world.dto.MemberVO">
-		insert into member( id, email, name, provider )
+		insert into Lmember( id, email, name, provider )
 		values( #{id}, #{email}, #{name}, #{provider} )
 	</insert>
 	
 	<insert id="insertMember" parameterType="com.example.world.dto.MemberVO">
-		insert into member( id, email, name, pwd, zip_num, address1, address2,  phone )
+		insert into Lmember( id, email, name, pwd, zip_num, address1, address2,  phone )
 		values( #{id}, #{email}, #{name},#{pwd}, #{zip_num}, #{address1}, #{address2}, 
 		 #{phone} )
 	</insert>
 	
 	<update id="updateMember" parameterType ="com.example.world.dto.MemberVO">
-		Update member set pwd=#{pwd}, name=#{name}, zip_num= #{zip_num}, 
+		Update Lmember set pwd=#{pwd}, name=#{name}, zip_num= #{zip_num}, 
 		address1=#{address1},	 address2=#{address2},	
 		email=#{email}, phone=#{phone} where id = #{id}
 	</update>
 	
 	
 	<update id="withDrawalMember">
-		update member set useyn='N' where id=#{param1}
+		update Lmember set useyn='N' where id=#{param1}
 	</update>
 	
+	<select id="selectId" resultType="com.example.world.dto.MemberVO">
+		select * from Lmember where name=#{param1} and phone=#{param2}
+	</select>
 
 
 

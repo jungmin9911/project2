@@ -277,13 +277,31 @@ public class MemberController {
 	
 	@RequestMapping("/selectId")
 	public String selectId() {
-		return "member/findid";	
-	}
-	/*
-	 * HttpServletRequest request , Model model,
+		return "member/findId";	
+ 	}
+	
+	
+	@RequestMapping("/re")
+	public String re(
+			HttpServletRequest request , Model model,
 			@RequestParam("name") String name,
 			@RequestParam("phone") String phone
-	 */
+			) {
+		
+		if (name != null && !name.isEmpty() && phone != null && !phone.isEmpty()) {
+	          MemberVO member = ms.selectId(name, phone);
+	          if( member==null) {
+	        	  model.addAttribute("message", "일치하는 정보가 없습니다");
+	          }else {
+	        	  model.addAttribute("Lmember", member);
+	          }
+	          
+	          //System.out.println(member.getName());
+	         //System.out.println(member.getPhone());
+	      }
+		
+		return "member/findId";	
+ 	}
 	
 	
 }
