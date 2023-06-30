@@ -30,7 +30,7 @@ public class AttractionController {
 		ModelAndView mav =new ModelAndView();
 		ArrayList<AttractionVO> bestList = ats.getBestattraction();
 		mav.addObject("bestList",  bestList );
-		mav.addObject("size", ats.getBannerList().size() );
+		//mav.addObject("size", ats.getBannerList().size() );
 		mav.setViewName("main");
 		
 		return mav;

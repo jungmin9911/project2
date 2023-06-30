@@ -20,4 +20,5 @@ public interface IAttractionDao {
 
 	ArrayList<AttractionVO> getBannerList();
 
+
 }
