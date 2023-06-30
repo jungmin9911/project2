@@ -13,6 +13,7 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -306,6 +307,72 @@ public class MemberController {
 		
 		return "member/findId";	
  	}
+	
+	
+	@RequestMapping("/selectPwd")
+	public String selectPwd() {
+		return "member/findPwd";	
+ 	}
+	
+	
+	@RequestMapping("/re2")
+	public String re2(
+			HttpServletRequest request , Model model,
+			@RequestParam("id") String id,
+			@RequestParam("name") String name,
+			@RequestParam("phone") String phone
+			) {
+		
+		 if (id != null && !id.isEmpty() && name != null && !name.isEmpty() && phone != null && !phone.isEmpty()) {
+			 MemberVO member = ms.selectPwd(id, name, phone);
+	          if( member==null) {
+	        	  model.addAttribute("message", "일치하는 정보가 없습니다");
+	          }else {
+	        	  model.addAttribute("Lmember", member);
+	          }
+	         
+	      }
+		
+		return "member/findPwd";	
+ 	}
+	
+	
+	@RequestMapping("/resetPwdForm")
+	public String resetPwdForm() {
+		return "member/resetPwd";	
+ 	}
+	
+	
+	@RequestMapping("/re3")
+	public String resetPwd(
+			 Model model, HttpServletResponse response,
+			@RequestParam("id") String id,
+			@RequestParam("pwd") String pwd
+			
+			) throws IOException {
+		
+			ms.resetNewPwd(id, pwd);
+		    
+		  	model.addAttribute("result", 3);
+		  	model.addAttribute("message", "비밀번호 변경이 완료되었습니다.");
+		  	
+		    
+		    /*
+		  	String message = "비밀번호 변경이 완료되었습니다.";
+	        String script = "<script>";
+	        script += "alert('" + message + "');";
+	        script += "window.close();";
+	        script += "</script>";
+	        response.setContentType("text/html; charset=UTF-8");
+	        response.getWriter().println(script);
+	        */
+	        
+		return "member/findPwd";	
+ 	}
+	
+	
+	
+	
 	
 	@RequestMapping("/cartList")
 	public ModelAndView cartList(HttpServletRequest request) {

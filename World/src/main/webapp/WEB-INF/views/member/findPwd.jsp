@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>비밀번호 찾기</title>
-<script src="member/member.js"></script>
+<script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
 </head>
 <body>
@@ -41,6 +41,7 @@
       <input type="button" value="찾기" class="button" onclick="find_Pwd();" /></div>
    </form>
     </div>
+    <h2>${message}</h2>
    <br />
    <c:if test="${not empty Lmember}">
       <h2>회원님의 비밀번호는 '${Lmember.pwd}' 입니다.</h2>

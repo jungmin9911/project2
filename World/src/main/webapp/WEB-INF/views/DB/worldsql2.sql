@@ -176,7 +176,7 @@ insert into lqna(lqseq, title, content, id, passCheck, pass) values
 select * from Lqna;
 select * from rest_at_view
 alter table Lmember add provider varchar2(50) ;
-
+alter table Lmember add address3 varchar2(100) ;
 update Lmember set provider='';
 
 select * from Lmember;
