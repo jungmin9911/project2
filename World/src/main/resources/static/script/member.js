@@ -133,7 +133,7 @@ function find_Id() {
       alert("전화번호를 입력해 주세요.");
       document.formm.phone.focus();
    } else {
-      document.formm.action = "world.do";
+      document.formm.action = "re";
       document.formm.submit();
    }
 }
@@ -149,7 +149,7 @@ function find_Pwd() {
       alert("전화번호를 입력해 주세요.");
       document.formm.phone.focus();
    } else {
-      document.formm.action = "world.do";
+      document.formm.action = "re";
       document.formm.submit();
    }
 }

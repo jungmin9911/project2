@@ -31,4 +31,9 @@ public class MemberService {
 	public void withdrawalMember(String id) {
 		mdao.withDrawalMember(id);		
 		}
+
+	public MemberVO selectId(String name, String phone) {
+		
+		return mdao.selectId(name,phone);
+	}
 }
