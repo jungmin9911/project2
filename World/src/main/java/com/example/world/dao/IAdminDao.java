@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.world.dto.AdminVo;
+import com.example.world.dto.BannerVO;
 import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
 
@@ -20,6 +21,8 @@ public interface IAdminDao {
 	List<AdminVo> listNotice(Paging paging, String key);
 	Object viewNotice(int nseq);
 	void updateNotice(@Valid NoticeVO noticevo);
+	List<BannerVO> getBannerList();
+	void insertBanner(BannerVO bannervo);
 
 	}
 

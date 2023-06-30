@@ -30,4 +30,20 @@
 		update notice set id=#{id}, title=#{title}, ncontent=#{ncontent}, indate=#{indate},
 		where nseq=#{nseq}
 	</update>
+	
+	<select id="getBannerList" resultType="com.example.world.dto.BannerVO">
+		select * from banner order by order_seq
+	</select>
+	
+	<insert id="insertBanner" parameterType="com.example.world.dto.BannerVO">
+		insert into banner(bseq, subject, order_seq, useyn, image )
+		values( banner_seq.nextVal, #{subject}, #{order_seq}, #{useyn}, #{image} )
+	</insert>
+	
+	
+	
+	
+	
+	
+	
 </mapper>

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.world.dto.AdminVo;
-import com.example.world.dto.MemberVO;
+import com.example.world.dto.BannerVO;
 import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
 import com.example.world.service.AdminService;
@@ -161,5 +161,31 @@ public class AdminController {
 	@RequestMapping("/adminQna")
 	public String adminQna() {
 		return "admin/adminQna/adminQnaList";
+	}
+	
+	
+	
+	@RequestMapping("/adminBannerList")
+	public ModelAndView adminBannerList( ) {
+		ModelAndView mav = new ModelAndView();
+	
+		mav.addObject("bannerList", as.getBannerList() );
+		mav.setViewName("admin/Banner/bannerList");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/newBannerWrite")
+	public String newBannerWrite() {
+		return "admin/Banner/writeBanner";
+	}
+	
+	
+	@RequestMapping(value="/bannerWrite" )
+	public String bannerWrite(  BannerVO bannervo	) {
+		if( bannervo.getOrder_seq() == 8 ) bannervo.setUseyn("N");
+		else bannervo.setUseyn("Y");
+		as.insertBanner( bannervo );
+		return "redirect:/bannerList";
 	}
 }

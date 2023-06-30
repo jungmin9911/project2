@@ -58,7 +58,7 @@
     $(function(){
     	var num=0;
     	setInterval(function(){
-            $('#imgs').animate({ left : num * -405 },1000);
+            $('#imgss').animate({ left : num * -2000 },1000);
                 num++;
                 if(num==5)num=0;
         }, 2000);
