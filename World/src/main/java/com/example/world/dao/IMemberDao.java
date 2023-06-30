@@ -23,5 +23,7 @@ public interface IMemberDao {
 	int getAllCount(String string, String string2, String key);
 	List<Cart2VO> listCart(Paging paging, String key);
 	MemberVO selectId(String name, String phone);
+	MemberVO selectPwd(String id, String name, String phone);
+	void resetNewPwd(String id, String pwd);
 
 }

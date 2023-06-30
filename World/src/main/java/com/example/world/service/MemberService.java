@@ -90,4 +90,14 @@ public class MemberService {
 		
 		return mdao.selectId(name,phone);
 	}
+
+	public MemberVO selectPwd(String id, String name, String phone) {
+		
+		return mdao.selectPwd(id,name,phone);
+	}
+
+	public void resetNewPwd(String id, String pwd) {
+		mdao.resetNewPwd(id,pwd);
+		
+	}
 }

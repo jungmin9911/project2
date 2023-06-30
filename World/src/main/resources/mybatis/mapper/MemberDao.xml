@@ -47,4 +47,15 @@
 		select * from Lmember where name=#{param1} and phone=#{param2}
 	</select>
 
+
+	<select id="selectPwd" resultType="com.example.world.dto.MemberVO">
+		select * from Lmember where id=#{param1} and name=#{param2} and phone=#{param3}
+	</select>
+	
+	
+	<update id="resetNewPwd">
+		Update Lmember set pwd=#{param2} where id=#{param1}
+	</update>
+
+
 </mapper>

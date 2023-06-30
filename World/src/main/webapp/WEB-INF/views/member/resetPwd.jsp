@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>비밀번호 재설정</title>
-<script src="member/member.js"></script>
+<script src="script/member.js"></script>
 </head>
 <body>
     <h2>비밀번호 재설정</h2>
@@ -26,6 +26,8 @@
             <div class="join_buttons_text">
                 <input type="submit" value="재설정" class="join_submit" onclick="checkPwd();"> 
                 <input type="reset" value="취소" class="join_cancel">
+                <br> <h2>${message}</h2>
+                
             </div>
         </div>
     </form>
