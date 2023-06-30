@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
-<link href="order/order.css" rel="stylesheet">  
-<script src="order/order.js"></script>
+<link href="css/order.css" rel="stylesheet">  
+<script src="script/order.js"></script>
 
 <style>
 	.container {position:relative; width:900px;} 
@@ -20,7 +20,7 @@
 			<div class="order_box_date">
 				<div class="order_box_date_text">방문일자/인원 선택</div>
 				<div class="order_box_date_select" onclick="showCalendar()">
-					<img src="images/ticket_images/calendar.png" style="width:40px; height:40px;">
+					<img src="../../images/ticket_images/calendar.png" style="width:40px; height:40px;">
 				</div>
 				<!-- 달력 선택 날짜 표기 -->
 				<div id="calendarPopup" class="calendar-popup"></div>
