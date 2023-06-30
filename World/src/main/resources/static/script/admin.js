@@ -73,8 +73,8 @@ function go_deletent(nseq){ //공지 삭제
 }
 
 function go_modnt(nseq){ // 공지 수정폼으로 이동
-	var url="world.do?command=adminUpdateNoticeForm&nseq="+nseq;
-	location.href=url;
+	var url="adminUpdateNoticeForm&nseq="+nseq;
+	window.open(url, "go_modnt", opt);
 }
 
 function go_mod_savent(){ // 공지 수정 버튼 클릭
@@ -83,7 +83,7 @@ function go_mod_savent(){ // 공지 수정 버튼 클릭
 		document.updatent.title.focus();
 	}else{
 	if(confirm('수정하시겠습니까?')){
-	document.updatent.action = "world.do?command=noticeUpdate";
+	document.updatent.action = "noticeUpdate";
 	document.updatent.submit();
 		}
 	}

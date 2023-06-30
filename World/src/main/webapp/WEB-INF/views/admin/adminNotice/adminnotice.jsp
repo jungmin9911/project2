@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file ="/admin/header.jsp"%>
+<%@ include file ="../header.jsp"%>
 <style>
 #plusebtn{position: absolute; right:45px; bottom:15px;  }
 #btn2{width:110px; background: #555;color: #fff; font-size: 25px;}
@@ -45,7 +45,7 @@
                 <c:forEach items="${noticeList}"  var="noticeVO">
 	                <tr>
 	                    <td>${noticeVO.nseq}</td>
-	                    <td><a href="world.do?command=adminnoticeDetail&nseq=${noticeVO.nseq}">${noticeVO.title}</a></td>
+	                    <td><a href="adminNoticeDetail?nseq=${noticeVO.nseq}">${noticeVO.title}</a></td>
 	                    <td><fmt:formatDate value="${noticeVO.indate}" type="date"/></td>
 	                </tr>
 	          	</c:forEach>
@@ -59,10 +59,10 @@
 </form>
 <br>
 <jsp:include page="../../paging/page.jsp">
-	<jsp:param name="command" value="world.do?command=adminnotice" />
+	<jsp:param name="command" value="adminnotice" />
 </jsp:include>
 
 <div  class="clear"></div><br>
 
 <br><br><br>
-<%@ include file ="/admin/footer.jsp"%>
+<%@ include file ="../footer.jsp"%>

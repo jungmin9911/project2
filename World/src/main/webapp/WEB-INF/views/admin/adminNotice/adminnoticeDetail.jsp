@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file ="/admin/header.jsp"%>   
+<%@ include file ="../header.jsp"%>   
 <article>
 <div class="event01">
 	<div class="event02">공지사항</div>
@@ -13,7 +13,7 @@
 	</div>
 	<div class="event09">
 		<div class="event10">
-	   		<input type="button" value="목 록" class="btn" onclick="location.href='world.do?command=adminnotice'">
+	   		<input type="button" value="목 록" class="btn" onclick="adminNotice">
 	   		<input type="button" value="수 정" class="btn" onclick="go_modnt('${noticeVO.nseq}')">
 	   		<input type="button" value="삭 제" class="btn" onclick="go_deletent('${noticeVO.nseq}')">
 		</div>
@@ -21,4 +21,4 @@
 </div>
 </article>
 
-<%@ include file ="/admin/footer.jsp"%>
+<%@ include file ="../footer.jsp"%>
