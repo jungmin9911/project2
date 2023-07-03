@@ -1,7 +1,6 @@
 package com.example.world.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,23 +30,20 @@ public class AttractionController {
 		ModelAndView mav =new ModelAndView();
 		ArrayList<AttractionVO> bestList = ats.getBestattraction();
 		mav.addObject("bestList",  bestList );
+		mav.addObject("bannerList", ats.getBannerList() );
+		mav.addObject("size", ats.getBannerList().size() );
 		mav.setViewName("main");
 		
 		return mav;
 	}
 
-	
 	@RequestMapping("/attractionDetail")
 	public String attractionDetail(@RequestParam("aseq") int aseq, Model model) {
 		AttractionVO attractionvo = ats.getAttraction(aseq);
         model.addAttribute("AttractionVO", attractionvo);
 
         return "attraction/attractionDetail";
-	}
-	
-	
-	
-	
+	}	
 	
 	@RequestMapping("/attractionForm")
     public String attractionForm(Model model) {
@@ -61,7 +57,7 @@ public class AttractionController {
 	 public String parade() {
 		
 	        return "parade/parade";
-	    }
+	 }
 	
 	
 }

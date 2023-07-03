@@ -23,7 +23,7 @@ function go_cart_delete(){
 	if(count ==0){
 			alert("삭제할 항목을 선택하세요");
 	}else{
-			document.formm.action="world.do?command=cartDelete";
+			document.formm.action="cartDelete";
 			document.formm.submit();
 			//jsp파일에 있는 체크된 체크박스 들의 벨류 (cseq값들)이 배열로 전송된다.
 		}
@@ -48,7 +48,7 @@ function go_order(){
 	if(count ==0){
 			alert("결제할 항목을 선택하세요");
 	}else{
-			document.formm.action="world.do?command=cartList";
+			document.formm.action="cartList";
 			document.formm.submit();
 			//jsp파일에 있는 체크된 체크박스 들의 벨류 (cseq값들)이 배열로 전송된다.
 		}

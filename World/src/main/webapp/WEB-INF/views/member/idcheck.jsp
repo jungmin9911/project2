@@ -21,7 +21,7 @@ form .submit, form .cancel {width:80px; height:25px; background-color:#6f23f9;
       border-radius:5px; font-size:16px; color:white;}
 form .cancel {background:#6f23f9;} 
 </style>
-<script src="member/member.js"></script>
+<script src="script/member.js"></script>
 </head>
 <body>
 	<h2>아이디 중복 확인</h2>

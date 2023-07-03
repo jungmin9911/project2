@@ -32,7 +32,7 @@ function loginCheck(){
 }
 
 function go_contract(){
-	document.loginFrm.action = "world.do?command=contract";
+	document.loginFrm.action = "/contract";
 	document.loginFrm.submit();
 }
 
@@ -58,7 +58,7 @@ function go_save(){
 		alert("전화번호를  입력해 주세요.");	    
 	    document.joinForm.phone.focus();
 	}else{
-		document.joinForm.action = "world.do";
+		document.joinForm.action = "/join";
 	    document.joinForm.submit();
 	    }
 	
@@ -113,7 +113,7 @@ function go_update(){
 	    alert("이메일을 입력해 주세요.");
 	    document.joinForm.phone.focus();
 	}else {
-	    document.joinForm.action = "world.do";
+	    document.joinForm.action = "memberUpdate";
 	    document.joinForm.submit();
 	}
 }
@@ -133,7 +133,7 @@ function find_Id() {
       alert("전화번호를 입력해 주세요.");
       document.formm.phone.focus();
    } else {
-      document.formm.action = "world.do";
+      document.formm.action = "re";
       document.formm.submit();
    }
 }
@@ -149,7 +149,7 @@ function find_Pwd() {
       alert("전화번호를 입력해 주세요.");
       document.formm.phone.focus();
    } else {
-      document.formm.action = "world.do";
+      document.formm.action = "re2";
       document.formm.submit();
    }
 }
@@ -162,8 +162,10 @@ function checkPwd() {
       alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
       document.joinForm.pwd.focus();
    } else {
-      document.joinForm.action = "world.do";
+      document.joinForm.action = "re3";
       document.joinForm.submit();
+      //alert("비밀번호 변경이 완료되었습니다");
+      //window.close();
    }
 }
 
@@ -180,7 +182,7 @@ function findPwd() {
 }
 
 function resetPwd(){
-	document.formm.action = "world.do?command=resetPwdForm";
+	document.formm.action = "resetPwdForm";
 	document.formm.submit();
 }
 

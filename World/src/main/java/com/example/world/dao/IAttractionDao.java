@@ -18,4 +18,9 @@ public interface IAttractionDao {
 
 	List<AttractionVO> getAseqList();
 
+	ArrayList<AttractionVO> getBannerList();
+
+	
+
+
 }

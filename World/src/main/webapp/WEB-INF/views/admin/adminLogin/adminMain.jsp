@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
 <style>
@@ -22,16 +21,16 @@ border-radius: 10px; box-shadow: 3px 3px 2px #ccc; font-size:150%; float:left; b
 <form method="post" name="frm">
 
    <div class="buttons">
-      <input type="submit" value="어트렉션 관리" onclick="go_atmanage()">
+      <input type="submit" value="어트랙션 관리" onclick="location.href='adminAttraction'">
    </div>
     <div class="buttons">
-      <input type="submit" value="공지사항 관리" onclick="go_ntmanage()">
+      <input type="submit" value="공지사항 관리" onclick="location.href='adminNotice'">
    </div>
     <div class="buttons">
-      <input type="submit" value="회원 관리" onclick="go_membermanage()">
+      <input type="submit" value="회원 관리" onclick="location.href='adminMember'">
    </div>
 	<div class="buttons">
-      <input type="submit" value="Q & A 관리" onclick="go_qnamanage()">
+      <input type="submit" value="Q & A 관리" onclick="location.href='adminQna'">
    </div>
 </form>
 </div>

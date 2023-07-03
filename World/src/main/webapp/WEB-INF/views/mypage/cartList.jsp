@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../header.jsp" %>
 <script src="mypage/mypage.js"></script>
@@ -81,7 +80,7 @@
 </section>
 </form>
 <jsp:include page="../paging/page.jsp">
-	<jsp:param name="command" value="world.do?command=cartList" />
+	<jsp:param name="command" value="cartList" />
 </jsp:include>
 
 <br><br><br><br><br><br><br>

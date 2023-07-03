@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+<script type=text/javaScript>
+    $(function(){
+    	var num=0;
+    	setInterval(function(){
+            $('#imgss').animate({ left : num * -2000 },1000);
+                num++;
+                if(num==8)num=0;
+        }, 2000);
+    });
+</script>
 
 <style>
     @keyframes fadeInUp {
@@ -13,10 +23,20 @@
     .boxArea{ position: relative; animation: fadeInUp 5s;}
 	#mainback{ position: relative; animation: fadeInUp 7s;}
     .main_bottom{ position: relative; animation: fadeInUp 7s;}
-  
 </style>
+
+<div id = "main_view">
+	<div id = "imgss" >
+		<div id ="main_imgs" >
+			<c:forEach items="${bannerList}" var="bannerVO">
+				<img src="../images/${bannerVO.image}" style="width:2000px; height:700px; margin:0">
+			</c:forEach>
+		</div>
+	</div>
+</div>
+
  
-<div id="main_view">
+<!-- <div id="main_view">
     <div id="main_imgs">
    			<img src="images/mainimgs1.jpg" >
         	<img src="images/mainimgs2.jpg" >
@@ -41,7 +61,7 @@
         <div class="auto">▶</div>
     </div>
 </div>
-
+ -->
 <div id="mainTodayArea" >
 	<a href="guide" target='_blank'>
  		<img src="images/icons/mainTodayArea_tit_icon.png"/>&nbsp;&nbsp;&nbsp;오늘의 파크 운영시간&nbsp;&nbsp;10:00 ~ 21:00

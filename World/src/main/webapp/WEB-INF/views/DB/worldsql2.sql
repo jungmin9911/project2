@@ -16,7 +16,7 @@ select*from Lworker;
 select*from Lmember;
 
 select*from cart2;
-
+select*from member;
 -- 어트렉션 추가
 insert into attraction(aseq, pnum, atname, acontent, act1, act2, image, limitkey, limitage ) values
 (attraction_aseq.nextval, 1,'범퍼카' ,'화려한 조명과 신나는 음악 속에서 스릴만점의 자동차 경주가 펼쳐진다. 
@@ -175,4 +175,12 @@ insert into lqna(lqseq, title, content, id, passCheck, pass) values
 
 select * from Lqna;
 select * from rest_at_view
+alter table Lmember add provider varchar2(50) ;
+alter table Lmember add address3 varchar2(100) ;
+update Lmember set provider='';
+
+select * from Lmember;
+select * from Lmember where name='김나리' and phone='017-777-7777'
+
+select * from Lmember where
 

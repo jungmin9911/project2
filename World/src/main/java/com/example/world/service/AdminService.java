@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.world.dao.IAdminDao;
 import com.example.world.dto.AdminVo;
+import com.example.world.dto.BannerVO;
 import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
 
@@ -83,6 +84,15 @@ public class AdminService {
 
 	public void updateNotice(NoticeVO noticevo) {
 		adao.updateNotice(noticevo);
+	}
+
+	public List<BannerVO> getBannerList() {
+		return adao.getBannerList();
+	}
+
+	public void insertBanner(BannerVO bannervo) {
+		adao.insertBanner( bannervo );	
+		
 	}
 
 }
