@@ -24,8 +24,8 @@
                     <div class="search-wrap">
                         <label for="search" class="blind"> 회원 이름 검색 </label>
                         <input id="search" type="search" name="key" placeholder="회원 이름을 입력해주세요." value="${key }">
-                        <button type="submit" class="btn btn-dark" value="검색" onClick="go_search('adminmember');">검색</button>
-                        <button type="submit" class="btn btn-darkk" value="전체보기" onClick="go_total('adminmember');">전체보기</button>
+                        <button type="submit" class="btn btn-dark" value="검색" onClick="go_search('adminMember');">검색</button>
+                        <button type="submit" class="btn btn-darkk" value="전체보기" onClick="go_total('adminMember');">전체보기</button>
                           
                     </div>
                

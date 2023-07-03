@@ -54,10 +54,10 @@
 			<c:choose>
 				<c:when test='${qnaVO.rep=="N" }'>
 					<input type="button" class="btn4" value="저장" onClick="go_rep()">
-					<input type="button"  value="목록보기" class="submit" onclick="location.href='world.do?command=adminqna'">
+					<input type="button"  value="목록보기" class="submit" onclick="location.href='/adminQna'">
 				</c:when>
 				<c:otherwise>
-					<input type="button"  value="목록보기" class="submitt" onclick="location.href='world.do?command=adminqna'">
+					<input type="button"  value="목록보기" class="submitt" onclick="location.href='/adminQna'">
 				</c:otherwise>
 			</c:choose>
 			

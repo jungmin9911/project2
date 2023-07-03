@@ -19,13 +19,10 @@ function count_check(obj) {
 }
 
 function go_cart(num){
-	
-	
 	if(document.getElementById("selectedDate").value==""){
 		alert("방문 일자를 선택해주세요");
 		return;
 		}
-		
 	var chkCnt = count_check();
 	var today = new Date(); // 현재 날짜와 시간을 가지는 Date 객체 생성
 	var todayDate = today.toISOString().slice(0, 10); // yyyy-MM-dd 형식의 문자열로 변환
@@ -47,12 +44,12 @@ function go_cart(num){
 			return ;
 		}
 		else{
-		document.formm.action ="/passTicketInsert&kind="+num;
+		document.formm.action ="/passTicketInsert?kind="+ num ;
 		document.formm.submit();
 		} 			
 	}
 	else {
-		document.formm.action ="passTicketInsert&kind="+num;
+		document.formm.action ="passTicketInsert?kind=" + num ;
 		document.formm.submit();
 	}
 }

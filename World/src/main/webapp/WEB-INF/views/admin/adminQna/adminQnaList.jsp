@@ -25,8 +25,8 @@
                     <div class="search-wrap">
                         <label for="search" class="blind"> Q&A 검색 </label>
                         <input id="search" type="search" name="key" placeholder="검색어를 입력해주세요." value="${key}">
-                        <button type="submit" class="btn btn-dark" value="검색" onClick="go_search('adminqna')">검색</button>
-                        <button type="submit" class="btn btn-darkk" value="전체보기" onClick="go_total('adminqna')">전체보기</button>
+                        <button type="submit" class="btn btn-dark" value="검색" onClick="go_search('adminQna')">검색</button>
+                        <button type="submit" class="btn btn-darkk" value="전체보기" onClick="go_total('adminQna')">전체보기</button>
                     </div>
            
             </div>
@@ -48,8 +48,9 @@
                
 
 		<c:forEach items="${qnaList}"  var="qnaVO">
-			<tr ><td> ${qnaVO.lqseq}</td>    
-	    		<td><a href="world.do?command=adminqnaView&lqseq=${qnaVO.lqseq}">${qnaVO.title}</a></td>      
+			<tr >
+				<td> ${qnaVO.lqseq}</td>    
+	    		<td><a href="/adminQnaView?lqseq=${qnaVO.lqseq}">${qnaVO.title}</a>      
 	       		<td><fmt:formatDate value="${qnaVO.indate}" type="date"/></td>
 	       		<td><c:choose>
 					<c:when test="${qnaVO.rep=='N'}"> no </c:when>
@@ -67,8 +68,10 @@
 </form>
 <br>
 <jsp:include page="../../paging/page.jsp">
-	<jsp:param name="command" value="world.do?command=adminqna" />
+	<jsp:param name="command" value="adminQna"/>
 </jsp:include>
+
+
 
 <div  class="clear"></div><br>
 

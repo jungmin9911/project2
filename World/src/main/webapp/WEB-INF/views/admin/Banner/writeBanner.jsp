@@ -5,10 +5,10 @@
 $(function(){
 	$('#myButton').click( function(){
 		
-		var formselect = $("#fileupForm")[0];   // 지목된 폼을 변수에 저장
-		var formdata = new FormData(formselect);   // 전송용 폼객에 다시 저장
+		var formselect = $("#fileupForm")[0]; 
+		var formdata = new FormData(formselect);   
 		
-		$.ajax({    // 웹페이지 이동 또는 새로고침이 필요없는 request요청
+		$.ajax({    
 			url:"<%=request.getContextPath() %>/fileup",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
 			type:"POST",
 			enctype:"multipart/form-data",
@@ -18,8 +18,8 @@ $(function(){
 	    	contentType : false,
 	        processData : false,
 	        
-	        success : function(data){    // controller 에서 린턴된 해시맵이  data 로 전달됩니다
-	            if( data.STATUS == 1 ){  	// 동적으로 div태그 달아주기.
+	        success : function(data){ 
+	            if( data.STATUS == 1 ){
 	            	$("#filename").append("<div>"+data.FILENAME+"</div>");
 	            	$("#image").val(data.FILENAME);
 	            	$("#filename").append("<img src='images/"+data.FILENAME+"' height='150'/>");
@@ -49,7 +49,10 @@ $(function(){
 					<option value="3">3</option>
 					<option value="4">4</option>
 					<option value="5">5</option>
-					<option value="6">사용안함 </option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">사용안함 </option>
 				</select>
 			</td></tr>
 		<tr height="250"><th>배너 이미지</th>

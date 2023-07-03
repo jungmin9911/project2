@@ -7,7 +7,7 @@
 
 	<insert id="insertTicket" parameterType="com.example.world.dto.TicketVO">
 		insert into cart2( cseq, id, kind, p1, p2, tatname1, tatname2, tatname3, price1, price2, visitdate )
-			values(cart2_cseq.nextVal, #{id}, #{kind},#{p1}, #{tatname1}, #{tatname2}, 
+			values(cart2_cseq.nextVal, #{id}, #{kind},#{p1},#{p2}, #{tatname1}, #{tatname2}, 
 			#{tatname3}, #{price1}, #{price2}, #{visitdate} )
 	</insert>
 </mapper>

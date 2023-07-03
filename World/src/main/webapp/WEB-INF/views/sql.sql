@@ -17,7 +17,7 @@ alter table lmember add address3 varchar2(30) ;
 
 select*from lmember;
 select*from banner;
+select*from lqna;
+select*from attraction;
 
-update banner set image='mainimgs4.jpg' where subject=4;
-update banner set image='mainimgs5.jpg' where subject=5;
-update banner set useyn = 'Y' where bseq=17;
+delete from banner ;

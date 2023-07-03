@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file ="/admin/header.jsp"%>
+    
+<%@ include file="../header.jsp" %>  
+
 <article>
 <div class="update">
-	<form method="post" name="insertnt" enctype="multipart/form-data" >
+	<form method="post" name="insertat"   enctype="multipart/form-data" >
 		<div class="update_title">어트랙션 추가</div>
 		<div class="update_main">
 			<div><p>어트랙션 이름</p><input type="text" name="atname"><br></div>
@@ -19,9 +21,9 @@
 		</div>
 		<div class="update_buttons">
 			<input class="btn" type="button" value="기구등록" onclick="go_insertat()">
-			<input class="btn" type="button" value="목록으로" onclick="go_mov('adminattractionForm')">
+			<input class="btn" type="button" value="목록으로" onclick="go_mov('adminAttraction')">
 		</div> 
 	</form>
 </div>
 </article>
-<%@ include file ="/admin/footer.jsp"%>
+<%@ include file ="../footer.jsp"%>
