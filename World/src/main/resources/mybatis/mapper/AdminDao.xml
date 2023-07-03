@@ -31,6 +31,8 @@
 		where nseq=#{nseq}
 	</update>
 	
+	
+	<!-- banner -->
 	<select id="getBannerList" resultType="com.example.world.dto.BannerVO">
 		select * from banner order by order_seq
 	</select>
@@ -40,7 +42,62 @@
 		values( banner_seq.nextVal, #{subject}, #{order_seq}, #{useyn}, #{image} )
 	</insert>
 	
+	<update id="updateSeq" >
+		update banner set order_seq=#{param1}, useyn=#{param2} where bseq=#{param3}
+	</update>
 	
+	<!--  member -->
+	
+	<select id ="listMember" resultType="com.example.world.dto.MemberVO">
+		select * from (
+		select * from (
+			select rownum as rn, m.*from(( select * from lmember 
+			where name like '%' || #{param2} || '%' 
+			order by indate  desc) m)
+		) where rn &gt; = #{param1.startNum}
+		) where rn &lt; = #{param1.endNum}
+	</select>
+	
+	<!-- attraction -->
+	<select id ="listAttraction" resultType="com.example.world.dto.AttractionVO">
+		select * from (
+		select * from (
+			select rownum as rn, at.*from(( select * from attraction 
+			where atname like '%' || #{param2} || '%' 
+			order by aseq  desc) at)
+		) where rn &gt; = #{param1.startNum}
+		) where rn &lt; = #{param1.endNum}
+	</select>
+	
+	<insert id="insertat" parameterType="com.example.world.dto.AttractionVO">>	
+		insert into attraction
+			(aseq, atname, acontent , act1, act2, image,
+				pnum, limitkey, limitage, bestat, aresult )
+		values(attraction_aseq.nextval, #{atname},#{acontent}, #{act1}, #{act2},
+				#{image}, #{pnum}, #{limitkey}, #{limitage}, #{bestat}, #{aresult} )	
+	</insert>
+	
+	<update id="updateAttraction" parameterType="com.example.world.dto.AttractionVO">
+		update attraction set atname=#{atname}, acontent=#{acontent}, act1=#{act1}, act2=#{act2},
+		 image=#{image} ,pnum=#{pnum}, limitkey=#{limitkey}, limitage=#{limitage}, 
+		 bestat=#{bestat}, aresult=#{aresult} where aseq=#{aseq}
+	</update>
+	
+	<!--  qna  -->
+	
+	<select id ="listQna" resultType="com.example.world.dto.QnaVO">
+		select * from (
+		select * from (
+			select rownum as rn, q.*from(( select * from lqna 
+			where title like '%' || #{param2} || '%' 
+			order by lqseq desc) q)
+		) where rn &gt; = #{param1.startNum}
+		) where rn &lt; = #{param1.endNum}
+	</select>
+
+	<update id ="updateQna">
+		update lqna set reply = #{param2}, rep='2' where lqseq = #{param1}
+	</update>
 	
 	
 	

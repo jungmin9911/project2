@@ -1,12 +1,13 @@
 package com.example.world.dto;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import lombok.Data;
 
 @Data
 public class Cart2VO {
-	private String cseq;
+	private Integer cseq;
 	private String id;
 	private Integer p1;
 	private Integer p2;
@@ -18,5 +19,5 @@ public class Cart2VO {
 	private Integer price2;
 	private Integer result;
 	private Timestamp indate;
-	private Timestamp visitdate;
+	private LocalDate visitdate;
 }

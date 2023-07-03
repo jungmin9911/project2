@@ -5,10 +5,10 @@
     $(function(){
     	var num=0;
     	setInterval(function(){
-            $('#imgss').animate({ left : num * -2000 },1000);
+            $('#imgs').animate({ left : num * -1970 },3000);
                 num++;
                 if(num==8)num=0;
-        }, 2000);
+        }, 3000);
     });
 </script>
 
@@ -25,43 +25,18 @@
     .main_bottom{ position: relative; animation: fadeInUp 7s;}
 </style>
 
-<div id = "main_view">
-	<div id = "imgss" >
-		<div id ="main_imgs" >
+
+<div id = "main_img">
+	<div id = "view" style="position:relative; width:1950px; overflow:hidden; height:700px; border-radius:20px;">
+		<div id ="imgs" style="position:absolute; width:16000px; height:700px; text-align:left;">
 			<c:forEach items="${bannerList}" var="bannerVO">
-				<img src="../images/${bannerVO.image}" style="width:2000px; height:700px; margin:0">
+				<img src="../images/${bannerVO.image}" style="width:1950px; height:700px; margin:0">
 			</c:forEach>
 		</div>
 	</div>
 </div>
 
- 
-<!-- <div id="main_view">
-    <div id="main_imgs">
-   			<img src="images/mainimgs1.jpg" >
-        	<img src="images/mainimgs2.jpg" >
-        	<img src="images/mainimgs3.jpg">
-        	<img src="images/mainimgs4.jpg">
-        	<img src="images/mainimgs5.jpg">
-        	<img src="images/mainimgs6.jpg">
-        	<img src="images/mainimgs7.jpg">
-        	<img src="images/mainimgs8.jpg">
-    </div>
-    <div id ="remote">
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-        </ul>
-        <div class="auto">▶</div>
-    </div>
-</div>
- -->
+
 <div id="mainTodayArea" >
 	<a href="guide" target='_blank'>
  		<img src="images/icons/mainTodayArea_tit_icon.png"/>&nbsp;&nbsp;&nbsp;오늘의 파크 운영시간&nbsp;&nbsp;10:00 ~ 21:00
