@@ -30,6 +30,7 @@ import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
 import com.example.world.dto.QnaVO;
 import com.example.world.service.AdminService;
+import com.example.world.service.NoticeService;
 import com.example.world.service.AttractionService;
 import com.example.world.service.QnaService;
 import com.oreilly.servlet.MultipartRequest;
@@ -63,11 +64,11 @@ public class AdminController {
 			mav.setViewName("admin/adminLogin/adminLoginForm");
 			return mav;
 		}else if( workPwd == null) {
-			mav.addObject("msg" , "패쓰워드를 입력하세요");
+			mav.addObject("msg" , "패스워드를 입력하세요");
 			mav.setViewName("admin/adminLogin/adminLoginForm");
 			return mav;
 		}else if( workPwd.equals("")) {
-			mav.addObject("msg" , "패쓰워드를 입력하세요");
+			mav.addObject("msg" , "패스워드를 입력하세요");
 			mav.setViewName("admin/adminLogin/adminLoginForm");
 			return mav;
 		}
@@ -118,35 +119,35 @@ public class AdminController {
 		return mav;
 	}
 	
+	@Autowired
+	NoticeService ns;
+	
 	//공지사항 디테일
 	@RequestMapping("adminNoticeDetail")
-	public ModelAndView adminNoticeDetail(HttpServletRequest request, 
+	public ModelAndView notice_Detail(HttpServletRequest request, 
 			@RequestParam("nseq") int nseq) {
 		ModelAndView mav = new ModelAndView();
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("workId");
-		if(id==null)
-			mav.setViewName("redirect:/adminLoginForm");
-		else {
-			mav.addObject("noticeVO", as.viewNotice(nseq));
-			mav.setViewName("admin/adminNotice/adminnoticeDetail");
-		}
+		mav.addObject("noticeVO", ns.getNotice(nseq));
+		mav.setViewName("admin/adminNotice/adminnoticeDetail");
+
 		return mav;
 	}
 	
 	//공지사항 수정
-	@RequestMapping("/adminUpdateNoticeForm")
-	public String adminUpdateNoticeForm(HttpServletRequest request, Model model) {
-		return "admin/adminNotice/noticeUpdate";
+	@RequestMapping("noticeUpdateForm")
+	public ModelAndView noticeUpdateForm(HttpServletRequest request, Model model,
+			@RequestParam("nseq") int nseq) {
+		ModelAndView mav = new ModelAndView();
+		model.addAttribute("noticeVO", ns.viewNotice(nseq));
+		mav.setViewName("admin/adminNotice/noticeUpdate");
+		return mav;
 	}
 	
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.POST)
 	public String noticeUpdate(@ModelAttribute("dto") @Valid NoticeVO noticevo,
 			BindingResult result, Model model, HttpServletRequest request) {
 		String url="admin/adminNotice/noticeUpdate";
-		if(result.getFieldError("id")!=null)
-			model.addAttribute("message", result.getFieldError("id").getDefaultMessage());
-		else if(result.getFieldError("title")!=null)
+		if(result.getFieldError("title")!=null)
 			model.addAttribute("message", result.getFieldError("title").getDefaultMessage());
 		else if(result.getFieldError("ncontent")!=null)
 			model.addAttribute("message", result.getFieldError("ncontent").getDefaultMessage());
@@ -154,7 +155,7 @@ public class AdminController {
 			if(noticevo.getNcontent()==null||noticevo.getNcontent().equals(""))
 				noticevo.setNcontent(request.getParameter("oldfilename"));
 			as.updateNotice(noticevo);
-			url="admin/adminNotice/admonnoticeDetail?nseq=" + noticevo.getNseq();
+			url="redirect:/adminnoticeDetail?nseq=" + noticevo.getNseq();
 		}
 		return url;
 	}

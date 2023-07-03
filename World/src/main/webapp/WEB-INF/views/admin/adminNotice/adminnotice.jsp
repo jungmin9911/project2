@@ -45,7 +45,8 @@
                 <c:forEach items="${noticeList}"  var="noticeVO">
 	                <tr>
 	                    <td>${noticeVO.nseq}</td>
-	                    <td><a href="adminNoticeDetail?nseq=${noticeVO.nseq}">${noticeVO.title}</a></td>
+	                    <td>
+	                    <a href="#" onClick="go_detail('${noticeVO.nseq}')">${noticeVO.title}</a></td>
 	                    <td><fmt:formatDate value="${noticeVO.indate}" type="date"/></td>
 	                </tr>
 	          	</c:forEach>

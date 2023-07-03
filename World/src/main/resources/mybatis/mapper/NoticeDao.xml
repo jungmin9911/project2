@@ -18,6 +18,10 @@
 		) where rn &lt;=#{param1.endNum}
 	</select>
 		
+	<select id="getNotice" resultType="com.example.world.dto.NoticeVO">
+		select * from notice where nseq=#{param1}
+	</select>
+	
 	<select id="viewNotice" resultType="com.example.world.dto.NoticeVO">
 		select * from notice where nseq=#{param1}
 	</select>

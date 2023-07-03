@@ -84,11 +84,7 @@ public class AdminService {
 		return result;
 	}
 
-	public Object viewNotice(int nseq) {
-		return adao.viewNotice(nseq);
-	}
-
-	public void updateNotice(@Valid NoticeVO noticevo) {
+	public void updateNotice(NoticeVO noticevo) {
 		adao.updateNotice(noticevo);
 	}
 
@@ -257,8 +253,5 @@ public class AdminService {
 		adao.updateAttraction(attractionvo);
 		
 	}
-
-	
-
 
 }
