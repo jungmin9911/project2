@@ -1,6 +1,8 @@
 package com.example.world.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,11 +27,12 @@ public class TicketController {
 	@Autowired
 	TicketService ts;
 
-	/*
-	 * @RequestMapping("/event01") public String event01() { return
-	 * "notice/event01"; }
-	 */
-
+	
+	 @RequestMapping("/event01") 
+	 public String event01() { 
+		 return"notice/event01"; 
+	}
+	
 	@RequestMapping("/reserve")
 	public String reserve() {
 		return "order/reserve";
@@ -80,12 +83,13 @@ public class TicketController {
 		if (mvo == null)
 			return "member/login";
 		// ---------------------로그인 확인 ------------------------
+		
 		else {
 			TicketVO tvo = new TicketVO();
 			tvo.setKind(kind);
 			tvo.setP1(p1);
 			tvo.setP2(p2);
-			
+		// 오류 : 날짜 형식 인식? 못함 수정필요
 			LocalDate visitDate = LocalDate.parse(visitdate);
 			tvo.setVisitdate(visitDate);
 
@@ -104,7 +108,7 @@ public class TicketController {
 		        break;
 			}
 			ts.insertTicket(tvo);
-			url= "redirect:/mypage/cartList";
+			url= "mypage/cartList";
 		}
 		return url;
 	}

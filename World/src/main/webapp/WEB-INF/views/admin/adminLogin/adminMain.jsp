@@ -32,6 +32,7 @@ border-radius: 10px; box-shadow: 3px 3px 2px #ccc; font-size:150%; float:left; b
 	<div class="buttons">
       <input type="submit" value="Q & A 관리" onclick="location.href='adminQna'">
    </div>
+
 </form>
 </div>
 </div>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file ="/admin/header.jsp"%>
+<%@ include file ="../header.jsp"%>
 <article>
 <div class="update">
 	<form method="post" name="updateat" enctype="multipart/form-data" >
@@ -57,9 +57,9 @@
 		<div class="update_buttons">
 			<input class="btn" type="button" value="수정" onclick="go_mod_saveat()">
 			<input class="btn" type="reset" value="취소"
-				onclick= 'location.href="world.do?command=adminattractionDetail&aseq=${AttractionVO.aseq}"'> 
+				onclick= "location.href='adminattractionDetail?aseq=${AttractionVO.aseq}'"> 
 		</div>
 </form>		
 </div>
 </article>
-<%@ include file ="/admin/footer.jsp"%>
+<%@ include file ="../footer.jsp"%>
