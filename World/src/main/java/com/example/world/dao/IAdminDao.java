@@ -23,7 +23,6 @@ public interface IAdminDao {
 	List<AdminVo> listNotice(Paging paging, String key);
 	Object viewNotice(int nseq);
 	void updateNotice(NoticeVO noticevo);
-	void updateNotice(@Valid NoticeVO noticevo);
 	
 	// 배너
 	List<BannerVO> getBannerList();
