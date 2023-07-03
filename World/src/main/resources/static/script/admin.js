@@ -58,11 +58,13 @@ function go_insertnt(){ //공지추가 동작액션으로 이동
 	}
 }
 
+function go_detail(nseq){
+	document.frm.action = "adminNoticeDetail?nseq=" + nseq;
+	document.frm.submit();
+}
 
-
-function go_mov(comm){ // 공지사항 목록으로 이동
-	document.insertnt.action = "world.do?command="+comm;
-	document.insertnt.submit();
+function go_mov(){ // 공지사항 목록으로 이동
+	location.href = "adminNotice";
 }
 
 function go_deletent(nseq){ //공지 삭제
@@ -73,20 +75,27 @@ function go_deletent(nseq){ //공지 삭제
 }
 
 function go_modnt(nseq){ // 공지 수정폼으로 이동
-	var url="adminUpdateNoticeForm&nseq="+nseq;
-	window.open(url, "go_modnt", opt);
+	document.frm.action = "noticeUpdateForm?nseq=" + nseq;
+	document.frm.submit();
 }
 
 function go_mod_savent(){ // 공지 수정 버튼 클릭
-	if( document.updatent.title.value==""){  
+	if( document.frm.title.value==""){  
 		alert('제목을 입력하세요');
-		document.updatent.title.focus();
+		document.frm.title.focus();
+	}else if( document.frm.ncontent.value==""){  
+		alert('내용을 입력하세요');
+		document.frm.ncontent.focus();
 	}else{
-	if(confirm('수정하시겠습니까?')){
-	document.updatent.action = "noticeUpdate";
-	document.updatent.submit();
+		if(confirm('수정하시겠습니까?')){
+			document.frm.action = "noticeUpdate";
+			document.frm.submit();
 		}
 	}
+}
+
+function goToDetail(nseq) {
+	window.location.href = "/adminnoticeDetail?nseq=" + nseq;
 }
 
 // 놀이기구 ----------------------------------------------------------------------------

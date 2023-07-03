@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
@@ -27,7 +26,6 @@
 	</select>
 	
 	<update id="updateNotice" parameterType="com.example.world.dto.NoticeVO">
-		update notice set id=#{id}, title=#{title}, ncontent=#{ncontent}, indate=#{indate},
-		where nseq=#{nseq}
+		update notice set title=#{title}, ncontent=#{ncontent} where nseq=#{nseq}
 	</update>
 </mapper>

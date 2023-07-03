@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,7 +66,11 @@ public class NoticeService {
 		return result;
 	}
 
-	public Object viewNotice(int nseq) {
+	public NoticeVO viewNotice(int nseq) {
 		return ndao.viewNotice(nseq);
+	}
+
+	public NoticeVO getNotice(int nseq) {
+		return ndao.getNotice(nseq);
 	}
 }

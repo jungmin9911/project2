@@ -19,7 +19,7 @@ public interface IAdminDao {
 	int getAllCount(String string, String string2, String key);
 	List<AdminVo> listNotice(Paging paging, String key);
 	Object viewNotice(int nseq);
-	void updateNotice(@Valid NoticeVO noticevo);
+	void updateNotice(NoticeVO noticevo);
 
 	}
 

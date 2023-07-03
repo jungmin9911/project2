@@ -2,6 +2,8 @@ package com.example.world.dao;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.world.dto.NoticeVO;
@@ -12,6 +14,7 @@ public interface INoticeDao {
 
 	int getAllCount(String string, String string2, String key);
 	List<NoticeVO> listNotice(Paging paging, String key);
-	Object viewNotice(int nseq);
+	NoticeVO viewNotice(int nseq);
+	NoticeVO getNotice(int nseq);
 
 }
