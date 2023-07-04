@@ -43,6 +43,8 @@ public interface IAdminDao {
 	void insertNotice(NoticeVO noticevo);
 	void updateat(AttractionVO attractionvo);
 	void deleteat(int aseq);
+
+	void noticeDelete(int nseq);
 	
 }
 

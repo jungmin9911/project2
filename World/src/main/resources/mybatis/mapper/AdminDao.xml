@@ -12,6 +12,7 @@
 		select count(*) from ${param1} where ${param2} like '%'||#{param3}||'%'
 	</select>
 	
+	<!-- Notice -->
 	<select id="listNotice" resultType="com.example.world.dto.NoticeVO">
 		select * from(
 		select * from(
@@ -25,15 +26,18 @@
 		select * from notice where nseq=#{param1}
 	</select>
 	
-	<update id="updateNotice" parameterType="com.example.world.dto.NoticeVO">
-		update notice set title=#{title}, ncontent=#{ncontent}, id=#{id} where nseq=#{nseq}
+	<update id="updateNotice" >
+		update notice set id=#{id}, title=#{title}, ncontent=#{ncontent}  where nseq=#{nseq}
 	</update>
 	
 	<insert id="insertNotice" parameterType="com.example.world.dto.NoticeVO">
-		insert into notice(nseq, title, ncontent )
-		values( notice_neq.nextVal, #{title}, #{ncontent})
+		insert into notice(nseq, id, title, ncontent )
+		values( notice_nseq.nextVal, #{id}, #{title}, #{ncontent})
 	</insert>
 	
+	<delete id="noticeDelete">
+		delete from notice where nseq = #{param1}
+	</delete> 
 	
 	<!-- banner -->
 	<select id="getBannerList" resultType="com.example.world.dto.BannerVO">
