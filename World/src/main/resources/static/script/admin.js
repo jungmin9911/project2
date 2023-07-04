@@ -14,7 +14,7 @@ function adminloginCheck(){  //관리자 로그인시 아이디 비번 입력 �
 }
 
 function go_manage(comm){
-	var url = "world.do?command=" + comm;   // 검색어로 검색한 결과의 1페이지로 이동
+	var url =  comm;   // 검색어로 검색한 결과의 1페이지로 이동
 	document.frm.action = url;
 	document.frm.submit();
 }
@@ -39,6 +39,10 @@ function go_view( lqseq ){
 	location.href = "adminQnaView?lqseq=" + lqseq;
 }
 
+function go_insertform(com){ 
+	document.frm.action = com ;
+	document.frm.submit();
+}
 
 
 
