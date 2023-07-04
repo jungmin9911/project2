@@ -39,14 +39,15 @@ function go_view( lqseq ){
 	location.href = "adminQnaView?lqseq=" + lqseq;
 }
 
+function go_insertform(com){ 
+	document.frm.action = com ;
+	document.frm.submit();
+}
 
 
 
 //------ 공지사항 ------
-function go_insertform(){ //공지추가 폼으로 이동
-	document.frm.action = "insertnoticeForm";
-	document.frm.submit();
-}
+
 
 function go_insertnt(){ //공지추가 동작액션으로 이동
 	if( document.insertnt.title.value==""){ 
