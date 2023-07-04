@@ -21,3 +21,10 @@ select*from lqna;
 select*from attraction;
 
 delete from banner ;
+
+alter table lqna add passcheck varchar2(10) default 'N';
+alter table lqna add pass varchar2(10);
+select * from lqna;
+
+update lqna set passcheck='Y' where lqseq='35';
+update lqna set pass='1234' where lqseq='35';
