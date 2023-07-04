@@ -22,7 +22,7 @@
 		<nav id ="top_menu">
 			<ul>
 				<li><a href="adminLogout">logout</a></li>
-				<li>${loginAdmin.name}(${loginAdmin.id})</li>
+				<li>${AdminVo.name}(${AdminVo.id})</li>
 			</ul>
 		</nav>
 		

@@ -52,7 +52,8 @@ public class NoticeController {
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
 		MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
-		if(mvo==null) mav.setViewName("member/login"); else {
+		if(mvo==null) mav.setViewName("member/login"); 
+		else {
 			HashMap<String, Object> result = ns.getNotice(request);
 			mav.addObject("notice", (List<NoticeVO>)result.get("noticeList"));
 			mav.addObject("paging", (Paging)result.get("paging"));

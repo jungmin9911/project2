@@ -109,8 +109,11 @@ public class AdminController {
 		if(id==null)
 			mav.setViewName("redirect:/adminLoginForm");
 		else {
+			int page = 1;
+	        session.setAttribute("page", page);
+	        
 			HashMap<String, Object> result = as.getNoticeList(request);
-			mav.addObject("noticeList", (List<AdminVo>)result.get("noticeList"));
+			mav.addObject("noticeList", (List<NoticeVO>)result.get("noticeList"));
 			mav.addObject("paging", (Paging)result.get("paging"));
 			mav.addObject("key", (String)result.get("key"));
 			mav.setViewName("admin/adminNotice/adminnotice");
@@ -194,11 +197,14 @@ public class AdminController {
 		if(id==null)
 			mav.setViewName("redirect:/adminLoginForm");
 		else {
-		HashMap<String, Object> result = as.getMeberList ( request );
-		mav.addObject("memberList", (List<MemberVO>)result.get("memberList") );
-		mav.addObject("paging", (Paging)result.get("paging") );
-		mav.addObject("key", (String)result.get("key") );
-		mav.setViewName("admin/adminmember/adminMemberList");
+			int page = 1;
+	        session.setAttribute("page", page);
+	        
+			HashMap<String, Object> result = as.getMeberList ( request );
+			mav.addObject("memberList", (List<MemberVO>)result.get("memberList") );
+			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
+			mav.setViewName("admin/adminmember/adminMemberList");
 		}
 		return mav;
 	}
@@ -213,11 +219,14 @@ public class AdminController {
 		if(id==null)
 			mav.setViewName("redirect:/adminLoginForm");
 		else {
-		HashMap<String, Object> result = as.getAttractionList ( request );
-		mav.addObject("attractionList", (List<AttractionVO>)result.get("attractionList") );
-		mav.addObject("paging", (Paging)result.get("paging") );
-		mav.addObject("key", (String)result.get("key") );
-		mav.setViewName("admin/adminattraction/adminattraction");
+			int page = 1;
+	        session.setAttribute("page", page);
+	        
+	        HashMap<String, Object> result = as.getAttractionList ( request );
+			mav.addObject("attractionList", (List<AttractionVO>)result.get("attractionList") );
+			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
+			mav.setViewName("admin/adminattraction/adminattraction");
 		}
 		return mav;
 	}
@@ -338,11 +347,14 @@ public class AdminController {
 		if(id==null)
 			mav.setViewName("redirect:/adminLoginForm");
 		else {
-		HashMap<String, Object> result = as.getQnaList ( request );
-		mav.addObject("qnaList", (List<QnaVO>)result.get("qnaList") );
-		mav.addObject("paging", (Paging)result.get("paging") );
-		mav.addObject("key", (String)result.get("key") );
-		mav.setViewName("admin/adminQna/adminQnaList");
+			int page = 1;
+	        session.setAttribute("page", page);
+	        
+			HashMap<String, Object> result = as.getQnaList ( request );
+			mav.addObject("qnaList", (List<QnaVO>)result.get("qnaList") );
+			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
+			mav.setViewName("admin/adminQna/adminQnaList");
 		}
 		return mav;
 	}
