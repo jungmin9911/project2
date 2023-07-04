@@ -263,3 +263,68 @@ nav#sub_menu h1 { padding: 5px; border-bottom: double;}
 nav#sub_menu ul { margin-left: -20px;}
 
 
+/*배너리스트*/
+.findfindd{width:100%; height:800px; margin: 0 auto; position:relative; border: 1px dotted gray;}
+  .id_foundd{width:1150px; height:800px;margin: 0 auto; position:relative;}
+  .baba{margin:0 0 0 110px;position:relative;}
+  .btnp{height: 50px;width: 150px;border:1px solid #6317ed; font-weight:bold;float:left;
+		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
+		background-position: center center;	color:#fff;margin: 73px 0 0 450px;}
+  .btnn{height: 50px;width: 140px;border:1px solid #6317ed; font-weight:bold;float:left;
+		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
+		background-position: center center;	color:#fff;margin: 73px 0 0 5px;}
+#mymy{ width: 190px;
+  height: 32px;
+  font-size: 13px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding: 3px;
+  background-color: rgb(233, 233, 233);}
+#myButton{ width: 150px;
+    height: 32px;
+    font-size: 12px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding: 3px;
+    background-color: rgb(233, 233, 233);
+}
+  input {
+  width: 400px;
+  height: 32px;
+  font-size: 10px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+.baba tr{height:100px;}
+.baba td{width:600px;border:none; }
+.baba th{font-size:30px;border:none;}
+
+.pl{
+    width: 300px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 12px 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.pl:focus{
+    border: 1px solid #9B51E0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: 3px solid #F8E4FF;
+    border-radius: 10px;
+}
+
+
+
