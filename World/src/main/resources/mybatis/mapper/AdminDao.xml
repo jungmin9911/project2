@@ -44,6 +44,10 @@
 		update banner set order_seq=#{param1}, useyn=#{param2} where bseq=#{param3}
 	</update>
 	
+	<delete id="deleteBanner">
+		delete from banner where bseq = #{param1}
+	</delete> 
+	
 	<!--  member -->
 	
 	<select id ="listMember" resultType="com.example.world.dto.MemberVO">
@@ -67,19 +71,23 @@
 		) where rn &lt; = #{param1.endNum}
 	</select>
 	
-	<insert id="insertat" parameterType="com.example.world.dto.AttractionVO">>	
+	<insert id="insertat" >	
 		insert into attraction
 			(aseq, atname, acontent , act1, act2, image,
 				pnum, limitkey, limitage, bestat, aresult )
-		values(attraction_aseq.nextval, #{atname},#{acontent}, #{act1}, #{act2},
+		values(attraction_aseq.nextval, #{atname}, #{acontent}, #{act1}, #{act2},
 				#{image}, #{pnum}, #{limitkey}, #{limitage}, #{bestat}, #{aresult} )	
 	</insert>
-	
-	<update id="updateAttraction" parameterType="com.example.world.dto.AttractionVO">
-		update attraction set atname=#{atname}, acontent=#{acontent}, act1=#{act1}, act2=#{act2},
-		 image=#{image} ,pnum=#{pnum}, limitkey=#{limitkey}, limitage=#{limitage}, 
-		 bestat=#{bestat}, aresult=#{aresult} where aseq=#{aseq}
+
+	<update id="updateat" >
+		update attraction set atname = #{atname}, acontent = #{acontent}, act1 = #{act1}, 
+			act2 = #{act2}, image = #{image}, pnum = #{pnum}, limitkey = #{limitkey},
+			limitage = #{limitage}, bestat = #{bestat}, aresult = #{aresult} where aseq = #{aseq}
 	</update>
+	
+	<delete id="deleteat">
+		delete from attraction where aseq=#{param1}
+	</delete>
 	
 	<!--  qna  -->
 	
@@ -94,7 +102,7 @@
 	</select>
 
 	<update id ="updateQna">
-		update lqna set reply = #{param2}, rep='2' where lqseq = #{param1}
+		update lqna set reply = #{param2}, rep='Y' where lqseq = #{param1}
 	</update>
 	
 	

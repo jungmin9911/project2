@@ -158,7 +158,7 @@ public class AdminController {
 		return url;
 	}
 	
-	//회원관리
+	//------------------------------------회원 관리 -------------------------------------- 
 	@RequestMapping("/adminMember")
 	public ModelAndView adminMember(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
@@ -176,7 +176,7 @@ public class AdminController {
 		return mav;
 	}
 	
-	// 어트랙션 관리 
+	// ------------------------------------어트랙션 관리 -------------------------------------- 
 	
 	@RequestMapping("/adminAttraction")
 	public ModelAndView adminAttraction(HttpServletRequest request) {
@@ -201,10 +201,7 @@ public class AdminController {
 		return "admin/adminattraction/insertAttractionForm";
 	}
 	
-
-
-
-	// 어트랙션 추가 오류 : 부적합한 열유형 (SQL)
+	// 어트랙션 추가 
 	@RequestMapping(value="/insertat", method = RequestMethod.POST)
 	public String insertat( @ModelAttribute("dto") @Valid AttractionVO attractionvo,
 							BindingResult result, 
@@ -216,19 +213,26 @@ public class AdminController {
 			model.addAttribute("message", result.getFieldError("atname").getDefaultMessage() );
 		else if ( result.getFieldError("acontent")!= null )
 			model.addAttribute("message", result.getFieldError("acontent").getDefaultMessage() );
+		else if ( result.getFieldError("act1")!= null )
+			model.addAttribute("message", result.getFieldError("act1").getDefaultMessage() );
+		else if ( result.getFieldError("act2")!= null )
+			model.addAttribute("message", result.getFieldError("act2").getDefaultMessage() );
 		else if ( result.getFieldError("image")!= null )
 			model.addAttribute("message", result.getFieldError("image").getDefaultMessage() );
 		else if ( result.getFieldError("limitkey")!= null )
 			model.addAttribute("message", result.getFieldError("limitkey").getDefaultMessage() );
 		else if ( result.getFieldError("limitage")!= null )
 			model.addAttribute("message", result.getFieldError("limitage").getDefaultMessage() );
+		else if ( result.getFieldError("bestat")!= null )
+			model.addAttribute("message", result.getFieldError("bestat").getDefaultMessage() );
+		else if ( result.getFieldError("aresult")!= null )
+			model.addAttribute("message", result.getFieldError("aresult").getDefaultMessage() );
 		else {
 			as.insertat( attractionvo );
 			url ="redirect:/adminAttraction";
 		}
 		return url;
 	}
-
 	
 	// atView
 	@Autowired 
@@ -253,36 +257,51 @@ public class AdminController {
 		model.addAttribute("AttractionVO", ats.getAttraction(aseq) );
 		return "admin/adminattraction/AttractionUpdate";
 	}
-	// at 업뎃 오류 : 부적합한 열유형 (SQL)
-	@RequestMapping(value = "updateAttraction", method = RequestMethod.POST)
-	public String updateAttraction(
+	// at 업뎃 
+	@RequestMapping(value = "updateat", method = RequestMethod.POST)
+	public String updateat(
 			@ModelAttribute("dto") @Valid AttractionVO attractionvo, 
 			BindingResult result, Model model, HttpServletRequest request
 			
 			) {
 		
-		String url = "" ;
-	
-			if( request.getParameter ("bestyn") != null) 
-				attractionvo.setBestat("Y");
-			else attractionvo.setBestat("N");
-			
-			if( request.getParameter("useyn") != null)
-				attractionvo.setAresult("Y");
-			else attractionvo.setAresult("N");
-			
+		String url = "admin/adminattraction/AttractionUpdate" ;
+		if ( result.getFieldError("atname")!= null )
+			model.addAttribute("message", result.getFieldError("atname").getDefaultMessage() );
+		else if ( result.getFieldError("acontent")!= null )
+			model.addAttribute("message", result.getFieldError("acontent").getDefaultMessage() );
+		else if ( result.getFieldError("act1")!= null )
+			model.addAttribute("message", result.getFieldError("act1").getDefaultMessage() );
+		else if ( result.getFieldError("act2")!= null )
+			model.addAttribute("message", result.getFieldError("act2").getDefaultMessage() );
+		else if ( result.getFieldError("limitkey")!= null )
+			model.addAttribute("message", result.getFieldError("limitkey").getDefaultMessage() );
+		else if ( result.getFieldError("limitage")!= null )
+			model.addAttribute("message", result.getFieldError("limitage").getDefaultMessage() );
+		else if ( result.getFieldError("bestat")!= null )
+			model.addAttribute("message", result.getFieldError("bestat").getDefaultMessage() );
+		else if ( result.getFieldError("aresult")!= null )
+			model.addAttribute("message", result.getFieldError("aresult").getDefaultMessage() );
+		else {
 			if ( attractionvo.getImage() ==null || attractionvo.getImage().equals("") )
-				attractionvo.setImage( request.getParameter("oldfilename") );
-			
-			as.updateAttraction ( attractionvo );
+				attractionvo.setImage( request.getParameter("oldImage") );
+			as.updateat ( attractionvo );
 			url = "redirect:adminattractionDetail?aseq=" + attractionvo.getAseq() ;
-		
+		}
 		return url;
 	}
 		
-	//attractionDelete
+	// 삭제
+	@RequestMapping("/deleteat")
+	public String deleteat( Model model,
+							HttpServletRequest request,
+							@RequestParam("aseq") int aseq
+			) {
+		as.deleteat(aseq);
+		return "redirect:/adminAttraction";
+	}
 	
-	//Q&A관리
+	//------------------------------------Q&A 관리 -------------------------------------- 
 	@RequestMapping("/adminQna")
 	public ModelAndView adminQna( HttpServletRequest request
 			) {
@@ -318,14 +337,14 @@ public class AdminController {
 	@RequestMapping(value="/adminQnaRepSave", method =RequestMethod.POST)
 	public String adminQnaRepSave ( @RequestParam("lqseq") int lqseq,
 									@RequestParam("reply") String reply
-		) {
+								  ) {		
 	
 		as.updateQna( lqseq, reply);
-		return "redirect:/adminQnaView?qseq=" + lqseq ;
+		return "redirect:/adminQnaView?lqseq=" + lqseq ;
 	}
 
 	
-	// 배너 관리 
+	// ------------------------------------배너 관리 -------------------------------------- 
 	
 	// 배너 리스트로 이동
 	@RequestMapping("/adminBannerList")
@@ -369,7 +388,8 @@ public class AdminController {
 	// 배너 등록 
 	@RequestMapping(value="/bannerWrite" )
 	public String bannerWrite(  BannerVO bannervo	) {
-		if( bannervo.getOrder_seq() == 9 ) bannervo.setUseyn("N");
+		if( bannervo.getOrder_seq() == 9 ) 
+			bannervo.setUseyn("N");
 		else bannervo.setUseyn("Y");
 		as.insertBanner( bannervo );
 		return "redirect:/adminBannerList";
@@ -388,5 +408,15 @@ public class AdminController {
 		as.updateSeq( changeval, useyn, bseq);
 		return"redirect:/adminBannerList";
 	}
+	// 배너 삭제
+	@RequestMapping ("/deleteBanner")
+	public String deleteBanner ( @RequestParam ("bseq") int bseq,
+								 Model model
+			) {
+	as.deleteBanner( bseq );
+	return "redirect:/adminBannerList";
+		
+	}
 	
+
 }

@@ -66,8 +66,8 @@ function go_detail(nseq){
 	document.frm.submit();
 }
 
-function go_mov(){ // 공지사항 목록으로 이동
-	location.href = "adminNotice";
+function go_mov(com){ 
+	location.href = com;
 }
 
 function go_deletent(nseq){ //공지 삭제
@@ -198,7 +198,7 @@ function go_mod_saveat(){
 		document.updateat.acontent.focus();		
 	}else{
 		if(confirm('수정하시겠습니까?')){
-		document.updateat.action = "/updateAttraction";
+		document.updateat.action = "updateat";
 		document.updateat.submit();
 		}
 	}
@@ -207,7 +207,14 @@ function go_mod_saveat(){
 //놀이기구 삭제
 function go_deleteat(aseq){
 if(confirm('정말 삭제하시겠습니까?')){
-	var url="attractionDelete&aseq="+aseq;
+	var url="deleteat?aseq=" +aseq ;
+	location.href=url;
+	}
+}
+
+function go_deleteBanner(bseq){
+if(confirm('정말 삭제하시겠습니까?')){
+	var url="deleteBanner?bseq=" + bseq; 
 	location.href=url;
 	}
 }

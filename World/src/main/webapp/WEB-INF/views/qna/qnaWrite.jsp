@@ -33,7 +33,7 @@
 		<div id="buttons">
 			<input type="submit" value="글쓰기" class="purpleBtn" style="border:none;" > 
 			<input type="reset" value="취소" class="purpleBtn"  
-				onclick="location.href='world.do?command=qnaList'" style="border:none;">
+				onclick="qnaList'" style="border:none;">
 		</div>
 		</form>
 	</div>

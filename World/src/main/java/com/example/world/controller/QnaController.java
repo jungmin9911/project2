@@ -31,13 +31,10 @@ public class QnaController {
 	@Autowired
 	QnaService qs;
 	
-	
 	@RequestMapping("/qna")
 	public String qna() {
 		return "qna/qna";
 	}
-	
-
 	
 	@RequestMapping("/qnaList")
 	public ModelAndView qnaList( HttpServletRequest request ) {
@@ -48,7 +45,7 @@ public class QnaController {
 			mav.addObject("paging", (Paging)result.get("paging") );
 			mav.addObject("key", (String)result.get("key") );
 			mav.setViewName("qna/qnaList");
-			
+
 		return mav;
 	}
 	
@@ -59,23 +56,20 @@ public class QnaController {
 		mav.setViewName("qna/qnaView");
 		return mav;
 	}
-	
 
-	
 	@RequestMapping("/passCheck")
 	public ModelAndView passCheck( @RequestParam("lqseq") int lqseq ) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("lqseq", lqseq);
 		mav.setViewName("qna/checkPass");
-		
 		return mav;
 	}
 	
-	
-	@RequestMapping(value="/checkPass", method=RequestMethod.POST)
+	@RequestMapping(value="/qnaCheckPass", method=RequestMethod.POST)
 	public String qnaCheckPass( 
 			@RequestParam("lqseq") int lqseq, 
-			@RequestParam("pass") String pass, Model model ) {
+			@RequestParam("pass") String pass, 
+			Model model ) {
 
 		QnaVO qvo = qs.getQna(lqseq);
 		model.addAttribute("lqseq" , lqseq);
@@ -89,8 +83,6 @@ public class QnaController {
 			
 	}
 	
-	
-	
 	@RequestMapping("/qnaWriteForm")
 	public String qna_writre_form(Model model, HttpServletRequest request) {
 		
@@ -100,7 +92,6 @@ public class QnaController {
 	    
 	    return "qna/qnaWrite";
 	}
-	
 	
 	@RequestMapping(value="/qnaWrite", method=RequestMethod.POST)
 	public ModelAndView qna_write(
