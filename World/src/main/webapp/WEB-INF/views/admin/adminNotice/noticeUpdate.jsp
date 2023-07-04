@@ -3,8 +3,9 @@
 <%@ include file ="../header.jsp"%>
 <article>
 <div class="update">
-	<form method="post" name="frm" enctype="multipart/form-data" >
+	<form method="post" name="frm"  enctype="multipart/form-data" >
 		<input type="hidden" name="nseq" value="${noticeVO.nseq}">
+		<input type="hidden" name="oldfilename" value="${noticeVO.ncontent}">
 		<div class="update_title">공지사항 수정</div>
 		<div class="update_main">
 			<div>
@@ -19,9 +20,10 @@
 		</div>
 		<div class="update_buttons">
 			<input class="btn" type="button" value="공지수정" onclick="go_mod_savent('${noticeVO.nseq}')">
-			<input class="btn" type="reset" value="취소" onClick="goToDetail(${noticeVO.nseq})">
+			<input class="btn" type="reset" value="취소" onClick="go_mov()">
 		</div>
 	</form>		
 </div>
+
 </article>
 <%@ include file ="../footer.jsp"%>

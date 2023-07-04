@@ -25,9 +25,14 @@
 		select * from notice where nseq=#{param1}
 	</select>
 	
-	<update id="updateNotice" parameterType="com.example.world.dto.NoticeVO">
+	<update id="updateNotice" >
 		update notice set title=#{title}, ncontent=#{ncontent} where nseq=#{nseq}
 	</update>
+	
+	<insert id="insertNotice" parameterType="com.example.world.dto.NoticeVO">
+		insert into notice(nseq, title, ncontent )
+		values( notice_neq.nextVal, #{title}, #{ncontent})
+	</insert>
 	
 	
 	<!-- banner -->

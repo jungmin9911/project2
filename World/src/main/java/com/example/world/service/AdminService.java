@@ -254,4 +254,9 @@ public class AdminService {
 		
 	}
 
+	public void insertNotice(NoticeVO noticevo) {
+		adao.insertNotice(noticevo);
+		
+	}
+
 }
