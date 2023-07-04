@@ -4,7 +4,7 @@
 	
 function count_check(obj) {
 	var chkCnt = 0; // chkCnt 초기값 0 설정
-	var chkBox = document.getElementsByName("attraction") //name값 불러옴	
+	var chkBox = document.getElementsByName("attraction"); //name값 불러옴	
 	for ( var i = 0; i < chkBox.length; i++){
 		if (chkBox[i].checked){ // chkBox가 체크 됐을 경우
 			chkCnt++; // 1증가
