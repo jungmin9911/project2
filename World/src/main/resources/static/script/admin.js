@@ -47,7 +47,10 @@ function go_insertform(com){
 
 
 //------ 공지사항 ------
-
+function go_insertform(comm){ //공지추가 폼으로 이동
+	document.frm.action = comm;
+	document.frm.submit();
+}
 
 function go_insertnt(){ //공지추가 동작액션으로 이동
 	if( document.insertnt.title.value==""){ 
@@ -67,29 +70,26 @@ function go_detail(nseq){
 	document.frm.submit();
 }
 
-function go_mov(com){ 
-	location.href = com;
+function go_mov(){ 
+	location.href = "adminNotice";
 }
 
 function go_deletent(nseq){ //공지 삭제
 	if(confirm('정말 삭제하시겠습니까?')){
-		var url="world.do?command=noticeDelete&nseq="+nseq;
+		var url="noticeDelete?nseq="+nseq;
 		location.href=url;
 	}
 }
 
 function go_modnt(nseq){ // 공지 수정폼으로 이동
-	document.frm.action = "noticeUpdateForm?nseq=" + nseq;
-	document.frm.submit();
+	var url= "noticeUpdateForm?nseq=" + nseq;
+	location.href=url;
 }
 
 function go_mod_savent(){ // 공지 수정 버튼 클릭
 	if( document.frm.title.value==""){  
 		alert('제목을 입력하세요');
 		document.frm.title.focus();
-	}else if( document.frm.ncontent.value==""){  
-		alert('내용을 입력하세요');
-		document.frm.ncontent.focus();
 	}else{
 		if(confirm('수정하시겠습니까?')){
 			document.frm.action = "noticeUpdate";

@@ -254,5 +254,10 @@ public class AdminService {
 		
 	}
 
+	public void noticeDelete(int nseq) {
+		adao.noticeDelete(nseq);
+		
+	}
+
 
 }

@@ -134,16 +134,17 @@ public class AdminController {
 	
 	//공지사항 수정
 	@RequestMapping("noticeUpdateForm")
-	public ModelAndView noticeUpdateForm(HttpServletRequest request, Model model,
+	public String noticeUpdateForm(HttpServletRequest request, Model model,
 			@RequestParam("nseq") int nseq) {
-		ModelAndView mav = new ModelAndView();
 		model.addAttribute("noticeVO", ns.viewNotice(nseq));
-		mav.setViewName("admin/adminNotice/noticeUpdate");
-		return mav;
+		return "admin/adminNotice/noticeUpdate";
+		
 	}
 	
+	
+	
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.POST)
-	public String noticeUpdate(@ModelAttribute("noticeVO") @Valid NoticeVO noticevo,
+	public String noticeUpdate(@ModelAttribute("dto") @Valid NoticeVO noticevo,
 			BindingResult result, Model model, HttpServletRequest request) {
 		String url="admin/adminNotice/noticeUpdate";
 		if(result.getFieldError("title")!=null)
@@ -156,17 +157,18 @@ public class AdminController {
 			if(noticevo.getNcontent()==null||noticevo.getNcontent().equals(""))
 				noticevo.setNcontent(request.getParameter("oldfilename"));
 			as.updateNotice(noticevo);
-			url="redirect:/adminnoticeDetail?nseq=" + noticevo.getNseq();
+			url="redirect:/adminNoticeDetail?nseq=" + noticevo.getNseq();
 		}
 		return url;
 	}
-
+	
+	// 공지사항 추가
 	@RequestMapping("insertnoticeForm")
 	public String insertnoticeForm( ) {
 		return "admin/adminNotice/insertnoticeForm";
 	}
 	
-	@RequestMapping(value="/insertnotice", method = RequestMethod.POST)
+	@RequestMapping(value="insertnotice", method = RequestMethod.POST)
 	public String insertnotice( @ModelAttribute("dto") @Valid NoticeVO noticevo,
 							BindingResult result, 
 							Model model
@@ -177,12 +179,25 @@ public class AdminController {
 			model.addAttribute("message", result.getFieldError("title").getDefaultMessage());
 		else if(result.getFieldError("ncontent")!=null)
 			model.addAttribute("message", result.getFieldError("ncontent").getDefaultMessage());
+		else if(result.getFieldError("id")!=null)
+			model.addAttribute("message", result.getFieldError("id").getDefaultMessage());
 		else {
 			as.insertNotice( noticevo );
-			url ="redirect:/adminAttraction";
+			url ="redirect:/adminNotice";
 		}
 		return url;
 	}
+
+	// 공지사항 삭제
+	@RequestMapping("/noticeDelete")
+	public String noticeDelete( Model model,
+							HttpServletRequest request,
+							@RequestParam("nseq") int nseq
+			) {
+		as.noticeDelete(nseq);
+		return "redirect:/adminNotice";
+	}
+	
 
 	//------------------------------------회원 관리 -------------------------------------- 
 
