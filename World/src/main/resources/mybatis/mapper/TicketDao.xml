@@ -10,4 +10,17 @@
 			values(cart2_cseq.nextVal, #{id}, #{kind},#{p1},#{p2}, #{tatname1}, #{tatname2}, 
 			#{tatname3}, #{price1}, #{price2}, #{visitdate} )
 	</insert>
+	
+	<delete id="deleteCart" parameterType="com.example.world.dto.Cart2VO">
+			Delete from cart2 where cseq=#{param1}
+	</delete>
+	
+	<update id="orderCart">
+		update cart2 set result='1' where cseq=#{param1}
+	</update>
+	
+	<select id="getvisitList" resultType="com.example.world.dto.Cart2VO">
+		select p1,p2 from Cart2 where visitdate=#{param1} and result='1'
+	</select>
+	
 </mapper>
