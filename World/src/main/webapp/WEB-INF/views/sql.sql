@@ -37,7 +37,7 @@ create sequence banner_seq start with 1;
 
 alter table lqna add passcheck varchar2(10) default 'N';
 alter table lqna add pass varchar2(10);
-select * from lqna;
+select * from Lworker;
 
 update lqna set passcheck='Y' where lqseq='35';
 update lqna set pass='1234' where lqseq='35';

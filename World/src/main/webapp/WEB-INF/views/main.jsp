@@ -5,13 +5,13 @@
     $(function(){
     	var num=0;
     	setInterval(function(){
-            $('#imgs').animate({ left : num * -1970 },3000);
+            $('#imgs').animate({ left : num * -1970 },5000);
                 num++;
-                if(num==8)num=0;
-        }, 3000);
+                if(num==Number('${size}'))num=0;
+        }, 5000);
     });
 </script>
-<!-- if(num==8) 부분 8 말고 ${BannerVO.bseq} 이런 거 넣어서 등록된 배너 이미지 갯수만큼만 보이게 하고싶은데... 내일 시도해보겠습니다 -->
+
 <style>
     @keyframes fadeInUp {
         0% {opacity: 0;transform: translate3d(0, 100%, 0);}

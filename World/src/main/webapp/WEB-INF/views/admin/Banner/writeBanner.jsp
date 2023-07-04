@@ -77,15 +77,15 @@ $(function(){
 	   		</td>
 	   	</tr>
 	   	</table>
+    <input class="btnp" type="submit" value="등록" >
+	<input class="btnn" type="reset" value="취소" >
+</form>
 	<div style="position: relative;top: 13px;width: 600px;left: 750px;">
 		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
 					<input type="file" name="fileimage" id="mymy">
 					<input type="button" id="myButton" value="추가">
 		</form>
 	</div>
-        <input class="btnp" type="submit" value="등록" >
-	<input class="btnn" type="reset" value="취소" >
-</form>
 	
 	</div>
 	</div>
