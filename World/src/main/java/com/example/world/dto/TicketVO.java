@@ -25,7 +25,4 @@ public class TicketVO {
 	private Integer price2;
 	private Integer result;
 	
-	
-	
-	
 }

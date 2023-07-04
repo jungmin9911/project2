@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -88,29 +87,29 @@ public class AdminService {
 		adao.updateNotice(noticevo);
 	}
 
+	// -------------------------------- 배너 ------------------------
 	public List<BannerVO> getBannerList() {
 		return adao.getBannerList();
 	}
-
 	public void insertBanner(BannerVO bannervo) {
-		adao.insertBanner( bannervo );	
-		
+		adao.insertBanner( bannervo );		
 	}
-
 	public void updateSeq(int changeval, String useyn, int bseq) {
 		adao.updateSeq( changeval, useyn, bseq );
-		
+	}
+	public void deleteBanner(int bseq) {
+		adao.deleteBanner(bseq);
 	}
 
+
+	// --------------------------------- Q&A ---------------------------------
 	public HashMap<String, Object> getQnaList(HttpServletRequest request) {
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		HttpSession session = request.getSession();
-		
 		if ( request.getParameter("first") != null) {
 			session.removeAttribute("page");
 			session.removeAttribute("key");
 		}
-		
 		int page = 1;
 		if( request.getParameter("page") != null) {
 			page = Integer.parseInt(request.getParameter("page"));
@@ -121,7 +120,6 @@ public class AdminService {
 			page = 1;
 			session.removeAttribute("page");
 		}
-		
 		String key = "";
 		if( request.getParameter("key") != null ) {
 			key = request.getParameter("key");
@@ -132,27 +130,23 @@ public class AdminService {
 			session.removeAttribute("key");
 			key = "";
 		} 
-		
 		Paging paging = new Paging();
 		paging.setPage(page);
-		
 		int count = adao.getAllCount( "lqna ","title", key );
 		paging.setTotalCount(count);
 		paging.paging();
-		
 		List<QnaVO> list = adao.listQna( paging , key );
 		result.put("qnaList" , list);
 		result.put("paging", paging);
-		result.put("key", key);
-		
+		result.put("key", key);	
 		return result;
 	}
-
 	public void updateQna(int lqseq, String reply) {
 		adao.updateQna( lqseq, reply );
 		
 	}
 
+	// ----------------------------멤버----------------------------------
 	public HashMap<String, Object> getMeberList(HttpServletRequest request) {
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		HttpSession session = request.getSession();
@@ -198,7 +192,8 @@ public class AdminService {
 		
 		return result;
 	}
-
+	
+	// ---------------------------------- 어트랙션 -------------------------------------
 	public HashMap<String, Object> getAttractionList(HttpServletRequest request) {
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		HttpSession session = request.getSession();
@@ -244,14 +239,19 @@ public class AdminService {
 		
 		return result;
 	}
-
 	public void insertat( AttractionVO attractionvo) {
 		adao.insertat( attractionvo );
 	}
-
-	public void updateAttraction(AttractionVO attractionvo) {
-		adao.updateAttraction(attractionvo);
-		
+	public void updateat( AttractionVO attractionvo) {
+		adao.updateat(attractionvo);
 	}
+	public void deleteat(int aseq) {
+		adao.deleteat(aseq);
+	}
+
+	
+
+
+	
 
 }

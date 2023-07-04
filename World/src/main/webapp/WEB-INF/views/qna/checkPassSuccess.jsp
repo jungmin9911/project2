@@ -8,7 +8,7 @@
 <body>
 
 <script type="text/javascript">
-	opener.location.href="qnaView?lqseq=" + "${qseq}";
+	opener.location.href="qnaView?lqseq=" + "${lqseq}";
 	self.close();
 </script>
 
