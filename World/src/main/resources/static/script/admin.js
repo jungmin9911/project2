@@ -43,8 +43,8 @@ function go_view( lqseq ){
 
 
 //------ 공지사항 ------
-function go_insertform(comm){ //공지추가 폼으로 이동
-	document.frm.action = comm;
+function go_insertform(){ //공지추가 폼으로 이동
+	document.frm.action = "insertnoticeForm";
 	document.frm.submit();
 }
 
@@ -56,7 +56,7 @@ function go_insertnt(){ //공지추가 동작액션으로 이동
 		alert('공지할 사진을 입력하세요.'); 	
 		document.insertnt.ncontent.focus();	
 	}else{
-	document.insertnt.action = "world.do?command=insertnotice";
+	document.insertnt.action = "insertnotice";
 	document.insertnt.submit();
 	}
 }

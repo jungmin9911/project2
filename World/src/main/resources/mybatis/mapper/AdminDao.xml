@@ -29,6 +29,11 @@
 		update notice set title=#{title}, ncontent=#{ncontent}, id=#{id} where nseq=#{nseq}
 	</update>
 	
+	<insert id="insertNotice" parameterType="com.example.world.dto.NoticeVO">
+		insert into notice(nseq, title, ncontent )
+		values( notice_neq.nextVal, #{title}, #{ncontent})
+	</insert>
+	
 	
 	<!-- banner -->
 	<select id="getBannerList" resultType="com.example.world.dto.BannerVO">

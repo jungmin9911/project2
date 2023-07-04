@@ -40,12 +40,9 @@ public interface IAdminDao {
 	//Attraction
 	List<QnaVO> listAttraction(Paging paging, String key);
 	void insertat(AttractionVO attractionvo);
+	void insertNotice(NoticeVO noticevo);
 	void updateat(AttractionVO attractionvo);
 	void deleteat(int aseq);
-
-
-
-
 	
 }
 

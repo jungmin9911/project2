@@ -249,9 +249,10 @@ public class AdminService {
 		adao.deleteat(aseq);
 	}
 
-	
+	public void insertNotice(NoticeVO noticevo) {
+		adao.insertNotice(noticevo);
+		
+	}
 
-
-	
 
 }

@@ -160,8 +160,32 @@ public class AdminController {
 		}
 		return url;
 	}
+
+	@RequestMapping("insertnoticeForm")
+	public String insertnoticeForm( ) {
+		return "admin/adminNotice/insertnoticeForm";
+	}
 	
+	@RequestMapping(value="/insertnotice", method = RequestMethod.POST)
+	public String insertnotice( @ModelAttribute("dto") @Valid NoticeVO noticevo,
+							BindingResult result, 
+							Model model
+						) {
+		
+		String url = "admin/adminattraction/insertAttractionForm";
+		if(result.getFieldError("title")!=null)
+			model.addAttribute("message", result.getFieldError("title").getDefaultMessage());
+		else if(result.getFieldError("ncontent")!=null)
+			model.addAttribute("message", result.getFieldError("ncontent").getDefaultMessage());
+		else {
+			as.insertNotice( noticevo );
+			url ="redirect:/adminAttraction";
+		}
+		return url;
+	}
+
 	//------------------------------------회원 관리 -------------------------------------- 
+
 	@RequestMapping("/adminMember")
 	public ModelAndView adminMember(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
