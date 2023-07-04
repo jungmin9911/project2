@@ -162,6 +162,17 @@ select aseq, atname, image from attraction where aresult='Y';
 select * from rest_at_view;
 
 
+----------------------------------------------------------------------------
+
+create or replace view visitnum
+as
+select p1,p2 from Cart2 where visitdate='';
+
+
+select p1,p2 from Cart2 where visitdate='2023-07-20';
+
+select*from lmember;
+
 ---------------------------------------------------------------------
 alter table Lqna add pass varchar2(30);
 

@@ -7,6 +7,19 @@
 <title>비밀번호 찾기</title>
 <script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
+<style>
+input {
+  width: 230px;
+  height: 32px;
+  font-size: 10px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+</style>
 </head>
 <body>
 <div class="findfind">
@@ -44,7 +57,7 @@
     <h2>${message}</h2>
    <br />
    <c:if test="${not empty Lmember}">
-      <h2>회원님의 비밀번호는 '${Lmember.pwd}' 입니다.</h2>
+      <h2><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원님의 비밀번호는 '${Lmember.pwd}' 입니다.</h2>
 
        <div class="founff">
       <input type="button" value="재설정" class="button" onclick="resetPwd();" /></div>

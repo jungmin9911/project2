@@ -21,7 +21,7 @@ public interface IMemberDao {
 	void withDrawalMember(String id);
 	HashMap<String, Object> getCartList(HttpServletRequest request);
 	int getAllCount(String string, String string2, String key);
-	List<Cart2VO> listCart(Paging paging, String key);
+	List<Cart2VO> listCart(Paging paging, String key, String id);
 	MemberVO selectId(String name, String phone);
 	MemberVO selectPwd(String id, String name, String phone);
 	void resetNewPwd(String id, String pwd);

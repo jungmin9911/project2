@@ -43,7 +43,8 @@ public class MemberService {
 	public HashMap<String, Object> getCartList(HttpServletRequest request) {
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		HttpSession session = request.getSession();
-
+		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
+		String id= mvo.getId();
 		if( request.getParameter("first")!=null ) {
 			session.removeAttribute("page");
 			session.removeAttribute("key");
@@ -78,7 +79,7 @@ public class MemberService {
 		paging.setTotalCount(count);
 		paging.paging();
 		
-		List<Cart2VO> cartList = mdao.listCart( paging , key );
+		List<Cart2VO> cartList = mdao.listCart( paging , key,id );
 		result.put("cartList" , cartList);
 		result.put("paging", paging);
 		result.put("key", key);
