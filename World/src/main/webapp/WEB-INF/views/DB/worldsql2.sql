@@ -169,7 +169,7 @@ as
 select p1,p2 from Cart2 where visitdate='';
 
 
-select p1,p2 from Cart2 where visitdate='2023-07-20';
+select p1,p2,id from Cart2 where visitdate='2023-07-17' and result='1';
 
 select*from lmember;
 

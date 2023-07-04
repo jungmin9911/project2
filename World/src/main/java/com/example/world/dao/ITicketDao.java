@@ -1,7 +1,7 @@
 package com.example.world.dao;
 
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -18,7 +18,9 @@ public interface ITicketDao {
 
 	void orderCart(int cseq);
 
-	ArrayList<Cart2VO> getvisitList(LocalDate visitDate);
+	ArrayList<Cart2VO> getvisitList(String visitDate);
+
+	String getvisitDate(int cseq);
 
 
 }
