@@ -105,6 +105,26 @@ function enabled() {
 	}
 }
 
+function go_insertQna(){
+	var chk = document.getElementsByName("check")[0];
+	if ( chk.checked && document.qna.pass.value=="") {
+		alert("비밀번호를 입력하세요");
+		document.qna.pass.focus();
+	}else if(document.qna.title.value==""){
+		alert("제목을 입력해주세요");
+		document.qna.title.focus();
+	}else if(document.qna.content.value==""){
+		alert("문의 내용을 입력해주세요");
+		document.qna.content.focus();
+	}else{		
+		document.qna.action="qnaWrite";
+		document.qna.submit();	
+	}
+}
+
+
+ 
+
 
 
                 

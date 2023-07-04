@@ -24,11 +24,11 @@ function loginCheck(){
 		alert("비밀번호 필수 입력사항 입니다");
 		document.loginFrm.pwd.focus();
 		return false;
-		}else{
-	document.loginFrm.action = "login";
-	document.loginFrm.submit();
-			return true;
-		}
+	}else{
+		document.loginFrm.action = "login";
+		document.loginFrm.submit();
+		return true;
+	}
 }
 
 function go_contract(){
