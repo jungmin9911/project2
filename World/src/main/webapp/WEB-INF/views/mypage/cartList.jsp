@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../header.jsp" %>
-<script src="mypage/mypage.js"></script>
+<script src="script/mypage.js"></script>
 
 <form name="formm" method="post">
 <section class="notice">
   <div class="page-title">
         <div class="container">
             <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">주문 내역</h3>
+            <br><h2>${message}</h2>
         </div>
     </div>
     <div class="board-list">
@@ -72,7 +73,7 @@
 			    	<a href="#"onClick="go_cart_delete()"><h3>삭제하기</h3></a>
 			    </div>
 			    <div class="dede" style="float:right;">
-			    	<a href="#"onClick="go_order()"><h3>결제하기</h3></a>
+			    	<a href="#"onClick="go_order(${cart2VO.visitdate})"><h3>결제하기</h3></a>
 		    	</div>
         	</div>
     	</div>

@@ -378,8 +378,8 @@ public class MemberController {
 	public ModelAndView cartList(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
-		MemberVO cvo = (MemberVO)session.getAttribute("loginUser");
-		if(cvo==null)
+		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
+		if(mvo==null)
 			mav.setViewName("redirect:/login");
 		else {
 			HashMap<String, Object> result =  ms.getCartList( request );
