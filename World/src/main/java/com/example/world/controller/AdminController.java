@@ -142,13 +142,15 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.POST)
-	public String noticeUpdate(@ModelAttribute("dto") @Valid NoticeVO noticevo,
+	public String noticeUpdate(@ModelAttribute("noticeVO") @Valid NoticeVO noticevo,
 			BindingResult result, Model model, HttpServletRequest request) {
 		String url="admin/adminNotice/noticeUpdate";
 		if(result.getFieldError("title")!=null)
 			model.addAttribute("message", result.getFieldError("title").getDefaultMessage());
 		else if(result.getFieldError("ncontent")!=null)
 			model.addAttribute("message", result.getFieldError("ncontent").getDefaultMessage());
+		else if(result.getFieldError("id")!=null)
+			model.addAttribute("message", result.getFieldError("id").getDefaultMessage());
 		else {
 			if(noticevo.getNcontent()==null||noticevo.getNcontent().equals(""))
 				noticevo.setNcontent(request.getParameter("oldfilename"));

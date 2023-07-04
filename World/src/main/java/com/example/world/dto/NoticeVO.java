@@ -9,7 +9,7 @@ import lombok.Data;
 public class NoticeVO {
 	private Integer nseq; 
 	private String title; 
-	private String  ncontent;
+	private String ncontent;
 	private String id;
 	private Timestamp indate;
 }
