@@ -26,7 +26,7 @@
 	</select>
 	
 	<update id="updateNotice" parameterType="com.example.world.dto.NoticeVO">
-		update notice set title=#{title}, ncontent=#{ncontent} where nseq=#{nseq}
+		update notice set title=#{title}, ncontent=#{ncontent}, id=#{id} where nseq=#{nseq}
 	</update>
 	
 	
