@@ -23,4 +23,8 @@
 		select p1,p2 from Cart2 where visitdate=#{param1} and result='1'
 	</select>
 	
+	
+	<select id="getvisitDate" resultType="String">
+		select visitdate from Cart2 where cseq=#{param1}
+	</select>
 </mapper>

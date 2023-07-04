@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -162,46 +163,32 @@ public class TicketController {
 		}
 	
 	
-	
+	@Transactional
 	@RequestMapping(value = "/cartOrder", method = RequestMethod.POST)
-		public ModelAndView cartOrder( HttpServletRequest request,
-				@RequestParam("visitdate") String visitdate
-				) {
-		ModelAndView mav = new ModelAndView();
-		System.out.println( visitdate );
-		System.out.println("");
-		//String visitDate= visitdate.toString();
-		LocalDate visitDate = LocalDate.parse(visitdate);
-		int cnt=10;
-		int visitnum=0;
-		
-		ArrayList<Cart2VO> visitList = ts.getvisitList(visitDate);
-		
-		for(int i=0; i<visitList.size(); i++ ) {
-			
-			int p1 =+ visitList.get(i).getP1();
-			int p2 =+ visitList.get(i).getP2();
-			visitnum=p1+p2;
-		}
-		
-		if(visitnum > cnt) {
-			mav.addObject("message","선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
-			
-		}else {
-			String[] cseqArr =request.getParameterValues("cseq");
-			
-			for( String cseq : cseqArr)
-				ts.orderCart(Integer.parseInt(cseq));
-		}
-			HashMap<String, Object> result =  ms.getCartList( request );
-			mav.addObject("cartList",  (List<Cart2VO>)result.get("cartList")  );
-			mav.addObject("paging", (Paging)result.get("paging") );
-			mav.addObject("key", (String)result.get("key") );
-			mav.setViewName("mypage/cartList");
-			
-			return mav;
-		
-		}
-	
+	public ModelAndView cartOrder(HttpServletRequest request) {
+	    ModelAndView mav = new ModelAndView();
+	    int cnt = 10;
+	    String[] cseqArr = request.getParameterValues("cseq");
+
+	    for (String cseq : cseqArr) {
+	        ts.orderCart(Integer.parseInt(cseq));
+	        int visitNum = ts.orderCheck(Integer.parseInt(cseq));
+	        if (visitNum > cnt) {
+	            mav.addObject("message", "선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
+	            System.out.println("선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
+	            System.out.println();
+	            System.out.println();
+	            throw new RuntimeException("선택하신 날짜의 인원이 마감되었습니다");
+	        }
+	    }
+
+	    HashMap<String, Object> result = ms.getCartList(request);
+	    mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
+	    mav.addObject("paging", (Paging) result.get("paging"));
+	    mav.addObject("key", (String) result.get("key"));
+	    mav.setViewName("mypage/cartList");
+
+	    return mav;
+	}
 	
 }

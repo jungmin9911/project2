@@ -31,9 +31,8 @@ function go_cart_delete(){
 	}
 	
 	
-function go_order(visitdate){
+function go_order(){
 	var count=0;
-	document.write(visitdate);
 	if(document.formm.cseq.length==undefined){
 		//체크박스가 한개인 경우
 		if(document.formm.cseq.checked==true)
@@ -49,7 +48,7 @@ function go_order(visitdate){
 	if(count ==0){
 			alert("결제할 항목을 선택하세요");
 	}else{
-			document.formm.action="cartOrder?visitdate="+visitdate;
+			document.formm.action="cartOrder";
 			document.formm.submit();
 			//jsp파일에 있는 체크된 체크박스 들의 벨류 (cseq값들)이 배열로 전송된다.
 		}
