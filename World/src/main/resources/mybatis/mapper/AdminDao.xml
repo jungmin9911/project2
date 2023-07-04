@@ -80,7 +80,7 @@
 		) where rn &lt; = #{param1.endNum}
 	</select>
 	
-	<insert id="insertat" parameterType="com.example.world.dto.AttractionVO">>	
+	<insert id="insertat" >	
 		insert into attraction
 			(aseq, atname, acontent , act1, act2, image,
 				pnum, limitkey, limitage, bestat, aresult )
