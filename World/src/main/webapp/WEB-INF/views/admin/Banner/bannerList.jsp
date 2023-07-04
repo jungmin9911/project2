@@ -16,8 +16,9 @@
    <div class="board-searchh">
       <div class="containerr">
               <div class="search-wrap">
-                <button type="submit" style ="float:right;" class="btn btn-darkk" value="등록" 
+                <button type="submit" class="btn btn-dark" value="등록" style ="float:right; margin:0 0 20px;" 
     					onClick="go_insertform('newBannerWrite')">새배너등록</button>
+    					<br>
           </div>
      </div>
     </div>
@@ -85,6 +86,7 @@
 		</table>
 		</div>
 	</div>
+	<div style="height:150px"></div>
 </form>
 
 <article>

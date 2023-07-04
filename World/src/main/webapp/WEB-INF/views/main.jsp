@@ -11,7 +11,7 @@
         }, 3000);
     });
 </script>
-
+<!-- if(num==8) 부분 8 말고 ${BannerVO.bseq} 이런 거 넣어서 등록된 배너 이미지 갯수만큼만 보이게 하고싶은데... 내일 시도해보겠습니다 -->
 <style>
     @keyframes fadeInUp {
         0% {opacity: 0;transform: translate3d(0, 100%, 0);}
@@ -38,7 +38,7 @@
 
 
 <div id="mainTodayArea" >
-	<a href="guide" target='_blank'>
+	<a href="guide">
  		<img src="images/icons/mainTodayArea_tit_icon.png"/>&nbsp;&nbsp;&nbsp;오늘의 파크 운영시간&nbsp;&nbsp;10:00 ~ 21:00
 	</a>
 </div>

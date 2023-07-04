@@ -13,7 +13,7 @@
 <section class="notice">
   <div class="page-titlee">
         <div class="containerr">
-            <h3 style=" margin-right:70px; font-size: 60px;color: #333333;font-weight: 400;text-align: center;"> 어트렉션 관리 </h3>
+            <h3 style=" margin-right:70px; font-size: 60px;color: #333333;font-weight: 400;text-align: center;"> 어트랙션 관리 </h3>
         </div>
     </div>
 
@@ -22,11 +22,11 @@
             <div class="search-window">
                 
                     <div class="search-wrap" >
-                        <label for="search" class="blind">어트렉션 검색 </label>
-                        <input id="search" type="search" name="key" placeholder="어트렉션 이름을 입력해주세요." value="${key}">
+                        <label for="search" class="blind">어트랙션 검색 </label>
+                        <input id="search" type="search" name="key" placeholder="어트랙션 이름을 입력해주세요." value="${key}">
                         <button type="submit" class="btn btn-dark" value="검색" onClick="go_search('adminAttraction')">검색</button>
-                        <button type="submit" class="btn btn-darkk" value="전체보기" onClick="go_total('adminAttraction')">전체보기</button>
-                        <button type="submit" class="btn btn-darkk" value="추가" onClick="go_insertform('atInsertForm')"> 추가 </button>
+                        <button type="submit" class="btn btn-dark" value="전체보기" onClick="go_total('adminAttraction')">전체보기</button>
+                        <button type="submit" class="btn btn-dark" value="추가" onClick="go_insertform('atInsertForm')"> 추가 </button>
                         <!-- <button type="submit" class="btn btn-darkk" value="추가" onClick="location.href='/atInsertForm'">추가</button> -->
                         
                     </div>
@@ -41,31 +41,28 @@
                 <thead>
                 <tr>
                     <th scope="col" class="th-num">번호</th>
-                    <th scope="col" class="th-title">어트렉션 이름</th>
+                    <th scope="col" class="th-title">어트랙션 이름</th>
                     <th scope="col" class="th-date">운휴일</th>
                    
                 </tr>
-                
                 </thead>
-     		<c:forEach items="${attractionList}" var="AttractionVO">
-			<tr><td>${ AttractionVO.aseq}</td>
-		    	<td><a href="adminattractionDetail?aseq=${AttractionVO.aseq}">${AttractionVO.atname}</a>
-		    	</td><td>${AttractionVO.aresult}</td>
-		    	
-		    	</tr>
-	  </c:forEach>
+	     		<c:forEach items="${attractionList}" var="AttractionVO">
+					<tr>
+						<td>${ AttractionVO.aseq}</td>
+			    		<td><a href="adminattractionDetail?aseq=${AttractionVO.aseq}">${AttractionVO.atname}</a>
+			    		</td><td>${AttractionVO.aresult}</td>
+			    	</tr>
+		  		</c:forEach>
             </table>
         </div>
-<br>
-       <jsp:include page="../../paging/page.jsp">
-	<jsp:param name="command" value="adminAttraction" />
-</jsp:include>
-
+		<br>
+		<jsp:include page="../paging/paging.jsp">
+			<jsp:param name="command" value="adminAttraction" />
+		</jsp:include>
     </div>
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 </section>
 </form>
-
 <%@ include file="../footer.jsp" %>
 
  

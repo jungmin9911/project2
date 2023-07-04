@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+	body{text-align:center;}
 	#paging{font-size: 150%;}
 </style>
 </head>
@@ -30,6 +31,5 @@
 			<a href="${action}?page=${paging.endPage+1}">▶</a>&nbsp;
 	</c:if>	
 </div>
-
 </body>
 </html>

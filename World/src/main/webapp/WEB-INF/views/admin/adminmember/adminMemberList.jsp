@@ -25,7 +25,7 @@
                         <label for="search" class="blind"> 회원 이름 검색 </label>
                         <input id="search" type="search" name="key" placeholder="회원 이름을 입력해주세요." value="${key }">
                         <button type="submit" class="btn btn-dark" value="검색" onClick="go_search('adminMember');">검색</button>
-                        <button type="submit" class="btn btn-darkk" value="전체보기" onClick="go_total('adminMember');">전체보기</button>
+                        <button type="submit" class="btn btn-dark" value="전체보기" onClick="go_total('adminMember');">전체보기</button>
                           
                     </div>
                
@@ -59,20 +59,11 @@
             </table>
         </div>
         <br>
-        <jsp:include page="../../paging/page.jsp">
-		<jsp:param name="command" value="world.do?command=adminmember" />
-		</jsp:include>
-    </div>
-<br><br><br><br><br><br><br><br>
+<jsp:include page="../paging/paging.jsp">
+	<jsp:param name="command" value="adminmember" />
+</jsp:include>
+<br><br><br><br><br>
+</div>
 </section>
 </form>
-    
-
-	
-
-
-
-
-
-
 <%@ include file ="../footer.jsp"%>
