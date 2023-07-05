@@ -1,5 +1,6 @@
 package com.example.world.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -45,6 +46,13 @@ public interface IAdminDao {
 	void deleteat(int aseq);
 
 	void noticeDelete(int nseq);
+
+	String getName(String workId);
+
+	ArrayList<AdminVo> getAdmin();
+
+	
+
 	
 }
 

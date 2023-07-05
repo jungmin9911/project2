@@ -10,7 +10,7 @@ $(function(){
 		var formdata = new FormData(formselect);   
 		
 		$.ajax({    
-			url:"<%=request.getContextPath() %>/fileup",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
+			url:"<%=request.getContextPath() %>/fileupat",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
 			type:"POST",
 			enctype:"multipart/form-data",
 			async: false, 
@@ -23,7 +23,7 @@ $(function(){
 	            if( data.STATUS == 1 ){
 	            	$("#filename").append("<div>"+data.FILENAME+"</div>");
 	            	$("#image").val(data.FILENAME);
-	            	$("#filename").append("<img src='images/"+data.FILENAME+"' height='150'/>");
+	            	$("#filename").append("<img src='images/attraction_images/"+data.FILENAME+"' height='150'/>");
 	            }
 	        },
 	        error: function() {				alert("실패");			}
@@ -74,15 +74,36 @@ $(function(){
 				value="${AttractionVO.limitage }"></td>
 		</tr>
 		<tr>
-			<th>베스트(Y/N)</th> <td width="642" >
-			<input type="text" name="bestat" size="47" 
-				value="${AttractionVO.bestat }"></td>
+			<th>베스트 어트랙션(Y/N)</th>
+			<td width="642">
+						<c:choose>
+				  			<c:when test='${AttractionVO.bestat=="Y"}'>
+				  				<input type="radio" style="width:17px;height:17px;border:1px;" name="bestat" value="Y" checked="checked">사용
+				  				<input type="radio" style="width:17px;height:17px;border:1px;" name="bestat" value="N">미사용
+				  			</c:when>
+							<c:otherwise>
+								<input type="radio" style="width:17px;height:17px;border:1px;" name="bestat" value="Y">사용
+								<input type="radio" style="width:17px;height:17px;border:1px;" name="bestat" value="N" checked="checked">미사용
+							</c:otherwise>
+						</c:choose>
+			</td>
 		</tr>
 		<tr>
-			<th>운휴정보(Y/N)</th> <td width="642" >
-			<input type="text" name="aresult" size="47"
-				value="${AttractionVO.aresult }" ></td>
+			<th>운휴 정보(Y/N)</th>
+			<td width="642">	
+				<c:choose>
+				 	<c:when test='${AttractionVO.aresult=="Y"}'>
+				 		<input type="radio" style="width:17px;height:17px;border:1px;" name="aresult" value="Y" checked="checked">사용
+						<input type="radio" style="width:17px;height:17px;border:1px;" name="aresult" value="N">미사용
+				  	</c:when>
+					<c:otherwise>
+						<input type="radio" style="width:17px;height:17px;border:1px;" name="aresult" value="Y">사용
+						<input type="radio" style="width:17px;height:17px;border:1px;" name="aresult" value="N" checked="checked">미사용
+					</c:otherwise>
+				</c:choose>	
+			</td>
 		</tr>
+		
 		<tr height="250"><th>어트랙션 이미지</th>
 	    	<td width="642" style="vertical-align:top; ">
 	    		현재이미지 : <img src="images/${AttractionVO.image}" width="200pt"><br>

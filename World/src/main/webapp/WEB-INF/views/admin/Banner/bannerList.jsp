@@ -30,10 +30,10 @@
                 <tr>
                     <th scope="col" class="th-num">번호</th>
                     <th scope="col" class="th-title">제목</th>
-                    <th scope="col" class="th-title">순위</th>
-                    <th scope="col" class="th-title">사용유무</th>
+                    <th scope="col" class="th-num">순위</th>
+                    <th scope="col" class="th-num">사용유무</th>
                     <th scope="col" class="th-date">등록일</th>
-                	<th scope="col" class="th-answer">삭제</th>  
+                	<th scope="col" class="th-num">삭제</th>  
             	</tr>
                 </thead>
 		
@@ -48,48 +48,57 @@
 					<c:forEach items="${bannerList}" var="bannerVO">
 						<tr>
 							<td height="23" align="center" >${bannerVO.bseq}</td>
-		    				<td style="text-align:left; padding-left:50px; padding-right:0px;width:300px;">
+		    				<td style="text-align:center; width:300px;">
 		    						${bannerVO.subject}
 		    				</td>
 		    				<td>
-			    						<select name="order_seq" id="${bannerVO.bseq}"	
-			    								onChange="change_order('${bannerVO.bseq}');">
-				    							<c:forEach var="cnt" begin="1" end="8" varStatus="status">
-				    								<c:choose>
-											<c:when test="${cnt==bannerVO.order_seq}">
-												<option value="${cnt}" selected>${cnt}</option>
-											</c:when>
-											<c:otherwise>
-												<option value="${cnt}">${cnt}</option>
-											</c:otherwise>
-										</c:choose>
-									</c:forEach>
-									<c:choose>
-										<c:when test="${bannerVO.order_seq==9}">
-											<option value="9" selected>사용안함</option>
+			    				<select name="order_seq" id="${bannerVO.bseq}"	
+			    					onChange="change_order('${bannerVO.bseq}');">
+				    			<c:forEach var="cnt" begin="1" end="8" varStatus="status">
+				    				<c:choose>
+										<c:when test="${cnt==bannerVO.order_seq}">
+											<option value="${cnt}" selected>${cnt}</option>
 										</c:when>
 										<c:otherwise>
-											<option value="9">사용안함</option>
+											<option value="${cnt}">${cnt}</option>
 										</c:otherwise>
 									</c:choose>
-							</select></td>
+								</c:forEach>
+								<c:choose>
+									<c:when test="${bannerVO.order_seq==9}">
+										<option value="9" selected>사용안함</option>
+									</c:when>
+									<c:otherwise>
+										<option value="9">사용안함</option>
+									</c:otherwise>
+								</c:choose>
+								</select>
+							</td>
 							<td>${bannerVO.useyn}</td>
 							<td width="150"><fmt:formatDate value="${bannerVO.indate}" /></td>
-							<td><input type="button" value="삭제"
+							<td><input type="button" style="width: 60px;
+														  height: 32px;
+														  font-size: 10px;
+														  text-align: center;
+														  border: 0;
+														  border-radius: 15px;
+														  outline: none;
+														  padding : 0;
+														  background-color: rgb(233, 233, 233);" 
+														  value="삭제"
 								onClick="go_deleteBanner('${bannerVO.bseq}')">
-							</td>
-								 
+							</td>	 
 						</tr>
 					</c:forEach>
 				</c:otherwise>
 			</c:choose>
 		</table>
-		</div>
 	</div>
-	<div style="height:150px"></div>
+</div>
+<div style="height:150px"></div>
 </form>
 
-<article>
+
 
  
 

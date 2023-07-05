@@ -211,6 +211,32 @@ if(confirm('정말 삭제하시겠습니까?')){
 	}
 }
 
+
+
+//답글달기
+function go_rep(lqseq){
+	document.frm.action="adminQnaRepSave";
+	document.frm.submit();
+}
+
+
+
+
+
+
+// --------------------------------------------배너
+function change_order( bseq ){
+	var selectTag = document.getElementById(bseq);  
+	// 각 SELECT 태그의 ID를 BSEQ 값으로 설정해 놓았습니다. 따라서 방금 값이 바뀐 SELECT  태그는 매개변수로 전달된
+	// BSEQ 값으로 식별하여 selectTag 변수에 저장할 수 있습니다
+	 
+	var selectVal = selectTag.options[ selectTag.selectedIndex ].value;
+	// 식별한 SELECT 태그의 선택된 인덱스값으로 선택된 값을 추출합니다
+	
+	location.href='change_order?bseq=' + bseq + '&changeval=' + selectVal;
+	// BSEQ 와 바꾸려는 값을 갖고 change_order 리퀘스트로 이동합니다
+}
+
 function go_deleteBanner(bseq){
 if(confirm('정말 삭제하시겠습니까?')){
 	var url="deleteBanner?bseq=" + bseq; 
@@ -218,9 +244,7 @@ if(confirm('정말 삭제하시겠습니까?')){
 	}
 }
 
-//답글달기
-function go_rep(lqseq){
-	document.frm.action="adminQnaRepSave";
-	document.frm.submit();
-}
+
+
+
 

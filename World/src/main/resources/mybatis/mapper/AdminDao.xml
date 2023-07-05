@@ -7,7 +7,10 @@
  	<select id="getPwd"  resultType="string">
 		select pwd from Lworker where id=#{param1}
 	</select>
-	
+	<select id="getName" >
+		select name from Lworker where id=#{param1}
+	</select>
+
 	<select id="getAllCount" resultType="_int">
 		select count(*) from ${param1} where ${param2} like '%'||#{param3}||'%'
 	</select>

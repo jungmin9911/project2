@@ -201,7 +201,8 @@ section.notice {padding:  0;}
 .board-tablee a {color: #333;display: inline-block;line-height: 1.4;word-break: break-all;vertical-align: middle;}
 .board-tablee a:hover {text-decoration: underline;}
 .board-tablee th {text-align: center;}
-.board-tablee .th-num {width: 100px;text-align: center;}
+.board-tablee th {text-align: center;}
+.board-tablee .th-num {width: 100px; text-align: center;}
 .board-tablee .th-date {width: 200px;}
 .board-tablee th, .board-tablee td {padding: 14px 0;}
 .board-tablee tbody td {border-top: 1px solid #e7e7e7;text-align: center;}

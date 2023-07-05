@@ -1,6 +1,7 @@
 package com.example.world.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.world.dto.AdminVo;
@@ -32,8 +32,8 @@ import com.example.world.service.AdminService;
 import com.example.world.service.AttractionService;
 import com.example.world.service.NoticeService;
 import com.example.world.service.QnaService;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 
 
@@ -42,6 +42,10 @@ public class AdminController {
 
 	@Autowired
 	AdminService as;
+	
+	@Autowired
+	ServletContext context;
+	
 	
 	@RequestMapping("/admin")
 	public String admin() {
@@ -76,7 +80,11 @@ public class AdminController {
 		
 		if(result == 1) {
 	    		HttpSession session = request.getSession();
-	    		session.setAttribute("workId", workId);
+	    		session.setAttribute("adminUser", workId);// Id를 adminUser이름으로 가져감
+	   
+	    		String name = as.getName( workId ); // workId에 대한 이름을 select해서 name으로 저장
+	    		session.setAttribute("name", name); // name을 name이란 이름으로 가져감 
+	    		
 	    		mav.setViewName("redirect:/adminMain");
 		} else if (result == 0) {
 	        	mav.addObject("message", "비밀번호를 확인하세요.");
@@ -85,6 +93,9 @@ public class AdminController {
 	    		mav.addObject("message", "아이디를 확인하세요.");
 	    		mav.setViewName("admin/adminLogin/adminLoginForm");
 		}	
+		
+		
+		
 		
 		return mav;
 	}	
@@ -163,6 +174,26 @@ public class AdminController {
 			url="redirect:/adminNoticeDetail?nseq=" + noticevo.getNseq();
 		}
 		return url;
+	}
+	
+	// 파일업로드 공지사항
+	@RequestMapping(value="fileupno", method=RequestMethod.POST)
+	@ResponseBody // 추가해야 원래 페이지로 이동 
+	public HashMap<String, Object> fileupno( Model model,
+										   HttpServletRequest request 
+										  
+										 ) {
+		String path = context.getRealPath("/images/notice_images"); ; 
+
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		try {
+			MultipartRequest multi = new MultipartRequest(
+					request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
+				);
+			result.put("STATUS", 1);
+			result.put("FILENAME", multi.getFilesystemName("fileimage") );		
+		}catch (IOException e) {e.printStackTrace();}
+		return result;
 	}
 	
 	// 공지사항 추가
@@ -244,6 +275,26 @@ public class AdminController {
 			mav.setViewName("admin/adminattraction/adminattraction");
 		}
 		return mav;
+	}
+	
+	// 파일업로드 어트랙션
+	@RequestMapping(value="fileupat", method=RequestMethod.POST)
+	@ResponseBody // 추가해야 원래 페이지로 이동 
+	public HashMap<String, Object> fileupat( Model model,
+										   HttpServletRequest request 
+										  
+										 ) {
+		String path = context.getRealPath("/images/attraction_images"); ; 
+
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		try {
+			MultipartRequest multi = new MultipartRequest(
+					request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
+				);
+			result.put("STATUS", 1);
+			result.put("FILENAME", multi.getFilesystemName("fileimage") );		
+		}catch (IOException e) {e.printStackTrace();}
+		return result;
 	}
 	
 	// 어트래션 추가폼으로 이동
@@ -416,24 +467,43 @@ public class AdminController {
 	}
 	
 
-	// 파일 업로드 
-	@Autowired
-	ServletContext context;
-	
-	@RequestMapping(value="fileup", method=RequestMethod.POST)
+	// 파일 업로드 배너
+
+	@RequestMapping(value="fileupba", method=RequestMethod.POST)
 	@ResponseBody // 추가해야 원래 페이지로 이동 
-	public HashMap<String, Object> fileup( Model model, 
-			HttpServletRequest request ) {
-		String path = context.getRealPath("/images");
+	public HashMap<String, Object> fileupba( Model model,
+										   HttpServletRequest request 
+										  
+										 ) {
+		String path = context.getRealPath("/images/banner"); ; 
+		/*
+		  switch( kind ) { 
+		  	case "attraction" : 
+		  		path = context.getRealPath("/images/attraction_images"); 
+		  	break; 
+		  	case "banner" : 
+		  		path = context.getRealPath("/images/banner"); 
+		  	break; 
+		  	case "notice" : 
+		  		path = context.getRealPath("/images/notice_images"); 
+		  		break; 
+		  }
+		 /*
+		  if (kind.equals( "attraction" )) {
+		        path = context.getRealPath("/images/attraction_images");
+		    } else if (kind.equals("banner")) {
+		        path = context.getRealPath("/images/banner");
+		    } else if (kind.equals("notice")) {
+		        path = context.getRealPath("/images/notice_images");
+		    }
+		  */ 
 		HashMap<String, Object> result = new HashMap<String, Object>();
-		
 		try {
 			MultipartRequest multi = new MultipartRequest(
 					request, path, 5*1024*1024, "UTF-8", new DefaultFileRenamePolicy()
 				);
 			result.put("STATUS", 1);
-			result.put("FILENAME", multi.getFilesystemName("fileimage") );
-			
+			result.put("FILENAME", multi.getFilesystemName("fileimage") );		
 		}catch (IOException e) {e.printStackTrace();}
 		return result;
 	}
@@ -462,6 +532,7 @@ public class AdminController {
 		as.updateSeq( changeval, useyn, bseq);
 		return"redirect:/adminBannerList";
 	}
+	
 	// 배너 삭제
 	@RequestMapping ("/deleteBanner")
 	public String deleteBanner ( @RequestParam ("bseq") int bseq,
