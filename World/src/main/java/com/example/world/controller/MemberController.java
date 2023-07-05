@@ -267,17 +267,6 @@ public class MemberController {
 		return url;
 	}
 	
-	
-	
-	@RequestMapping("/withdrawal")
-	public String withdrawal( HttpServletRequest request , Model model) {
-		
-		HttpSession session = request.getSession();
-		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
-		ms.withdrawalMember( mvo.getId() );
-		model.addAttribute("message" , "회원탈퇴가 정상적으로 처리되었습니다");
-		return "member/login";
-	}
 
 	
 	@RequestMapping("/selectId")
@@ -390,6 +379,16 @@ public class MemberController {
 		}
 		return mav;	
 	}
+	
+	@RequestMapping("/deleteMember")
+	public String deleteMember( HttpServletRequest request , Model model) {
+		HttpSession session = request.getSession();
+		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
+		ms.withdrawalMember( mvo.getId() );
+		model.addAttribute("message" , "회원탈퇴가 정상적으로 처리되었습니다");
+		return "member/login";
+	}
+	
 	
 }
 
