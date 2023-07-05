@@ -27,4 +27,18 @@
 	<select id="getvisitDate" resultType="String">
 		select visitdate from Cart2 where cseq=#{param1}
 	</select>
+	
+	
+	<update id="returnOrder">
+		update cart2 set result='0' where cseq=#{param1}
+	</update>
+	
+	<select id="fastCheck" resultType="com.example.world.dto.Cart2VO">
+		select*from Cart2 where visitdate=#{param1} and result='1' and kind='1'
+	</select>
+	
+	<select id="kindCheck" resultType="com.example.world.dto.Cart2VO">
+		select*from Cart2 where cseq=#{param1}
+	</select>
+	
 </mapper>
