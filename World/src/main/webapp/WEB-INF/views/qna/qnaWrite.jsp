@@ -62,14 +62,15 @@ function go_insertQna(){
 					</td>
 				</tr>
 			</table>
-			<br>
-		<div id="buttons">
+		</form>
+		<br>
+		<div class="buttons">
 			<input type="button" value="글쓰기" class="purpleBtn" style="border:none;" 
 				onclick="go_insertQna()"> 
-			<input type="reset" value="취소" class="purpleBtn"  
-				onclick="location.href='qnaList'" style="border:none;">
+			<input type="reset" value="취소" class="purpleBtn" style="border:none;"  
+				onclick="location.href='qnaList'">
 		</div>
-		</form>
+		<br>
 	</div>
 </div>
 </article>

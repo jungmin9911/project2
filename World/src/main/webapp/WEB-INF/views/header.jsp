@@ -11,6 +11,9 @@
 <script src="script/event02.js"></script>  
 <script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="wrap">
@@ -41,7 +44,7 @@
 			<div class="category">
 				<div class="dropdown">
 					<button class="dropbtn"> 
-						<span style="">즐길거리</span>
+						<span>즐길거리</span>
 					</button>
 					<div class="dropdown-content">
 						<a href="/attractionForm">어트렉션</a>

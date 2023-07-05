@@ -11,14 +11,14 @@
 			<div class="basic_box_text">
 				<label>아이디</label><br>
 				<input type="text" name="id" class="dup" style="width:430px;"><input type="hidden" name="reid">
-			    <input type="button" value="중복 체크" onclick="idcheck()" style="width:100px; float:right;"><br>
+			    <input type="button" value="중복 체크" onclick="idcheck()" style="width:100px; float:right; font-family:'IBM Plex Sans KR', sans-serif;"><br>
 			    <label>비밀번호</label><br><input type="password" name="pwd" class="dup"><br>
 			    <label>비밀번호 확인</label><br><input type="password" name="pwdCheck" class="dup"><br>
 			    <label>이름</label><br><input type="text" name="name" class="dup"><br>
 			    <label id=last>휴대폰 번호</label><br><input type="text" name="phone" class="dup"><br>
 			    
-			    <label>우편번호</label><br><input type="text" class="dup"  id="sample6_postcode"   name="zip_num"  style="width:400px; " readonly>      
-			    <input type="button" onclick="sample6_execDaumPostcode()" class="dup" value="우편번호 찾기" style="width:140px; float:right; text-align:center"><br>
+			    <label>우편번호</label><br><input type="text" class="dup"  id="sample6_postcode"   name="zip_num"  style="width:390px; " readonly>      
+			    <input type="button" onclick="sample6_execDaumPostcode()" class="dup" value="우편번호 찾기" style="width:140px; float:right; text-align:center; font-family:'IBM Plex Sans KR', sans-serif;"><br>
 				<label>주소</label><br>
 						<input type="text" class="dup"  id="sample6_address"  size="50" name="address1"  value="${dto.address1}" readonly><br><br>
 				<label>상세주소</label><br>

@@ -15,7 +15,7 @@
 <section class="notice">
   <div class="page-title">
         <div class="container">
-            <h3 style=" margin-right:70px; font-size: 60px;color: #333333;font-weight: 400;text-align: center;"> QnA </h3>
+            <h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px;">QnA</h3>
         </div>
     </div>
 
