@@ -279,7 +279,7 @@ nav#sub_menu ul { margin-left: -20px;}
 #myButton{ width: 150px;height: 32px; font-size: 12px; border: 0;border-radius: 15px;outline: none;
     		padding: 3px;background-color: rgb(233, 233, 233);}
   input { width: 400px; height: 40px;font-size: 10px;border: 0;border-radius: 15px;outline: none;
-  		padding-left: 10px;background-color: rgb(233, 233, 233);}
+  		background-color: rgb(233, 233, 233);}
 
 .baba tr{height:100px;}
 .baba td{width:600px;border:none; }

@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<article>
 <form name="frm" method="post">
 <section class="notice">
 <div class="page-title">
 	<div class="container">
-		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px;">공지사항</h3>
+		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px; text-align:center;">공지사항</h3>
 	</div>
 </div>
 
@@ -53,5 +54,5 @@
 	<jsp:param name="command" value="notice" />
 </jsp:include>
 <br><br><br><br><br><br><br>
-
+</article>
 <%@ include file="../footer.jsp" %>

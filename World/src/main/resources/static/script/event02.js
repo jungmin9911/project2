@@ -1,23 +1,19 @@
-/**
- * 
- */function slidesPlugin() {
-     const slides = document.querySelectorAll(".slide");
+function slidesPlugin() {
+  const slides = document.querySelectorAll(".slide");
 
-     slides[activeSlide].classList.add("active");
+  for (const slide of slides) {
+    slide.addEventListener("click", () => {
+      clearActiveClasses();
+      slide.classList.add("active");
+    });
+  }
 
-     for (const slide of slides) {
-       slide.addEventListener("click", () => {
-         clearActiveClasses();
+  function clearActiveClasses() {
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+  }
+}
 
-         slide.classList.add("active");
-       });
-     }
-
-     function clearActiveClasses() {
-       slides.forEach((slide) => {
-         slide.classList.remove("active");
-       });
-     }
-   }
-
-   slidesPlugin();
+// 페이지가 로드되면 slidesPlugin() 함수 호출
+window.addEventListener("load", slidesPlugin);
