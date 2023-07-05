@@ -38,7 +38,6 @@ function go_order(){
 		if(document.formm.cseq.checked==true)
 			count++;
 	}else{
-		//체크박스가 두개 이상인 겨우 반복실행문을 이용하여 모든 체크박스를 하나씩 점검하여 체크된 갯수 카운트
 		for(var i=0; i<document.formm.cseq.length; i++){
 			if(document.formm.cseq[i].checked==true)
 			count++;
@@ -47,10 +46,74 @@ function go_order(){
 
 	if(count ==0){
 			alert("결제할 항목을 선택하세요");
-	}else{
+	}else if(count ==1){
 			document.formm.action="cartOrder";
 			document.formm.submit();
 			//jsp파일에 있는 체크된 체크박스 들의 벨류 (cseq값들)이 배열로 전송된다.
-		}
+	}else{
+		alert("한번에 하나만 결제 가능합니다");
+		return;
+	}
 }
 	
+function showConfirmationPopup(message, callback) {
+    var confirmation = confirm(message);
+
+    if (confirmation) {
+        callback(true); // 예 선택 시 콜백 함수 호출
+    } else {
+        callback(false); // 아니오 선택 시 콜백 함수 호출
+    }
+}
+
+function go_cart_return() {
+	
+	var count=0;
+	if(document.formm.cseq.length==undefined){
+		//체크박스가 한개인 경우
+		if(document.formm.cseq.checked==true)
+			count++;
+	}else{
+		for(var i=0; i<document.formm.cseq.length; i++){
+			if(document.formm.cseq[i].checked==true)
+			count++;
+		}
+	}
+	if(count ==0){
+			alert("환불할 항목을 선택하세요");
+	}else if(count ==1){
+	    showConfirmationPopup("정말 환불하시겠습니까?", function(result) {
+	        if (result) {
+	            alert("환불이 완료되었습니다");
+	            document.formm.action = "cartRefund";
+	            document.formm.submit();
+	        } else {
+	            alert("취소되었습니다");
+	            return;
+	        }
+	    });
+    }else{
+		alert("한번에 하나만 환불 가능합니다");
+		return;
+	}
+}
+	
+function go_cartList(){
+	alert("장바구니로 이동합니다!");
+	document.formm.action = "cartList";
+	document.formm.submit();
+}	
+
+function go_orderList(){
+	
+	document.formm.action = "orderList";
+	document.formm.submit();
+	
+}
+
+
+
+
+
+
+
