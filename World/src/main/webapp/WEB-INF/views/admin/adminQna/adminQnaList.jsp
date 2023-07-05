@@ -41,7 +41,7 @@
                     <th scope="col" class="th-num">번호</th>
                     <th scope="col" class="th-title">제목</th>
                     <th scope="col" class="th-date">등록일</th>
-                    <th scope="col" class="th-answer">답변여부</th>
+                    <th scope="col" class="th-num">답변여부</th>
                 </tr>
 
                 </thead>

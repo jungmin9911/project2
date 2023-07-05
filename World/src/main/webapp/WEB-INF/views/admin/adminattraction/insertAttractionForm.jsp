@@ -6,33 +6,40 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#myButton').click( function(){
-		
-		var formselect = $("#fileupForm")[0]; 
-		var formdata = new FormData(formselect);   
-		
-		$.ajax({    
-			url:"<%=request.getContextPath() %>/fileup",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
-			type:"POST",
-			enctype:"multipart/form-data",
-			async: false, 
-			data: formdata,
-	    	timeout: 10000,
-	    	contentType : false,
-	        processData : false,
-	        
-	        success : function(data){ 
-	            if( data.STATUS == 1 ){
-	            	$("#filename").append("<div>"+data.FILENAME+"</div>");
-	            	$("#image").val(data.FILENAME);
-	            	$("#filename").append("<img src='images/"+data.FILENAME+"' height='150'/>");
-	            }
-	        },
-	        error: function() {				alert("실패");			}
-		});
-	
-	});
+    $('#myButton').click(function(){
+        var formselect = $("#fileupForm")[0]; 
+        var formdata = new FormData(formselect);
+
+        // kind 값을 설정
+         var kindValue = "attraction"; // 원하는 값으로 설정 
+
+        // FormData에 kind 값을 추가
+        formdata.append("kind", kindValue);
+
+        $.ajax({
+            url: "<%=request.getContextPath() %>/fileupat",
+            type: "POST",
+            enctype: "multipart/form-data",
+            async: false,
+            data: formdata,
+            timeout: 10000,
+            contentType: false,
+            processData: false,
+            
+            success: function(data){
+                if(data.STATUS == 1){
+                    $("#filename").append("<div>" + data.FILENAME + "</div>");
+                    $("#image").val(data.FILENAME);
+                    $("#filename").append("<img src='images/attraction_images/" + data.FILENAME + "' height='150'/>");
+                }
+            },
+            error: function(){
+                alert("실패");
+            }
+        });
+    });
 });
+
 </script>
 
 
@@ -91,14 +98,19 @@ $(function(){
 		</table>
 		<table class="ttatta">
 		<tr>
-			<th>베스트(Y/N)</th> <td width="642" >
-			<input type="text" name="bestat" size="47" ></td>
+			<th>베스트 어트랙션(Y/N)</th>
+			<td width="642">
+					<input type="radio" style="width:17px;height:17px;border:1px;" name="bestat" value="Y">사용
+				  	<input type="radio" style="width:17px;height:17px;border:1px;" name="bestat" value="N">미사용	
+			</td>
 		</tr>
 		</table>
 		<table class="ttatta">
 		<tr>
-			<th>운휴정보(Y/N)</th> <td width="642" >
-			<input type="text" name="aresult" size="47" ></td>
+			<th>운휴정보(Y/N)</th> 
+			<td width="642" >
+				<input type="radio" style="width:17px;height:17px;border:1px;" name="aresult" value="Y">사용
+				<input type="radio" style="width:17px;height:17px;border:1px;" name="aresult" value="N">미사용	
 		</tr>
 	</table>
 	
@@ -108,9 +120,6 @@ $(function(){
 	   			<div id="filename"></div>
 	   		</td>
 	   	</tr>
-	   
-	   	
-
 
 </form>
 	<div style="position:relative; top:-70px; left:500px; ">

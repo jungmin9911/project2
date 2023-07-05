@@ -8,9 +8,12 @@ $(function(){
 		
 		var formselect = $("#fileupForm")[0]; 
 		var formdata = new FormData(formselect);   
+		var kindValue = "notice"; 
+        
+        formdata.append("kind", kindValue);
 		
 		$.ajax({    
-			url:"<%=request.getContextPath() %>/fileup",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
+			url:"<%=request.getContextPath() %>/fileupno",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
 			type:"POST",
 			enctype:"multipart/form-data",
 			async: false, 
@@ -23,7 +26,7 @@ $(function(){
 	            if( data.STATUS == 1 ){
 	            	$("#filename").append("<div>"+data.FILENAME+"</div>");
 	            	$("#image").val(data.FILENAME);
-	            	$("#filename").append("<img src='images/"+data.FILENAME+"' height='150'/>");
+	            	$("#filename").append("<img src='images/notice_images/"+data.FILENAME+"' height='150'/>");
 	            }
 	        },
 	        error: function() {				alert("실패");			}

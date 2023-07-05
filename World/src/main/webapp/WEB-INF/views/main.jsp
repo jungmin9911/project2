@@ -5,12 +5,10 @@
     $(function(){
     	var num=0;
     	setInterval(function(){
-    		setTimeout(function(){
-            	$('#imgs').animate({ left : num * -1970 },3000);
-    			}, 2000);
-                num++;
-                if(num==Number('${size}'))num=0;
-        }, 3000);
+            	$('#imgs').animate({ left : num * -1970 },2000);
+            num++;
+        	if(num==Number('${size}'))num=0;
+        }, 4000);
     });
 </script>
 
