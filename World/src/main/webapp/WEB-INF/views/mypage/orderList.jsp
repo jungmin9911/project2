@@ -7,24 +7,24 @@
 <section class="notice">
   <div class="page-title">
         <div class="container">
-            <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">장바구니</h3>
+            <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">주문 내역</h3>
             <br><h1 style="font-size: 15px;">${message}</h1>
         </div>
     </div>
     <div class="board-list">
-        <div class="container" style="width:960px; ">
+        <div class="container" style="width:1000px; ">
             <table class="board-table">
                 <thead>
                 <tr>
                 	<th scope="col" class="th-num">주문일자</th>
                     <th scope="col" class="th-num">주문번호</th>
-                    <th scope="col" class="th-num">티켓유형</th>
-                    <th scope="col" class="th-date">인원수</th>
-                    <th scope="col" class="th-num">가격</th>
+                    <th scope="col" class="th-date">티켓유형</th>
+                    <th scope="col" class="th-date" style="text-align:center;">인원수</th>
+                    <th scope="col" class="th-num" style="text-align:center;">가격</th>
                     <th scope="col" class="th-date">어트랙션</th>
                     <th scope="col" class="th-num">방문일자</th>
                     <th scope="col" class="th-num">총액</th>
-                    <th scope="col" class="th-num">처리 상태</th>
+                    <th scope="col" class="th-date">처리 상태</th>
                     <th scope="col" class="th-date">선택</th>
                 
           
@@ -58,16 +58,16 @@
 	                	<td><fmt:formatNumber type="currency" value="${cart2VO.price1+cart2VO.price2}" /></td>
 	                	<td>
                          	<c:choose>
-                        	<c:when test='${cart2VO.result == 0}'>결제 대기</c:when>                  
-                         	<c:otherwise><b style="color:red;">결제 완료</b></c:otherwise>
+                        		<c:when test='${cart2VO.result == 1}'><b style="color:red;">결제 완료</b></c:when>
+                        		<c:otherwise>결제 대기중</c:otherwise>                  
                      		</c:choose>
                   		</td>
 	                	<td>
 	                	<c:choose>
-                        	<c:when test='${cart2VO.result == 0}'>
-	                			<input type="checkbox" name="cseq" value="${cart2VO.cseq}">
-	                		</c:when>
-	                		<c:otherwise><a href="#"onClick="go_orderList()">주문내역 확인</a></c:otherwise>
+                        		<c:when test='${cart2VO.result == 1}'>
+	                				<input type="checkbox" name="cseq" value="${cart2VO.cseq}">
+	                			</c:when>
+	                		<c:otherwise><a href="#"onClick="go_cartList()" style="color:blue;">결제 하러가기</a></c:otherwise>
 	                	</c:choose>
 	                	</td>
 	                </tr>
@@ -77,17 +77,13 @@
             </table>
             <div class="mypage-btn-dede-wrap">
 			    <div class="dede" style="float:right;">
-			    	<a href="#"onClick="go_cart_delete()"><h3>삭제하기</h3></a>
-			    </div>
-			    <div class="dede" style="float:right;">
-			    	<a href="#"onClick="go_order()"><h3>결제하기</h3></a>
+			    	<a href="#"onClick="go_cart_return()"><h3>환불하기</h3></a>
 		    	</div>
         	</div>
     	</div>
     </div>
 </section>
 </form>
-<br>
 <jsp:include page="../paging/page.jsp">
 	<jsp:param name="command" value="cartList" />
 </jsp:include>

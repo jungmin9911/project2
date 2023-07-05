@@ -169,10 +169,12 @@ as
 select p1,p2 from Cart2 where visitdate='';
 
 
-select p1,p2,id from Cart2 where visitdate='2023-07-17' and result='1';
+select p1,p2,id from Cart2 where visitdate='2023-07-20' and result='1';
+
+select*from Cart2 where visitdate='2023-07-20' and result='1' and kind='1'
 
 select*from lmember;
-
+select*from Cart2;
 ---------------------------------------------------------------------
 alter table Lqna add pass varchar2(30);
 

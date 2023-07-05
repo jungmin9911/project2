@@ -22,5 +22,11 @@ public interface ITicketDao {
 
 	String getvisitDate(int cseq);
 
+	void returnOrder(int cseq);
+
+	Cart2VO fastCheck(String result);
+
+	Cart2VO kindCheck(int cseq);
+
 
 }
