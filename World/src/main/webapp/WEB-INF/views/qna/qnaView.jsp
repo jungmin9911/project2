@@ -20,23 +20,22 @@
 				</tr>
 				<tr>
 					<th>질문내용</th>
-					<td align="left" style="text-align:left;font-size:115%;">
-					<pre>${qnaVO.content}</pre>
-					</td>
+					<td align="left" style="text-align:left;font-size:115%;">${qnaVO.content}</td>
 				</tr>
 				<tr>
 					<th>답변 내용</th>
-					<td align="left" style="text-align:left;">
-					<pre>${qnaVO.reply}</pre>
+					<td align="left" style="text-align:left;">${qnaVO.reply}</td>
 				</tr>
 			</table>
 		</form>
-		<div class="buttons" style="margin-top:25px;">
+		<br>
+		<div class="buttons">
 			<input type="button"  value="목록보기" class="purpleBtn" style="border:none;"
 				onclick="location.href='qnaList'">
 			<input type="button"  value="돌아가기"  class="purpleBtn" style="border:none;"
 				onclick="location.href='qna'">
 		</div>
+		<br>
 	</div>
 </div>
 </article>

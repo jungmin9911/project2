@@ -1,9 +1,6 @@
 package com.example.world.controller;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,7 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -93,7 +89,6 @@ public class TicketController {
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
 		MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
-		String url="";
 		if (mvo == null) { 
 			mav.setViewName("member/login");
 			return mav;
@@ -162,60 +157,157 @@ public class TicketController {
 		
 		}
 	
-	/*
-	@Transactional
+	
+	
 	@RequestMapping(value = "/cartOrder", method = RequestMethod.POST)
 	public ModelAndView cartOrder(HttpServletRequest request) {
 	    ModelAndView mav = new ModelAndView();
-	    int cnt = 10;
+	    int cnt = 10; // 하루 가능 인원수
 	    String[] cseqArr = request.getParameterValues("cseq");
-
+	    
 	    for (String cseq : cseqArr) {
-	        ts.orderCart(Integer.parseInt(cseq));
-	        int visitNum = ts.orderCheck(Integer.parseInt(cseq));
-	        if (visitNum > cnt) {
-	            mav.addObject("message", "선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
-	            System.out.println("선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
-	            System.out.println();
-	            System.out.println();
-	            throw new RuntimeException("선택하신 날짜의 인원이 마감되었습니다");
-	        }
+	    	
+	    	HashMap<String, Object> result3 = ts.fastCheck(Integer.parseInt(cseq)); //패스티켓 구매여부 조회
+	    	Cart2VO cvo= (Cart2VO) result3.get("cvo");
+	    	int kind =(int) result3.get("kind");
+	    	
+	    	
+	    	if(cvo!=null&&kind==1) { //패스트패스 구매 내역이 있고 선택한것이 패스트인지 확인
+	    		 mav.addObject("message","패스트 패스는 날짜별로 한장만 구매 가능합니다");
+	    		 mav.setViewName("mypage/cartList");
+	    	}else {
+		        
+	    		ts.orderCart(Integer.parseInt(cseq)); // 결제완료로 변경 result=1로 변경
+	    		
+		        HashMap<String, Object> result2 = ts.orderCheck(Integer.parseInt(cseq)); // cseq로 날짜별 결제완료된 인원수 조회
+		        int visitNum= (int)result2.get("visitnum");
+		        String visitDate = (String) result2.get("visitDate");       
+		       
+		        if (visitNum > cnt) { //날짜별 인원수와 하루 이용가능 인원수 비교
+		            mav.addObject("message", "선택하신 "+ visitDate +"의 인원이"+ (visitNum-cnt) +"명 초과되었습니다"
+		            		+ "다른 방문일을 선택하거나 인원을 조정해 주세요");
+		            
+		            // 확인하려고 프린트 한거 없어도됩니다.
+		            System.out.println("선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
+		            System.out.println();
+		            
+		            ts.returnOrder(Integer.parseInt(cseq)); // 방금 결제 완료된것 취소
+		            mav.setViewName("mypage/cartList");
+		            
+		        }else {
+		        	mav.setViewName("mypage/orderList");
+		        }
+	    	}
+	        HashMap<String, Object> result = ms.getCartList(request);
+		    mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
+		    mav.addObject("paging", (Paging) result.get("paging"));
+		    mav.addObject("key", (String) result.get("key"));
 	    }
-
-	    HashMap<String, Object> result = ms.getCartList(request);
-	    mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
-	    mav.addObject("paging", (Paging) result.get("paging"));
-	    mav.addObject("key", (String) result.get("key"));
-	    mav.setViewName("mypage/cartList");
-
+	    
+	    
 	    return mav;
 	}
-	*/
+	
+	@RequestMapping("/orderList")
+	public ModelAndView cartList(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
+		if(mvo==null)
+			mav.setViewName("redirect:/login");
+		else {
+			HashMap<String, Object> result =  ms.getCartList( request );
+			mav.addObject("cartList",  (List<Cart2VO>)result.get("cartList")  );
+			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
+			mav.setViewName("mypage/orderList");
+		
+		}
+		return mav;	
+	}
 	
 	
+
+	@RequestMapping(value = "/cartRefund", method = RequestMethod.POST)
+		public ModelAndView cartRefund( HttpServletRequest request
+				) {
+			
+			String[] cseqArr =request.getParameterValues("cseq");
+			for( String cseq : cseqArr)
+				ts.deleteCart(Integer.parseInt(cseq));
+			ModelAndView mav = new ModelAndView();
+			HashMap<String, Object> result =  ms.getCartList( request );
+			mav.addObject("cartList",  (List<Cart2VO>)result.get("cartList")  );
+			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
+			mav.setViewName("mypage/orderList");
+			
+			return mav;
+		
+		}
 	
-	@Transactional
+	/*
 	@RequestMapping(value = "/cartOrder", method = RequestMethod.POST)
 	public ModelAndView cartOrder(HttpServletRequest request) {
 	    ModelAndView mav = new ModelAndView();
 	  
 	    String[] cseqArr = request.getParameterValues("cseq");
 
-	    int result= ts.ticketBuy(cseqArr);
-	    
-	    if
-	   
+	    int result1= ts.ticketBuy(cseqArr);
 	    HashMap<String, Object> result = ms.getCartList(request);
         mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
         mav.addObject("paging", (Paging) result.get("paging"));
         mav.addObject("key", (String) result.get("key"));
-        mav.setViewName("mypage/cartList"); // 에러 페이지로 이동하도록 설정
-        mav.addObject("error", "오류가 발생했습니다.");
+        mav.setViewName("mypage/cartList");
+	    if (result1==1) {
+	    	mav.addObject("message", "선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
+	       // 에러 페이지로 이동하도록 설정
+	    }else {
+	    	mav.addObject("message", "결제가 완료되었습니다.");
+	    	
+	    }
+	    
 	    return mav;
 	}
+*/
+	
+	/*
+	@Transactional(rollbackFor = {RuntimeException.class, Error.class})
+	@RequestMapping(value = "/cartOrder", method = RequestMethod.POST)
+	public ModelAndView cartOrder(HttpServletRequest request) {
+	    ModelAndView mav = new ModelAndView();
+	    int cnt = 10;
+	    String[] cseqArr = request.getParameterValues("cseq");
 
-	
-	
-	
+	    try {
+	        for (String cseq : cseqArr) {
+	            int cseqValue = Integer.parseInt(cseq); // cseq 값을 변수에 저장
+	            ts.orderCart(cseqValue); // 변수를 사용하여 실행
+	            int visitNum = ts.orderCheck(cseqValue);
+	            if (visitNum > cnt) {
+	                mav.addObject("message", "선택하신 날짜의 인원이 마감되었습니다 다른 방문일을 선택해 주세요");
+	                throw new RuntimeException("선택하신 날짜의 인원이 마감되었습니다");
+	            }
+	            
+	        }
+
+	        HashMap<String, Object> result = ms.getCartList(request);
+	        mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
+	        mav.addObject("paging", (Paging) result.get("paging"));
+	        mav.addObject("key", (String) result.get("key"));
+	        mav.setViewName("mypage/cartList");
+	    } catch (Exception e) {
+	    	HashMap<String, Object> result = ms.getCartList(request);
+	        mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
+	        mav.addObject("paging", (Paging) result.get("paging"));
+	        mav.addObject("key", (String) result.get("key"));
+	        mav.setViewName("mypage/cartList");
+	        
+	       
+	    }
+
+	    return mav;
+	}
+	*/
 	
 }

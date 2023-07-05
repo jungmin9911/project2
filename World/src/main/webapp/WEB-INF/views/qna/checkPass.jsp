@@ -18,16 +18,17 @@
 <body>
 
 <div align="center">
-	<h1>비밀번호 확인</h1>
+	<h1 style="font-family:'IBM Plex Sans KR', sans-serif;">비밀번호 확인</h1>
 	<form action ="qnaCheckPass" method="post" name="frm">
 		<input type="hidden" name="lqseq" value="${param.lqseq}">		
 		<table style="width:80%">
 				<tr>	
-					<th>열람 비밀번호</th>
-					<td><input type="password" name="pass" size="20"></td>	</tr>
+					<th style="font-family:'IBM Plex Sans KR', sans-serif;">열람 비밀번호</th>
+					<td><input type="password" name="pass" size="20" style="font-family:'IBM Plex Sans KR', sans-serif;"></td>	</tr>
 		</table><br>
-		<input type="submit" value="확 인 " onclick="return qnaCheckPass()">
-		<br><br>${message}
+		<input type="submit" value="확 인 " onclick="return qnaCheckPass()" style="font-family:'IBM Plex Sans KR', sans-serif;">
+		<br><br>
+		<div style="font-family:'IBM Plex Sans KR', sans-serif;">${message}</div>
 	</form>
 </div>
 

@@ -49,7 +49,7 @@ $(function(){
 
 		<tr>
 			<th>&nbsp;&nbsp;&nbsp;&nbsp;제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> <td>
-			<input type="text" name="subject" size="47" ></td>
+			<input type="text" name="subject" size="47" height="30px"></td>
 			
 		</tr>
 		</table>
@@ -80,10 +80,12 @@ $(function(){
 	   		</td>
 	   	</tr>
 	   	</table>
+	   	
     <input class="btnp" type="submit" value="등록" >
 	<input class="btnn" type="reset" value="취소" >
+	
 </form>
-	<div style="position: relative;top: 13px;width: 600px;left: 750px;">
+	<div style="position: relative;width: 600px;left: 750px;bottom:100px">
 		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
 					<input type="file" name="fileimage" id="mymy">
 					<input type="button" id="myButton" value="추가">
