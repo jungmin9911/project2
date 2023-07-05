@@ -129,7 +129,7 @@
 	<h2 style="font-size:30px; text-align:center; line-height:80px;">인기 어트랙션</h2>
 	<div id="mainimg">
 		<c:forEach var="AttractionVO" items="${bestList}" begin="0" end="2">
-			<a href="attractionDetail&aseq=${AttractionVO.aseq}">
+			<a href="attractionDetail?aseq=${AttractionVO.aseq}">
 				<div id="att_list">
 					<img src="images/attraction_images/${AttractionVO.image}"/>
 					<h3>${AttractionVO.atname}</h3>
