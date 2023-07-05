@@ -8,10 +8,13 @@ $(function(){
 	$('#myButton').click( function(){
 		
 		var formselect = $("#fileupForm")[0]; 
-		var formdata = new FormData(formselect);   
+		var formdata = new FormData(formselect); 
+		var kindValue = "banner"; 
+        
+        formdata.append("kind", kindValue);
 		
 		$.ajax({    
-			url:"<%=request.getContextPath() %>/fileup",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
+			url:"<%=request.getContextPath() %>/fileupba",    // 현재주소의 fileup 리퀘스트로 요청  http://localhost:8070/fileup
 			type:"POST",
 			enctype:"multipart/form-data",
 			async: false, 
@@ -24,7 +27,7 @@ $(function(){
 	            if( data.STATUS == 1 ){
 	            	$("#filename").append("<div>"+data.FILENAME+"</div>");
 	            	$("#image").val(data.FILENAME);
-	            	$("#filename").append("<img src='images/"+data.FILENAME+"' height='150'/>");
+	            	$("#filename").append("<img src='images/banner/"+data.FILENAME+"' height='150'/>");
 	            }
 	        },
 	        error: function() {				alert("실패");			}
@@ -46,7 +49,7 @@ $(function(){
 
 		<tr>
 			<th>&nbsp;&nbsp;&nbsp;&nbsp;제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> <td>
-			<input type="text" name="subject" size="47" ></td>
+			<input type="text" name="subject" size="47" height="30px"></td>
 			
 		</tr>
 		</table>
@@ -77,10 +80,12 @@ $(function(){
 	   		</td>
 	   	</tr>
 	   	</table>
+	   	
     <input class="btnp" type="submit" value="등록" >
 	<input class="btnn" type="reset" value="취소" >
+	
 </form>
-	<div style="position: relative;top: 13px;width: 600px;left: 750px;">
+	<div style="position: relative;width: 600px;left: 750px;bottom:100px">
 		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
 					<input type="file" name="fileimage" id="mymy">
 					<input type="button" id="myButton" value="추가">

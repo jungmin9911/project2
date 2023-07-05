@@ -39,7 +39,7 @@
 				<a href="attractionDetail?aseq=${AttractionVO.aseq}">
 					<div id="att_list">
 						<img src="images/attraction_images/${AttractionVO.image}"/>
-						<h3 class="nn">${AttractionVO.atname}</h3>
+						<h3 style="font-weight:400">${AttractionVO.atname}</h3>
 					</div>
 				</a>
 			</c:forEach>

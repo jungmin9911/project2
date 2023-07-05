@@ -28,14 +28,22 @@ function toggleAnswer(answerId) {
 
 
 <article>
-<h2 style="font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif;font-size: 60px;color: #000;text-align: center; padding-top: 50px;">QnA</h2><br>
+<div class="page-title" style="text-align:center;">
+	<div class="container">
+		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px;">QnA</h3>
+	</div>
+</div>
 <div style="position: relative; text-align: center;">
   <img src="images/qna_image.jpg" style="opacity: 0.5;">
   <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%);">
-    <p style="font-size: 24px; color: white;"><h3 style="font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif;font-size: 30px;color: #000;text-align: center; padding-top: 50px;"> 더 궁금하신 사항이 있으면 <br>이용문의를 이용하시기 바랍니다.
-<div id="buttons" style="float:center">
-<input type="button" value="이용문의" class="submit" onclick="location.href='qnaList?first=y'" style="display: inline-block; font-size: 18px;font-weight:bold; background: #CCFF99;color: black; border: 2px solid #fff; border-radius: 30px; padding: 14px 58px; margin-top: 40px;">
-</h3></p>
+    <p style="font-size: 24px; color: white;">
+    <h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 30px; padding-top: 50px;"> 더 궁금하신 사항이 있으면 <br>이용문의를 이용하시기 바랍니다.</h3>
+	<div id="buttons" style="float:center">
+		<input type="button" value="이용문의" class="submit" onclick="location.href='qnaList?first=y'" 
+			style="display:inline-block; font-size: 18px; font-weight:400; font-family:'IBM Plex Sans KR', sans-serif; background: #CCFF99; 
+			border: 2px solid #fff; border-radius: 30px; padding: 14px 58px; margin-top: 40px;">
+	</div>
+</p>
   </div>
  <br><br><br>
  <div id="board-search">
@@ -45,7 +53,7 @@ function toggleAnswer(answerId) {
 			</div>
 		</div>
 </div>
-<br><br><br>
+<br>
 	<div id="qna_category_top_menu">	
 		<a href="">전체</a>&nbsp;&nbsp;&nbsp;
 		<a href="">이용정보</a>&nbsp;&nbsp;&nbsp;
@@ -58,7 +66,7 @@ function toggleAnswer(answerId) {
 </div><br><br>
 <div id="board-list">
         <div class="container">
-            <table class="board-table" style="font-size:20px">  
+            <table class="board-table" style="font-size:20px; width:960px; margin:0 auto;">  
                 <tr>
                     <td><img src=images/Q.jpg style="width: 60px; height: 55px; border-radius: 50%; border:1px solid blue"></td>
                     <th><a href="#!" onclick="toggleAnswer('answer1')"> 매직패스 사전예매는 어떻게 하나요? </a></th>      

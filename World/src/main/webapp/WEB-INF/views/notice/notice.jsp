@@ -2,11 +2,11 @@
 <%@ include file="../header.jsp" %>
 <form name="frm" method="post">
 <section class="notice">
-  <div class="page-title">
-        <div class="container">
-             <h3 style="font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif;font-size: 50px;color: #000;text-align: center; padding-top: 0px;">공지사항</h3>
-        </div>
-    </div>
+<div class="page-title">
+	<div class="container">
+		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px;">공지사항</h3>
+	</div>
+</div>
 
     <div class="board-searchh">
         <div class="container">
@@ -48,6 +48,7 @@
     </div>
 </section>
 </form>
+<br>
 <jsp:include page="../paging/page.jsp">
 	<jsp:param name="command" value="notice" />
 </jsp:include>

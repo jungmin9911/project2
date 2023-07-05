@@ -1,5 +1,6 @@
 package com.example.world.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -260,6 +261,12 @@ public class AdminService {
 		adao.noticeDelete(nseq);
 		
 	}
+
+	public String getName(String workId) {
+		return adao.getName( workId );
+		
+	}
+
 
 
 }
