@@ -84,6 +84,7 @@
     </div>
 </section>
 </form>
+<br>
 <jsp:include page="../paging/page.jsp">
 	<jsp:param name="command" value="cartList" />
 </jsp:include>
