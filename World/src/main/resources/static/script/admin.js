@@ -245,6 +245,8 @@ if(confirm('정말 삭제하시겠습니까?')){
 }
 
 
-
+function reInsert(id, useyn){
+	location.href="memberReinsert?id=" + id + "&useyn=" + useyn;
+}
 
 
