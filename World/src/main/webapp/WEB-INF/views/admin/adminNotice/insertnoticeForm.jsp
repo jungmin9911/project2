@@ -84,7 +84,7 @@ $(function(){
 			<input class="btnpp" type="button" value="공지등록" onclick="go_insertnt()">
 			<input class="btnnn" type="reset" value="목록으로" onClick="go_mov('adminnotice')" >
 		</div>
-	<div style="position:relative; bottom:300px;width: 600px; left:1100px; ">
+	<div style="position:relative;bottom:300px; width:600px; left:1100px; ">
 		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
 					<input type="file" name="fileimage" id="mymyy">
 					<input type="button" id="myButton" value="추가">
