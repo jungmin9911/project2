@@ -22,7 +22,7 @@
 		<nav id ="top_menu">
 			<ul>
 				<li><a href="adminLogout">logout</a></li>
-				<li>${AdminVo.name}(${AdminVo.id})</li>
+				<li><%= request.getSession().getAttribute("workName")%>(${workId})</li>
 			</ul>
 		</nav>
 		

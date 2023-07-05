@@ -45,6 +45,8 @@ public interface IAdminDao {
 	void deleteat(int aseq);
 
 	void noticeDelete(int nseq);
+
+	String getName(String workId);
 	
 }
 

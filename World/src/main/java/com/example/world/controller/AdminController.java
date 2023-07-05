@@ -51,6 +51,7 @@ public class AdminController {
 	@RequestMapping("/adminlogin")
 	public ModelAndView admin_login(
 						@RequestParam(value="id", required=false) String workId,
+						@RequestParam(value="name", required=false) String workName,
 						@RequestParam(value="pwd", required=false) String workPwd, 
 						HttpServletRequest request ) {
 		ModelAndView mav = new ModelAndView();
@@ -72,12 +73,25 @@ public class AdminController {
 			return mav;
 		}
 		
-		int result = as.workerCheck( workId, workPwd );
+		int result = as.workerCheck( workId, workPwd, workName );
 		
 		if(result == 1) {
 	    		HttpSession session = request.getSession();
 	    		session.setAttribute("workId", workId);
+	    		session.setAttribute("workName", workName);
+	    		AdminVo adminVo = new AdminVo();
+				adminVo.setName(workName); 
+				adminVo.setId(workId);
+			
+				session.setAttribute("AdminVo", adminVo);
+				mav.addObject("workName", workName);
+				mav.addObject("workId", workId);
 	    		mav.setViewName("redirect:/adminMain");
+
+	    		String id = adminVo.getId();
+	            System.out.println("id: " + id);
+	    		String name = adminVo.getName();
+	            System.out.println("이름: " + name);
 		} else if (result == 0) {
 	        	mav.addObject("message", "비밀번호를 확인하세요.");
 	        	mav.setViewName("admin/adminLogin/adminLoginForm");
@@ -89,6 +103,7 @@ public class AdminController {
 		return mav;
 	}	
 	
+	
 	@RequestMapping("/adminMain")
 	public String adminMain() {
 		return "admin/adminLogin/adminMain";
@@ -96,6 +111,7 @@ public class AdminController {
 	
 	@RequestMapping("/adminLogout")
 	public String adminLogout() {
+		
 		return "redirect:/";
 	}
 	
