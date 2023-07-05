@@ -87,7 +87,7 @@ $(function(){
 	<div style="position:relative; bottom:300px;width: 600px; left:1100px; ">
 		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
 					<input type="file" name="fileimage" id="mymyy">
-					<input type="button" id="myButtonn" value="추가">
+					<input type="button" id="myButton" value="추가">
 		</form>
 	</div>
 	
