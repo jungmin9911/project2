@@ -117,7 +117,9 @@
 	</update>
 	
 	
-	
+	<update id="memberReinsert">
+		update Lmember set useyn=#{param2} where id=#{param1}
+	</update>
 	
 	
 </mapper>

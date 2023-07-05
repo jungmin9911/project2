@@ -267,6 +267,11 @@ public class AdminService {
 		
 	}
 
+	public void memberReinsert(String id, String useyn) {
+		adao.memberReinsert(id, useyn);	
+		
+	}
+
 
 
 }
