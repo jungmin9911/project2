@@ -1,6 +1,6 @@
 /**
  * 
- */function slidesPlugin(activeSlide = 2) {
+ */function slidesPlugin() {
      const slides = document.querySelectorAll(".slide");
 
      slides[activeSlide].classList.add("active");

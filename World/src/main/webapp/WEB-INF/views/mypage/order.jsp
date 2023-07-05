@@ -8,7 +8,7 @@
   <div class="page-title">
         <div class="container">
             <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">나의 주문 내역</h3>
-            <h4> 아래의 상품들이 결제가 완료되엇습니다.</h4>
+            <h4> 아래의 상품들이 결제가 완료되었습니다.</h4>
         </div>
     </div>
     <div class="board-list">

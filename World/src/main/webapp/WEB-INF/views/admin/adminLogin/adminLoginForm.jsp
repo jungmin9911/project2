@@ -13,19 +13,19 @@
    <form method="post" name="frm">
    <!-- <input type="hidden" name="command" value="login">  action="world.do"-->
    <div id=input>
-      <input name="id" placeholder="&nbsp;아이디" size="40" type="text" style="width:550px ;background:white;"><br>
+      <input name="id" placeholder="&nbsp;아이디" size="40" type="text" style="width:500px ;background:white;"><br>
    </div>
+   <br>
    <div id=input>
-      <input name="pwd" placeholder="&nbsp;비밀번호" size="40" type="password" style="width:550px"><br>
+      <input name="pwd" placeholder="&nbsp;비밀번호" size="40" type="password" style="width:500px"><br>
    </div>
-   <div class="ar">&nbsp;&nbsp;&nbsp;${param.message}</div>
-   <div class="ar">&nbsp;&nbsp;&nbsp;${message}</div>
    <div class="menu1">
       <ul>
           <li><a href="#">아이디 찾기 | </a></li>
-             <li><a href="#">비밀번호 찾기</a></li>
+             <li><a href="#">&nbsp;비밀번호 찾기</a></li>
       </ul>
    </div>
+   <div class="ar">&nbsp;&nbsp;&nbsp;${message}</div>
    <div id="buttons">
       <input type="submit" value="로그인" class="submit" onclick="adminloginCheck()">
    </div><br><br>

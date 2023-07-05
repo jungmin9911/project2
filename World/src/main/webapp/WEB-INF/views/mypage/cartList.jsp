@@ -12,15 +12,15 @@
         </div>
     </div>
     <div class="board-list">
-        <div class="container" style="width:950px; ">
+        <div class="container" style="width:960px; ">
             <table class="board-table">
                 <thead>
                 <tr>
                 	<th scope="col" class="th-num">주문일자</th>
                     <th scope="col" class="th-num">주문번호</th>
-                    <th scope="col" class="th-date">티켓유형</th>
-                    <th scope="col" class="th-date" style="text-align:center;">인원수</th>
-                    <th scope="col" class="th-num" style="text-align:center;">가격</th>
+                    <th scope="col" class="th-num">티켓유형</th>
+                    <th scope="col" class="th-date">인원수</th>
+                    <th scope="col" class="th-num">가격</th>
                     <th scope="col" class="th-date">어트랙션</th>
                     <th scope="col" class="th-num">방문일자</th>
                     <th scope="col" class="th-num">총액</th>
@@ -87,6 +87,7 @@
     </div>
 </section>
 </form>
+<br>
 <jsp:include page="../paging/page.jsp">
 	<jsp:param name="command" value="cartList" />
 </jsp:include>

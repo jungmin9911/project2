@@ -66,7 +66,7 @@
 		                </tr>   
 		                <tr id="answer1" style="display:none">
 		               		 
-		                	<th style="font-size:15px; font-weight:normal;background:#F7F7F7;"><br>
+		                	<th style="font-size:15px; font-weight:normal;background:#F7F7F7;">
 								<b>예매취소 안내</b> <br>
 								<b>온라인 예매 시 선택한 날짜에만 방문 및 이용이 가능하며, 미사용시에 해당날짜가 지나면 자동 취소 됩니다.</b><br>
 								(사용 후에는 취소가 불가능합니다.)<br>
@@ -83,7 +83,7 @@
 		                </tr>
 		                <tr id="answer2" style="display:none">
 		               		 
-		                	<th style="font-size:15px; font-weight:normal; background:#F7F7F7"><br>
+		                	<th style="font-size:15px; font-weight:normal; background:#F7F7F7">
 								<b>이용 안내</b><br>
 								<b> 1. 어드벤처 예매페이지 및 모바일APP을 통한 티켓예매 </b><br>
 								<b> 2. 카카오 알림톡(또는 문자메시지)으로 웹티켓 URL 발송 </b><br>
