@@ -82,20 +82,11 @@ public class AdminController {
 		if(result == 1) {
 	    		HttpSession session = request.getSession();
 	    		session.setAttribute("workId", workId);
-	    		session.setAttribute("workName", workName);
-	    		AdminVo adminVo = new AdminVo();
-				adminVo.setName(workName); 
-				adminVo.setId(workId);
-			
-				session.setAttribute("AdminVo", adminVo);
-				mav.addObject("workName", workName);
-				mav.addObject("workId", workId);
+	    		
+	    		String name = as.getName(workId);
+	    		session.setAttribute("name", name);
+	    		
 	    		mav.setViewName("redirect:/adminMain");
-
-	    		String id = adminVo.getId();
-	            System.out.println("id: " + id);
-	    		String name = adminVo.getName();
-	            System.out.println("이름: " + name);
 		} else if (result == 0) {
 	        	mav.addObject("message", "비밀번호를 확인하세요.");
 	        	mav.setViewName("admin/adminLogin/adminLoginForm");
