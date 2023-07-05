@@ -121,7 +121,7 @@ function go_update(){
 function go_delete(){
 	var a = confirm("정말로 탈퇴하시겠습니까?");
 	if(a){
-		location.href='world.do?command=deleteMember';
+		location.href='deleteMember';
 	}
 }
 
