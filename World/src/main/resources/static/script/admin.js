@@ -70,8 +70,8 @@ function go_detail(nseq){
 	document.frm.submit();
 }
 
-function go_mov(){ 
-	location.href = "adminNotice";
+function go_mov(com){ 
+	location.href = com;
 }
 
 function go_deletent(nseq){ //공지 삭제
