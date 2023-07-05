@@ -24,10 +24,12 @@ public class AdminService {
 	@Autowired
 	IAdminDao adao;
 
-	public int workerCheck(String workId, String workPwd) {
+	public int workerCheck(String workId, String workPwd, String workName) {
 		System.out.println("id : " + workId);
 		String pwd = adao.getPwd( workId );
+		String name = adao.getName( workId );
 		System.out.println("pwd : " + pwd);
+		System.out.println("name : " + name);
 		int result=0;
 		
 		if(pwd == null) result = -1;   // 아이디가 없습니다

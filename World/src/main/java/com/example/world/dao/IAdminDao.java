@@ -49,11 +49,6 @@ public interface IAdminDao {
 
 	String getName(String workId);
 
-	ArrayList<AdminVo> getAdmin();
-
-	
-
-	
 }
 
 
