@@ -462,6 +462,7 @@ public class AdminController {
 		as.updateSeq( changeval, useyn, bseq);
 		return"redirect:/adminBannerList";
 	}
+	
 	// 배너 삭제
 	@RequestMapping ("/deleteBanner")
 	public String deleteBanner ( @RequestParam ("bseq") int bseq,
