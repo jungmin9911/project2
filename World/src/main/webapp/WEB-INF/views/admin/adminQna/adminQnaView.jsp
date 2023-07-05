@@ -54,11 +54,11 @@
 		<div id="buttonss" style="margin:0 0 0 200px; height:70px;" >
 			<c:choose>
 				<c:when test='${qnaVO.rep=="N" }'>
-					<input type="button" class="purpleBtn center-align" value="저장" onClick="go_rep()">
-					<input type="button" value="목록보기" class="purpleBtn center-align" onclick="location.href='/adminQna'">
+					<input type="button" class="purpleBtn" value="저장" onClick="go_rep()">
+					<input type="button" value="목록보기" class="purpleBtn" onclick="location.href='/adminQna'">
 				</c:when>
 				<c:otherwise>
-					<input type="button"  value="목록보기" class="submitt" onclick="location.href='/adminQna'">
+					<input type="button"  value="목록보기" class="purpleBtn" onclick="location.href='/adminQna'">
 				</c:otherwise>
 			</c:choose>
 
