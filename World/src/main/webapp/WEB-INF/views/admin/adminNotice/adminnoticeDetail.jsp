@@ -14,7 +14,7 @@
 	</div>
 	<div class="event09">
 		<div class="event10">
-	   		<input type="button" value="목 록" class="btn" onclick="go_mov()">
+	   		<input type="button" value="목 록" class="btn" onclick="go_mov('adminNotice')">
 	   		<input type="button" value="수 정" class="btn" onclick="go_modnt('${noticeVO.nseq}')">
 	   		<input type="button" value="삭 제" class="btn" onclick="go_deletent('${noticeVO.nseq}')">
 		</div>

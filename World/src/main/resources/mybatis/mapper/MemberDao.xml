@@ -53,8 +53,8 @@
 	</select>
 	
 	
-	<update id="resetNewPwd">
-		Update Lmember set pwd=#{param2} where id=#{param1}
+	<update id="resetNewPwd" parameterType="com.example.world.dto.MemberVO">
+		update Lmember set pwd=#{pwd} where id=#{id}
 	</update>
 
 

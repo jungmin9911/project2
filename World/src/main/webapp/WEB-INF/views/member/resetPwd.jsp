@@ -27,7 +27,7 @@ input {
    <h2 class="abcde">비밀번호 재설정</h2>
   
    <form method="post" name="joinForm">
-      <input type="hidden" name="command" value="edit" />
+      <input type="hidden" name="command" value="/re3" />
       <table class="find-id">
          <tr>
 
