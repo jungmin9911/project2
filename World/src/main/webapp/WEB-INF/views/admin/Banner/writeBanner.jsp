@@ -42,7 +42,7 @@ $(function(){
 <div class="id_foundd">
 <h1>배너 등록</h1>  
 <br><hr><br>
-<form name="frm" action="bannerWrite"  method="post">
+<form name="frm" method="post">
 	<table class="baba">
 		<tr>
 			<th>제목</th>
@@ -81,8 +81,8 @@ $(function(){
 	</form>
 </div>
 <div class="update_buttons">
-	<input type="submit" value="등록" onClick="">
-	<input type="reset" value="취소" onClick="">
+	<input type="submit" value="등록" onClick="go_insertBanner()">
+	<input type="reset" value="취소" onClick="go_mov('adminBannerList')">
 </div>
 </div>
 </div>
