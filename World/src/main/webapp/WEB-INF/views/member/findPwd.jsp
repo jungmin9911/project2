@@ -55,13 +55,18 @@ input {
    </form>
     </div>
    <br />
-   <c:if test="${not empty Lmember}">
-      <h2><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원님의 비밀번호는 '${Lmember.pwd}' 입니다.</h2>
-
-       <div class="founff">
-      <input type="button" value="재설정" class="button" onclick="resetPwd();" /></div>
-
-   </c:if>
+   <c:choose>
+  	 <c:when test="${not empty Lmember}">
+    	  <h2><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원님의 비밀번호는 '${Lmember.pwd}' 입니다.</h2>
+       	<div class="founff">
+      		<input type="button" value="재설정" class="button" onclick="resetPwd();" />
+      	</div>
+   	</c:when>
+   	<c:otherwise>
+   			  <h2><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${message}</h2>
+   	</c:otherwise>
+   </c:choose>
+   
 </div>
 
 </body>
