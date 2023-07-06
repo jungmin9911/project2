@@ -250,3 +250,7 @@ function reInsert(id, useyn){
 }
 
 
+
+function go_adminOrderList(name){
+	location.href="adminOrderList?name=" + name;
+}

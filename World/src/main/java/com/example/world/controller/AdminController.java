@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.world.dto.AdminVo;
 import com.example.world.dto.AttractionVO;
 import com.example.world.dto.BannerVO;
+import com.example.world.dto.Cart2VO;
 import com.example.world.dto.MemberVO;
 import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
@@ -574,6 +575,20 @@ public class AdminController {
 	as.deleteBanner( bseq );
 	return "redirect:/adminBannerList";
 		
+	}
+	
+	
+	@RequestMapping ("/adminOrderList")
+	public ModelAndView adminOrderList(@RequestParam ("name") String name ) {
+		
+		ModelAndView mav =new ModelAndView();
+		Cart2VO cvo =  as.getAdminOrderList( name );
+		mav.addObject("orderList",  cvo  );
+		
+		
+		mav.setViewName("admin/adminmember/adminOrderList");
+		
+		return mav;
 	}
 	
 

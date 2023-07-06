@@ -97,8 +97,8 @@ $(function(){
 	</div>
 	
 	</div>
-	</div>
 	</article>
+	
 	
 <%@ include file="../footer.jsp" %>
 	
