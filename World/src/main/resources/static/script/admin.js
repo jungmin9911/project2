@@ -282,13 +282,13 @@ function showConfirmationPopup(message, callback) {
 function go_admin_return(name, id) {
 	
 	var count=0;
-	if(document.formm.cseq.length==undefined){
+	if(document.frm.cseq.length==undefined){
 		//체크박스가 한개인 경우
-		if(document.formm.cseq.checked==true)
+		if(document.frm.cseq.checked==true)
 			count++;
 	}else{
-		for(var i=0; i<document.formm.cseq.length; i++){
-			if(document.formm.cseq[i].checked==true)
+		for(var i=0; i<document.frm.cseq.length; i++){
+			if(document.frm.cseq[i].checked==true)
 			count++;
 		}
 	}
@@ -298,8 +298,8 @@ function go_admin_return(name, id) {
 	    showConfirmationPopup("정말 환불하시겠습니까?", function(result) {
 	        if (result) {
 	            alert("환불이 완료되었습니다");
-	            document.formm.action = "adminRefund?id=" + id+"&name="+name;
-	            document.formm.submit();
+	            document.frm.action = "adminRefund?id=" + id+"&name="+name;
+	            document.frm.submit();
 	        } else {
 	            alert("취소되었습니다");
 	            return;
