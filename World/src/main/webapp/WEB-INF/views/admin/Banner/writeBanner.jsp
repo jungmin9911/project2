@@ -81,15 +81,19 @@ $(function(){
 	   	</tr>
 	   	</table>
 	   	
-    <input class="btnp" type="submit" value="등록" >
-	<input class="btnn" type="reset" value="취소" >
+    
 	
 </form>
-	<div style="position: relative;width: 600px;left: 750px;bottom:100px">
+	<div class="lplp">
 		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
 					<input type="file" name="fileimage" id="mymy">
 					<input type="button" id="myButton" value="추가">
 		</form>
+		
+	</div>
+	<div class="alal">
+	<input class="btnp" type="submit" value="등록" >
+	<input class="btnp" type="reset" value="취소" ></div>
 	</div>
 	
 	</div>

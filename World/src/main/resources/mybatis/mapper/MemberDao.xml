@@ -38,7 +38,7 @@
 		select * from ( 
 		select * from(
 			select rownum as rn, p.* from 
-			((select * from cart2   where cseq like '%'||#{param2}||'%' and id=#{param3}  order by cseq desc) p )
+			((select * from cart2   where  id=#{param3}  order by cseq desc) p )
 		) where rn &gt;= #{param1.startNum} 
 		) where rn &lt;= #{param1.endNum} 
 	</select>
@@ -56,6 +56,20 @@
 	<update id="resetNewPwd">
 		Update Lmember set pwd=#{param2} where id=#{param1}
 	</update>
+
+
+	<select id="getAllCount2"  resultType="_int">
+		select count(*) from  ${param1}  
+	</select>
+
+	<select id="listOrder" resultType="com.example.world.dto.Cart2VO">
+		select * from ( 
+		select * from(
+			select rownum as rn, p.* from 
+			((select * from cart2  where id=#{param2} and result=#{param3} order by cseq desc) p )
+		) where rn &gt;= #{param1.startNum} 
+		) where rn &lt;= #{param1.endNum} 
+	</select>
 
 
 </mapper>

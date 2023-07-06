@@ -49,6 +49,8 @@ public interface IAdminDao {
 
 	String getName(String workId);
 
+	void memberReinsert(String id, String useyn);
+
 }
 
 

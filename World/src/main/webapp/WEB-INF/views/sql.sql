@@ -7,12 +7,17 @@ select * from LMEMBER;
 
 select*from cart2;
 
+select * from cart2  where id='one' and result='1' order by cseq desc
 
 select*from rest_at_view;''
 
 alter table lmember add provider varchar2(30) default 'normal';
 
-alter table lmember add useyn varchar2(30) default 'N';
+
+ALTER TABLE lmember DROP COLUMN useyn;
+alter table lmember add useyn varchar2(30) default 'Y';
+
+
 alter table lmember add address3 varchar2(30) ;
 
 select*from lmember;

@@ -258,6 +258,36 @@ public class AdminController {
 		return mav;
 	}
 	
+	
+	@RequestMapping("/memberReinsert")
+	public  ModelAndView memberReinsert( @RequestParam("id") String id, 
+			@RequestParam("useyn") String useyn	,HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		String workid = (String)session.getAttribute("workId");
+		if(workid==null)
+			mav.setViewName("redirect:/adminLoginForm");
+		else {
+			int page = 1;
+	        session.setAttribute("page", page);
+		System.out.println(id);
+		System.out.println(useyn);
+		
+		if( useyn.equals("Y") ) useyn="N";
+		else useyn="Y";
+		
+		as.memberReinsert( id, useyn );
+		
+		HashMap<String, Object> result = as.getMeberList ( request );
+		mav.addObject("memberList", (List<MemberVO>)result.get("memberList") );
+		mav.addObject("paging", (Paging)result.get("paging") );
+		mav.addObject("key", (String)result.get("key") );
+		mav.setViewName("admin/adminmember/adminMemberList");
+		}
+		return mav;
+	}
+	
+	
 	// ------------------------------------어트랙션 관리 -------------------------------------- 
 	
 	@RequestMapping("/adminAttraction")

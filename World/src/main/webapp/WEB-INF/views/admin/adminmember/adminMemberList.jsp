@@ -38,7 +38,7 @@
             <table class="board-tablee">
                 <thead>
                 <tr>
-                    <th scope="col" class="th-num">아이디</th>
+                    <th scope="col" class="th-num">아이디<br>(탈퇴여부)</th>           
                     <th scope="col" class="th-title">이름</th>
                     <th scope="col" class="th-date">이메일</th>
                     <th scope="col" class="th-answer">우편번호</th>
@@ -49,7 +49,18 @@
                 
                 </thead>
      		<c:forEach items="${memberList}" var="memberVO">
-			<tr><td>${ memberVO.id}</td>
+			<tr><td>${ memberVO.id}
+					<c:choose>
+			      		<c:when test='${memberVO.useyn=="Y"}'>
+			        		<input type="checkbox" name="useyn" style="width: 10px; height: 10px;" 
+			        			onchange="reInsert('${memberVO.id}', '${memberVO.useyn}');">
+				        </c:when>
+				        <c:otherwise>
+				        	<input type="checkbox" name="useyn" checked="checked" style="width: 10px; height: 10px;"
+				        		onchange="reInsert('${memberVO.id}', '${memberVO.useyn}');" >
+				       	 </c:otherwise>
+		    		</c:choose>
+	    		</td>
 		    	<td>${memberVO.name}</td><td>${memberVO.email}</td>
 		    	<td>${memberVO.zip_num}</td><td>${memberVO.address1}</td>
 		    	<td>${memberVO.phone}</td><td>

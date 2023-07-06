@@ -101,4 +101,44 @@ public class MemberService {
 		mdao.resetNewPwd(id,pwd);
 		
 	}
+
+	public HashMap<String, Object> getorderList(HttpServletRequest request) {
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		HttpSession session = request.getSession();
+		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
+		String id= mvo.getId();
+		if( request.getParameter("first")!=null ) {
+			session.removeAttribute("page");
+			session.removeAttribute("key");
+		}
+		
+		int page = 1;
+		if( request.getParameter("page") != null) {
+			page = Integer.parseInt(request.getParameter("page"));
+			session.setAttribute("page", page);
+		} else if( session.getAttribute("page")!= null ) {
+			page = (int) session.getAttribute("page");
+		} else {
+			page = 1;
+			session.removeAttribute("page");
+		}
+		
+		
+		Paging paging = new Paging();
+		paging.setPage(page);
+		
+		int count = mdao.getAllCount2( "cart2");
+		paging.setTotalCount(count);
+		paging.paging();
+		
+		int result2= 1;
+		List<Cart2VO> orderList = mdao.listOrder( paging, id ,result2 );
+		result.put("orderList" , orderList);
+		result.put("paging", paging);
+		
+		
+		return result;
+		
+	}
 }

@@ -119,8 +119,8 @@ border-radius: 10px; box-shadow: 3px 3px 2px #ccc; font-size:150%;}
 	
 	
 	
-/* 공지사항*/
-table {border-collapse: collapse;border-spacing: 0;}
+/* 공지사항 */
+
 section.notice {padding:  0;}
 .page-title { margin-top:50px; margin-bottom: 80px;}
 #board-search .search-window {position: relative; padding: 15px 0;background-color: #f9f7f9;}
@@ -153,7 +153,6 @@ section.notice {padding:  0;}
 .blind { position: absolute;overflow: hidden;clip: rect(0 0 0 0);margin: -1px;width: 1px;height: 1px;}
 .plusebtn{float:left;}
 
-
 /* adminnoticeDetail */
 .event01{position:relative; width:1150px; height:100%; margin:0 auto;}
 .event02{position:relative; width:100%; height:200px; font-size:50px; font-weight:bold; text-align:center; 
@@ -178,18 +177,11 @@ section.notice {padding:  0;}
 	padding:10px;}
 .update_main input {width:300px; height:40px; margin:15px 0; border:1px solid lightgray; background-color:#f7f7f7;
 	border-radius:5px; font-size:16px; text-indent:10px;}
-.update_buttons {position:relative; width:100%; height:100px; padding:20px 410px;}
-.update_buttons input {width:140px; height:56px; border-radius:40px; background-color:#6f23f9;
-	font-size:20px; color:white; margin:30px 3px 0 0; border:none;}
-.update_buttonss {position:relative; width:100%; height:100px; padding:20px 550px;}
-.update_buttonss input {width:140px; height:56px; border-radius:40px; background-color:#6f23f9;
-	font-size:20px; color:white; margin:-21px -247px 9px 256px; border:none;}
 .update_buttonsq {position:relative; width:100%; height:100px; padding:20px 410px;}
 .update_buttonsq input {width:140px; height:56px; border-radius:40px; background-color:#6f23f9;
 	font-size:20px; color:white; margin:28px -29px 0 38px; border:none;}
+	
 /*adminmember*/
-table {border-collapse: collapse;border-spacing: 0;}
-section.notice {padding:  0;}
 .page-titlee { margin-top:50px; margin-bottom: 80px;}
 .board-searchh .search-window {padding: 15px 0;background-color: #f9f7f9;}
 .board-searchh .search-window .search-wrap {position: relative;margin: 0 auto;width: 90%;max-width: 800px;}
@@ -265,25 +257,29 @@ nav#sub_menu ul { margin-left: -20px;}
 
 
 /*배너리스트*/
-.findfindd{width:100%; height:800px; margin: 0 auto; position:relative;}
-  .id_foundd{width:1000px; height:800px;margin: 0 auto; position:relative;}
-  .baba{margin:0 0 0 110px;position:relative;}
-  .btnp{height: 50px;width: 150px;border:1px solid #6317ed; font-weight:bold;float:left;
-		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
-		background-position: center center;	color:#fff;margin: 73px 0 0 390px;}
-  .btnn{height: 50px;width: 140px;border:1px solid #6317ed; font-weight:bold;float:left;
-		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
-		background-position: center center;	color:#fff;margin: 73px 0 0 5px;}
-#mymy{ width: 190px; height: 32px;font-size: 13px; border: 0;border-radius: 15px;outline: none;
-  		padding: 3px;background-color: rgb(233, 233, 233);}
-#myButton{ width: 150px;height: 32px; font-size: 12px; border: 0;border-radius: 15px;outline: none;
-    		padding: 3px;background-color: rgb(233, 233, 233);}
-  input { width: 400px; height: 40px;font-size: 10px;border: 0;border-radius: 15px;outline: none;
-  		padding-left: 10px;background-color: rgb(233, 233, 233);}
+table {border-collapse: collapse; border-spacing: 0;}
+.findfindd{position:relative; width:100%; margin: 0 auto; border:1px solid blue;}
+.id_foundd{position:relative; width:1250px; margin: 0 auto; border:1px solid blue;}
+.id_foundd h1 {font-size:50px; text-align:center; height:110px; margin-top:40px;}
+.baba{position:relative; margin:0 auto; border:1px solid black;}
+.baba tr{position:relative; width:700px; height:100px; border:1px solid red;}
+.baba th{position:relative; width:200px; font-size:30px; text-align:center;}
+.baba td{position:relative; width:500px; margin:0 auto; border:none;}
+.baba td input {width:450px; height:50px; font-size:20px; border-radius:10px; 
+	border:none; padding-left:10px; background-color: rgb(233, 233, 233);}
+.fileUp {position:relative; width:700px; height:80px; margin:0 auto; text-align:right; border:1px solid blue;}
+.fileUp input[type=file]{width: 190px; height: 32px;font-size: 13px; border: 0;border-radius: 15px;outline: none;
+	padding: 3px;background-color: rgb(233, 233, 233);}
+.fileUp input[type=button]{ width: 150px;height: 32px; font-size: 12px; border: 0; border-radius: 15px; outline: none; 
+	padding: 3px;background-color: rgb(233, 233, 233);}
+.update_buttons {position:relative; width:100%; height:100px; margin:0 auto; text-align:center; border:1px solid green;}
+.update_buttons input {width:140px; height:56px; border-radius:40px; background-color:#6f23f9;
+	font-size:20px; color:white; margin:0 3px; border:none;}
 
-.baba tr{height:100px;}
-.baba td{width:600px;border:none; }
-.baba th{font-size:30px;border:none;}
+.btnp{height: 50px;width: 150px;border:1px solid #6317ed; font-weight:bold;float:left; position:relative;padding: 0 0 3px 6px; 
+	background:rgb(111, 35, 249); border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
+	background-position: center center;	color:#fff;margin: 0 20px;}
+	
 
 .pl{width: 300px; border: 1px solid #C4C4C4; box-sizing: border-box; border-radius: 10px;
     padding: 12px 13px;font-family: 'Roboto';font-style: normal;font-weight: 400;
@@ -297,20 +293,22 @@ nav#sub_menu ul { margin-left: -20px;}
   .addadd{width:1150px; height:1300px;margin: 0 auto; position:relative;}
   .ttatta{margin:0 0 0 250px;position:relative;}
  
-.update_buttons{margin-top:10px;}
+/* .update_buttons{margin-top:10px;} */
 .ttatta tr{height:100px;}
 .ttatta td{width:600px;border:none;}
 .ttatta th{font-size:24px;border:none; padding: 0 10px 0 0;}
 
 /*공지사항추가*/
-  .btnpp{height: 50px;width: 150px;border:1px solid #6317ed; font-weight:bold;float:left;
+  /* .btnpp{height: 50px;width: 150px;border:1px solid #6317ed; font-weight:bold;float:left;
 		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
 		background-position: center center;	color:#fff;margin: 73px 0 40px 790px;}
   .btnnn{height: 50px;width: 140px;border:1px solid #6317ed; font-weight:bold;float:left;
 		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
-		background-position: center center;	color:#fff;margin: 73px 0 40px 5px;}
+		background-position: center center;	color:#fff;margin: 73px 0 40px 5px;} */
 #mymyy{ width: 190px;height: 32px; font-size: 13px;border: 0;border-radius: 15px;
   		outline: none;padding: 3px;background-color: rgb(233, 233, 233);}
 #myButtonn{ width: 150px;height: 32px;font-size: 12px; border: 0;border-radius: 15px;
    			 outline: none;padding: 3px;background-color: rgb(233, 233, 233);}
 
+.lplp{position:relative;  height:79px;width:1000px;   margin: 0 auto;text-align: right;}
+.alal{position:relative;  width:400px; margin: 0 auto;}
