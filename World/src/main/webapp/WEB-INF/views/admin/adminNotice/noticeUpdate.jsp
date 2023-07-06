@@ -33,62 +33,45 @@ $(function(){
 	});
 });
 </script>
-<style>
- input {
-  width: 400px;
-  height: 46px;
-  font-size: 20px;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  padding-left: 10px;
-  background-color: rgb(233, 233, 233);
-}</style>
 <article>
 <div class="findfindd">
 <div class="id_foundd">
-<h1 style="font-size:50px; text-align:center; height:110px;margin-top:40px"> 공지사항 수정 </h1>  
+<h1>공지사항 수정</h1>
+<br><hr><br>  
 <form name="frm" method="post">
 	<input type="hidden" name="nseq" value="${noticeVO.nseq}">
  	<input type="hidden" name="oldfilename" value="${noticeVO.ncontent}">
-	
 	<table class= "baba" >
 		<tr>
-			<th>&nbsp;관리자 아이디</th> <td >
-			<input type="text" name="id" size="47" 
-				value="${noticeVO.id}"></td>
+			<th>관리자 아이디</th> 
+			<td><input type="text" name="id" size="47" value="${noticeVO.id}"></td>
 		</tr>
-		</table>
-		<table class= "baba" >
 		<tr>
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> <td >
-			<input type="text" name="title" size="47" 
-				value="${noticeVO.title}"></td>
+			<th>제목</th> 
+			<td><input type="text" name="title" size="47" value="${noticeVO.title}"></td>
 		</tr>
-		</table>
-		<table class= "baba" >
-		<tr height="250"><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-	    	<td width="642" style="vertical-align:top; ">
-	    	<img src="images/notice_images/${noticeVO.ncontent}" width="500px" height="300px">
-	   			<input type="hidden" name="ncontent" id="image" >
+		<tr style="height:250px">
+			<th>내용</th>
+	    	<td>
+	    		현재이미지<br>
+	    		<img src="images/notice_images/${noticeVO.ncontent}" width="400px">
+	   			<input type="hidden" name="ncontent" id="image">
 	   			<div id="filename"></div>
 	   		</td>
 	   	</tr>
-	   	
 	</table>
-
 </form>
+<div class="fileUp">
+	<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
+		<input type="file" name="fileimage" id="mymy">
+		<input type="button" id="myButton" value="추가">
+	</form>
+</div>
+<div class="update_buttons">
+	<input type="button" value="수정" onclick="go_mod_savent()">
+	<input type="reset" value="취소" onClick="location.href='adminNotice'"> 
 </div>
 </div>
-	<div style="position:relative;width: 600px;left: 1000px;bottom:100px ">
-		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
-					<input type="file" name="fileimage"id="mymyy">
-					<input type="button" id="myButton" value="추가">
-		</form>
-	</div>
-	<div class="update_buttonss">
-			<input class="btnpp" type="button" value="수정" onclick="go_mod_savent()">
-			<input class="btnnn" type="reset" value="취소" onClick="location.href='adminNotice'"> 
-		</div>
+</div>
 </article>
 <%@ include file ="../footer.jsp"%>
