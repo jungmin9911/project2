@@ -31,7 +31,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${cartList}"  var="cart2VO">
+                <c:forEach items="${orderList}"  var="cart2VO">
 	                <tr>
 	                	<td><fmt:formatDate value="${cart2VO.indate}" type="date"/></td>
 	                    <td>${cart2VO.cseq}</td>

@@ -192,16 +192,21 @@ public class TicketController {
 		            System.out.println();
 		            
 		            ts.returnOrder(Integer.parseInt(cseq)); // 방금 결제 완료된것 취소
+		            HashMap<String, Object> result = ms.getCartList(request);
+				    mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
+				    mav.addObject("paging", (Paging) result.get("paging"));
+				    mav.addObject("key", (String) result.get("key"));
+		            
 		            mav.setViewName("mypage/cartList");
 		            
 		        }else {
+		        	HashMap<String, Object> result =  ms.getorderList( request );
+					mav.addObject("orderList",  (List<Cart2VO>)result.get("orderList")  );
+					mav.addObject("paging", (Paging)result.get("paging") );
 		        	mav.setViewName("mypage/orderList");
 		        }
 	    	}
-	        HashMap<String, Object> result = ms.getCartList(request);
-		    mav.addObject("cartList", (List<Cart2VO>) result.get("cartList"));
-		    mav.addObject("paging", (Paging) result.get("paging"));
-		    mav.addObject("key", (String) result.get("key"));
+	      
 	    }
 	    
 	    
@@ -216,10 +221,9 @@ public class TicketController {
 		if(mvo==null)
 			mav.setViewName("redirect:/login");
 		else {
-			HashMap<String, Object> result =  ms.getCartList( request );
-			mav.addObject("cartList",  (List<Cart2VO>)result.get("cartList")  );
+			HashMap<String, Object> result =  ms.getorderList( request );
+			mav.addObject("orderList",  (List<Cart2VO>)result.get("orderList")  );
 			mav.addObject("paging", (Paging)result.get("paging") );
-			mav.addObject("key", (String)result.get("key") );
 			mav.setViewName("mypage/orderList");
 		
 		}
@@ -236,10 +240,9 @@ public class TicketController {
 			for( String cseq : cseqArr)
 				ts.deleteCart(Integer.parseInt(cseq));
 			ModelAndView mav = new ModelAndView();
-			HashMap<String, Object> result =  ms.getCartList( request );
-			mav.addObject("cartList",  (List<Cart2VO>)result.get("cartList")  );
+			HashMap<String, Object> result =  ms.getorderList( request );
+			mav.addObject("orderList",  (List<Cart2VO>)result.get("orderList")  );
 			mav.addObject("paging", (Paging)result.get("paging") );
-			mav.addObject("key", (String)result.get("key") );
 			mav.setViewName("mypage/orderList");
 			
 			return mav;
