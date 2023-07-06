@@ -166,20 +166,6 @@ section.notice {padding:  0;}
 .event10{position:relative; width:100%; height:100%;}
 .event10 input {width:130px; height:56px; border-radius:40px; background-color:#6f23f9;
 	font-size:20px; color:white; margin:0 10px; border:none;}
-
-/* Insert, Update */
-.update{position:relative; width:1150px; height:100%; margin:0 auto;}
-.update_title {position:relative; width:100%; height:100px; font-size:30px; font-weight:bold; text-align:center; 
-	padding:30px; border-bottom:2px solid lightgray;}
-.update_main {position:relative; width:100%; height:100%; margin:0 auto; padding:20px 270px; border-bottom:2px solid lightgray;}
-.update_main div {position:relative; width:100%; height:70px; margin:0 0 20px;}
-.update_main p {position:relative; width:300px; height:70px; text-align:center; font-weight:bold; font-size:32px; float:left;
-	padding:10px;}
-.update_main input {width:300px; height:40px; margin:15px 0; border:1px solid lightgray; background-color:#f7f7f7;
-	border-radius:5px; font-size:16px; text-indent:10px;}
-.update_buttonsq {position:relative; width:100%; height:100px; padding:20px 410px;}
-.update_buttonsq input {width:140px; height:56px; border-radius:40px; background-color:#6f23f9;
-	font-size:20px; color:white; margin:28px -29px 0 38px; border:none;}
 	
 /*adminmember*/
 .page-titlee { margin-top:50px; margin-bottom: 80px;}
@@ -258,57 +244,30 @@ nav#sub_menu ul { margin-left: -20px;}
 
 /*배너리스트*/
 table {border-collapse: collapse; border-spacing: 0;}
-.findfindd{position:relative; width:100%; margin: 0 auto; border:1px solid blue;}
-.id_foundd{position:relative; width:1250px; margin: 0 auto; border:1px solid blue;}
+.findfindd{position:relative; width:100%; margin: 0 auto;}
+.id_foundd{position:relative; width:1250px; margin: 0 auto;}
 .id_foundd h1 {font-size:50px; text-align:center; height:110px; margin-top:40px;}
-.baba{position:relative; margin:0 auto; border:1px solid black;}
-.baba tr{position:relative; width:700px; height:100px; border:1px solid red;}
-.baba th{position:relative; width:200px; font-size:30px; text-align:center;}
+.baba{position:relative; margin:0 auto;}
+.baba tr{position:relative; width:700px; height:100px;}
+.baba th{position:relative; width:250px; font-size:30px; text-align:center;}
 .baba td{position:relative; width:500px; margin:0 auto; border:none;}
 .baba td input {width:450px; height:50px; font-size:20px; border-radius:10px; 
-	border:none; padding-left:10px; background-color: rgb(233, 233, 233);}
-.fileUp {position:relative; width:700px; height:80px; margin:0 auto; text-align:right; border:1px solid blue;}
+	border:1px solid lightgray; padding-left:10px; background-color:#f7f7f7;}
+.fileUp {position:relative; width:700px; height:80px; margin:0 auto; text-align:right;}
 .fileUp input[type=file]{width: 190px; height: 32px;font-size: 13px; border: 0;border-radius: 15px;outline: none;
 	padding: 3px;background-color: rgb(233, 233, 233);}
 .fileUp input[type=button]{ width: 150px;height: 32px; font-size: 12px; border: 0; border-radius: 15px; outline: none; 
 	padding: 3px;background-color: rgb(233, 233, 233);}
-.update_buttons {position:relative; width:100%; height:100px; margin:0 auto; text-align:center; border:1px solid green;}
+.update_buttons {position:relative; width:100%; height:100px; margin:0 auto; text-align:center;}
 .update_buttons input {width:140px; height:56px; border-radius:40px; background-color:#6f23f9;
 	font-size:20px; color:white; margin:0 3px; border:none;}
 
 .btnp{height: 50px;width: 150px;border:1px solid #6317ed; font-weight:bold;float:left; position:relative;padding: 0 0 3px 6px; 
 	background:rgb(111, 35, 249); border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
 	background-position: center center;	color:#fff;margin: 0 20px;}
-	
-
 .pl{width: 300px; border: 1px solid #C4C4C4; box-sizing: border-box; border-radius: 10px;
     padding: 12px 13px;font-family: 'Roboto';font-style: normal;font-weight: 400;
     font-size: 14px;line-height: 16px;}
 
 .pl:focus{ border: 1px solid #9B51E0;box-sizing: border-box;border-radius: 10px;
     		outline: 3px solid #F8E4FF;border-radius: 10px;}
-
-/*어트렉션추가ㅣ*/
-  .attatt{width:100%; height:1500px; margin: 0 auto; position:relative; }
-  .addadd{width:1150px; height:1300px;margin: 0 auto; position:relative;}
-  .ttatta{margin:0 0 0 250px;position:relative;}
- 
-/* .update_buttons{margin-top:10px;} */
-.ttatta tr{height:100px;}
-.ttatta td{width:600px;border:none;}
-.ttatta th{font-size:24px;border:none; padding: 0 10px 0 0;}
-
-/*공지사항추가*/
-  /* .btnpp{height: 50px;width: 150px;border:1px solid #6317ed; font-weight:bold;float:left;
-		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
-		background-position: center center;	color:#fff;margin: 73px 0 40px 790px;}
-  .btnnn{height: 50px;width: 140px;border:1px solid #6317ed; font-weight:bold;float:left;
-		position:relative;padding: 0 0 3px 6px;background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
-		background-position: center center;	color:#fff;margin: 73px 0 40px 5px;} */
-#mymyy{ width: 190px;height: 32px; font-size: 13px;border: 0;border-radius: 15px;
-  		outline: none;padding: 3px;background-color: rgb(233, 233, 233);}
-#myButtonn{ width: 150px;height: 32px;font-size: 12px; border: 0;border-radius: 15px;
-   			 outline: none;padding: 3px;background-color: rgb(233, 233, 233);}
-
-.lplp{position:relative;  height:79px;width:1000px;   margin: 0 auto;text-align: right;}
-.alal{position:relative;  width:400px; margin: 0 auto;}
