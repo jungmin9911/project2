@@ -35,61 +35,41 @@ $(function(){
 	});
 });
 </script>
-<style>
- input {
-  width: 400px;
-  height: 46px;
-  font-size: 20px;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  padding-left: 10px;
-  background-color: rgb(233, 233, 233);
-}</style>
 <article>
 <div class="findfindd">
 <div class="id_foundd">
-<h1 style="font-size:50px; text-align:center; height:110px;margin-top:40px"> 공지사항 추가 </h1>  
+<h1>공지사항 추가</h1>
+<br><hr><br>
 <form name="insertnt" method="post">
-
-	<table class= "baba" >
+	<table class="baba">
 		<tr>
-			<th>&nbsp;&nbsp;관리자 아이디</th> <td>
-			<input type="text" name="id" size="47" 
-				value="${noticeVO.id}"></td>
+			<th>관리자 아이디</th> 
+			<td><input type="text" name="id" size="47" value="${noticeVO.id}"></td>
 		</tr>
-		</table>
-		<table class= "baba" >
 		<tr>
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> <td>
-			<input type="text" name="title" size="47" 
-				value="${noticeVO.title}"></td>
+			<th>제목</th> 
+			<td><input type="text" name="title" size="47" value="${noticeVO.title}"></td>
 		</tr>
-		</table>
-		<table class= "baba" >
-		
-		<tr style="height:250px"><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용</th>
+		<tr style="height:250px">
+			<th>내용</th>
 	    	<td width="700" style="vertical-align:top; ">
 	   			<input type="hidden" name="ncontent" id="image" >
 	   			<div id="filename"></div>
 	   		</td>
 	   	</tr>
-
 	</table>
-
 </form>
+<div class="fileUp">
+	<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
+		<input type="file" name="fileimage" id="mymy">
+		<input type="button" id="myButton" value="추가">
+	</form>
+</div>
+<div class="update_buttons">
+	<input type="button" value="공지등록" onclick="go_insertnt()">
+	<input type="reset" value="목록으로" onClick="go_mov('adminnotice')" >
 </div>
 </div>
-<div class="update_buttonss">
-			<input class="btnpp" type="button" value="공지등록" onclick="go_insertnt()">
-			<input class="btnnn" type="reset" value="목록으로" onClick="go_mov('adminnotice')" >
-		</div>
-	<div style="position:relative;bottom:300px; width:600px; left:1100px; ">
-		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
-					<input type="file" name="fileimage" id="mymyy">
-					<input type="button" id="myButton" value="추가">
-		</form>
-	</div>
-	
+</div>
 </article>
 <%@ include file ="../footer.jsp"%>
