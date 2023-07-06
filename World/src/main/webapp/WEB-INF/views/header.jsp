@@ -66,7 +66,7 @@
 						<span>즐길거리</span>
 					</button>
 					<div class="dropdown-content">
-						<a href="/attractionForm">어트렉션</a>
+						<a href="/attractionForm">어트랙션</a>
 						<a href="/parade">퍼레이드</a>
 					</div>
 				</div>
