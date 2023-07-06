@@ -3,12 +3,10 @@
 <%@ include file="../../header.jsp" %>
 <script src="script/admin.js"></script>
 <div id=logina>
-
-   <div id="login">
-   <h2>관리자 로그인</h2>
-   <hr>
+	<div class="login">
+   <div class="join_title">관리자 로그인</div>
    </div>
-   <h2 style="color:gray">관리자 아이디와 비밀번호로 로그인 하세요.</h2>
+   <h2 style="color:gray; font-weight:400">관리자 아이디와 비밀번호로 로그인 하세요.</h2>
    <br><br>
    <form method="post" name="frm">
    <!-- <input type="hidden" name="command" value="login">  action="world.do"-->

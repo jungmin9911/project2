@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 <div id=logina>
-   <div id="login">
-   <h2>로그인</h2>
-   <hr>
+   <div class="login">
+   <div class="join_title">로그인</div>
    </div>
    <h2 style="color:gray; font-weight:400">회원아이디와 비밀번호로 로그인 하세요.</h2>
    <br><br>
