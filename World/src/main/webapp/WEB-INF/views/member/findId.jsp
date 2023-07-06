@@ -12,7 +12,7 @@
 <div class="findfind">
 <div class="id_found">
    <h2 class="abcd">아이디(ID) 찾기</h2>
-   <form method="post" name="formm" action="world.do">
+   <form method="post" name="formm" >
       <input type="hidden" name="command" value="selectId" />
       <table class="find-id">
          <tr>

@@ -335,31 +335,45 @@ public class MemberController {
 	
 	
 	@RequestMapping("/re3")
-	public String resetPwd(
+	public String re3(
 			 Model model, HttpServletResponse response,
 			@RequestParam("id") String id,
-			@RequestParam("pwd") String pwd
-			
+			@RequestParam("pwd") String pwd,
+			MemberVO membervo
 			) {
 		
-			ms.resetNewPwd(id, pwd);
+			ms.resetNewPwd(membervo);
 		    
-		  	model.addAttribute("result", 3);
 		  	model.addAttribute("message", "비밀번호 변경이 완료되었습니다.");
-		  	
-		    
-		    /*
-		  	String message = "비밀번호 변경이 완료되었습니다.";
-	        String script = "<script>";
-	        script += "alert('" + message + "');";
-	        script += "window.close();";
-	        script += "</script>";
-	        response.setContentType("text/html; charset=UTF-8");
-	        response.getWriter().println(script);
-	        */
 	        
 		return "member/findPwd";	
  	}
+	
+//	@RequestMapping(value = "/re3", method = RequestMethod.POST)
+//	public String resetPwd(@ModelAttribute("dto") @Valid MemberVO membervo,
+//	BindingResult result, Model model, HttpServletRequest request,
+//	@RequestParam("id") String id,
+//	@RequestParam("pwd") String pwd,
+//	@RequestParam("pwdCheck") String pwdCheck) {
+//		String url = "member/findPwd";
+//		if (result.getFieldError("pwd") != null) {
+//		    model.addAttribute("message", "비밀번호를 입력해주세요.");
+//		    model.addAttribute("result", 0);
+//		    return url;
+//		} else if (!pwd.equals(pwdCheck)) {
+//		    model.addAttribute("message", "비밀번호 확인이 일치하지 않습니다.");
+//		    model.addAttribute("result", 0);
+//		    return url;
+//		}
+//
+//		membervo.setId(id);
+//		ms.resetNewPwd(id, pwd);
+//
+//		model.addAttribute("result", 3);
+//		model.addAttribute("message", "비밀번호 변경이 완료되었습니다.");
+//
+//		return url;
+//	}
 	
 	
 	
