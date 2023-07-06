@@ -25,5 +25,9 @@ public interface IMemberDao {
 	MemberVO selectId(String name, String phone);
 	MemberVO selectPwd(String id, String name, String phone);
 	void resetNewPwd(String id, String pwd);
+	
+	
+	List<Cart2VO> listOrder(Paging paging, String id , int result);
+	int getAllCount2(String string);
 
 }

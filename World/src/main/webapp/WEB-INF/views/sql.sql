@@ -7,6 +7,7 @@ select * from LMEMBER;
 
 select*from cart2;
 
+select * from cart2  where id='one' and result='1' order by cseq desc
 
 select*from rest_at_view;''
 
