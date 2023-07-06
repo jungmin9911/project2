@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.example.world.dto.AdminVo;
 import com.example.world.dto.AttractionVO;
 import com.example.world.dto.BannerVO;
+import com.example.world.dto.Cart2VO;
 import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
 import com.example.world.dto.QnaVO;
@@ -50,6 +51,9 @@ public interface IAdminDao {
 	String getName(String workId);
 
 	void memberReinsert(String id, String useyn);
+
+	Cart2VO getAdminOrderList(String name, int result);
+	
 
 }
 

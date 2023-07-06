@@ -31,7 +31,7 @@ input {
       <table class="find-id">
          <tr>
 
-         <th>아이디&nbsp;&nbsp;&nbsp;&nbsp;</th><td><input type="text" name="id" class="input-text" maxlength="30" /></td>
+         <th>아이디&nbsp;&nbsp;&nbsp;&nbsp;</th><td><input type="text" name="id" class="input-text"  value="${Lmember.id}" maxlength="30" /></td>
 
          </tr>
           </table>

@@ -49,7 +49,7 @@
                 
                 </thead>
      		<c:forEach items="${memberList}" var="memberVO">
-			<tr><td>${ memberVO.id}
+			<tr><td>${memberVO.id}
 					<c:choose>
 			      		<c:when test='${memberVO.useyn=="Y"}'>
 			        		<input type="checkbox" name="useyn" style="width: 10px; height: 10px;" 
@@ -61,7 +61,9 @@
 				       	 </c:otherwise>
 		    		</c:choose>
 	    		</td>
-		    	<td>${memberVO.name}</td><td>${memberVO.email}</td>
+		    	<td><a onClick="go_adminOrderList('${memberVO.name}')">${memberVO.name}</a></td>
+		    	
+		    	<td>${memberVO.email}</td>
 		    	<td>${memberVO.zip_num}</td><td>${memberVO.address1}</td>
 		    	<td>${memberVO.phone}</td><td>
 		    	<fmt:formatDate value="${memberVO.indate}"/></td></tr>

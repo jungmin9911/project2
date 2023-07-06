@@ -52,7 +52,7 @@ $(function(){
 		</tr>
 		<tr style="height:250px">
 			<th>내용</th>
-	    	<td width="700" style="vertical-align:top; ">
+	    	<td>
 	   			<input type="hidden" name="ncontent" id="image" >
 	   			<div id="filename"></div>
 	   		</td>
@@ -62,12 +62,12 @@ $(function(){
 <div class="fileUp">
 	<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
 		<input type="file" name="fileimage" id="mymy">
-		<input type="button" id="myButton" value="추가">
+		<input type="button" id="myButtonn" value="추가">
 	</form>
 </div>
 <div class="update_buttons">
 	<input type="button" value="공지등록" onclick="go_insertnt()">
-	<input type="reset" value="목록으로" onClick="go_mov('adminnotice')" >
+	<input type="reset" value="목록으로" onClick="go_mov('adminNotice')" >
 </div>
 </div>
 </div>

@@ -97,8 +97,9 @@ public class MemberService {
 		return mdao.selectPwd(id,name,phone);
 	}
 
-	public void resetNewPwd(String id, String pwd) {
-		mdao.resetNewPwd(id,pwd);
+	public MemberVO resetNewPwd(String id, String pwd) {
+		
+		return mdao.resetNewPwd(id,pwd);
 		
 	}
 
