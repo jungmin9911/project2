@@ -61,7 +61,9 @@
 				       	 </c:otherwise>
 		    		</c:choose>
 	    		</td>
-		    	<td><a onClick="go_adminOrderList('${memberVO.name}')">${memberVO.name}</a></td>
+		    	<td><a style="color:blue;" onClick="go_adminOrderList('${memberVO.id}','${memberVO.name}');">
+		    	
+		    	${memberVO.name}</a></td>
 		    	
 		    	<td>${memberVO.email}</td>
 		    	<td>${memberVO.zip_num}</td><td>${memberVO.address1}</td>

@@ -33,6 +33,7 @@ import com.example.world.service.AdminService;
 import com.example.world.service.AttractionService;
 import com.example.world.service.NoticeService;
 import com.example.world.service.QnaService;
+import com.example.world.service.TicketService;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -579,17 +580,44 @@ public class AdminController {
 	
 	
 	@RequestMapping ("/adminOrderList")
-	public ModelAndView adminOrderList(@RequestParam ("name") String name ) {
+	public ModelAndView adminOrderList(
+			@RequestParam ("id") String id,
+			@RequestParam ("name") String name
+			) {
 		
 		ModelAndView mav =new ModelAndView();
-		Cart2VO cvo =  as.getAdminOrderList( name );
+		List<Cart2VO> cvo =  as.getAdminOrderList( id );
 		mav.addObject("orderList",  cvo  );
-		
-		
+		mav.addObject("id",  id  );
+		mav.addObject("name",  name  );
 		mav.setViewName("admin/adminmember/adminOrderList");
 		
 		return mav;
 	}
 	
-
+	
+	
+	@Autowired
+	TicketService ts;
+	
+	@RequestMapping(value = "/adminRefund", method = RequestMethod.POST)
+	public ModelAndView adminRefund(HttpServletRequest request,
+			@RequestParam ("id") String id,
+			@RequestParam ("name") String name) {
+		
+		String[] cseqArr =request.getParameterValues("cseq");
+		for( String cseq : cseqArr)
+			ts.deleteCart(Integer.parseInt(cseq));
+		ModelAndView mav =new ModelAndView();
+		List<Cart2VO> cvo =  as.getAdminOrderList( id );
+		mav.addObject("orderList",  cvo  );
+		
+		mav.addObject("name",  name  );
+		mav.setViewName("admin/adminmember/adminOrderList");
+		
+		return mav;
+	
+	}
+	
+	
 }

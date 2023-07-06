@@ -52,7 +52,7 @@ public interface IAdminDao {
 
 	void memberReinsert(String id, String useyn);
 
-	Cart2VO getAdminOrderList(String name, int result);
+	List<Cart2VO> getAdminOrderList(String id, int result);
 	
 
 }
