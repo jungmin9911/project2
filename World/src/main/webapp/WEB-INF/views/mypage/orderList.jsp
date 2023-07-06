@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../header.jsp" %>
+
 <script src="script/mypage.js"></script>
 
 <form name="formm" method="post">
@@ -13,6 +14,15 @@
     </div>
     <div class="board-list">
         <div class="container" style="width:1000px; ">
+        	<div class="mypage-btn-dede-wrap">
+	 			<nav id="sub_mypage" style="float:right;">
+					<ul style= "font-weight:bold;
+							color:#5c10e6;">
+						<li><a href='cartList'>장바구니 이동</a></li>
+					</ul>
+				</nav>
+	    	</div>
+	    	
             <table class="board-table">
                 <thead>
                 <tr>

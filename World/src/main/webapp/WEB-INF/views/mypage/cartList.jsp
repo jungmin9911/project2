@@ -3,16 +3,30 @@
 <%@ include file="../header.jsp" %>
 <script src="script/mypage.js"></script>
 
+
+
 <form name="formm" method="post">
 <section class="notice">
-  <div class="page-title">
+   <div class="page-title">
         <div class="container">
             <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">장바구니</h3>
             <br><h1 style="font-size: 15px;">${message}</h1>
         </div>
-    </div>
+    </div>  
+    
+    
     <div class="board-list">
-        <div class="container" style="width:960px; ">
+        <div class="container" style="width:1000px; ">
+	        <div class="mypage-btn-dede-wrap">
+	 			<nav id="sub_mypage" style="float:right;">
+				<ul style= "font-weight:bold;
+							color:#5c10e6;"
+				>
+					<li><a href='orderList'>주문내역 이동 </a></li>
+				</ul>
+				</nav>
+	    	</div>
+            
             <table class="board-table">
                 <thead>
                 <tr>
