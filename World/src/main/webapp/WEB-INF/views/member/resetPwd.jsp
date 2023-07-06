@@ -26,26 +26,26 @@ input {
 <div class="id_found">
    <h2 class="abcde">비밀번호 재설정</h2>
   
-   <form method="post" name="formm" action="world.do">
-      <input type="hidden" name="command" value="selectPwd" />
+   <form method="post" name="joinForm">
+      <input type="hidden" name="command" value="edit" />
       <table class="find-id">
          <tr>
 
-         <th>&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><td><input type="text" name="id" class="input-text" maxlength="30" value="${param.id}" readonly /></td>
+         <th>&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><td><input type="text" name="id" class="input-text" value="${param.id}" readonly maxlength="30"  /></td>
 
          </tr>
           </table>
           <table class="find-id">
          <tr>
 
-         <th>&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;</th><td><input type="text" name="name" class="input-text" maxlength="30" /></td>
+         <th>&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;</th><td><input type="password" name="pwd" class="input-text" maxlength="30" /></td>
 
          </tr>
            </table>
             <table class="find-id">
          <tr>
 
-         <th>비밀번호 확인</th><td><input type="text" name="phone" class="input-text" maxlength="30" /></td>
+         <th>비밀번호 확인</th><td><input type="password" name="pwdCheck" class="input-text" maxlength="30" /></td>
 
          </tr>
       </table>
@@ -53,7 +53,7 @@ input {
       <div class="founfd">
       <input type="button" value="재설정" class="button" onclick="checkPwd();" />  </div>
   	  <div class="founfff">
-  	  <input type="button" value="취소" class="button">
+  	  <input type="reset" value="취소" class="button">
       <br><h2>${message}</h2></div>
     
       </form>

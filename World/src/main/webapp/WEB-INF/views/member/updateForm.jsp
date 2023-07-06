@@ -16,8 +16,8 @@
 			    <label>이름</label><br><input type="text" name="name" class="dup" value="${loginUser.name}"><br>
 			    <label id=last>휴대폰 번호</label><input type="text" name="phone" class="dup" value="${loginUser.phone}"><br>
 			   
-			     <label>우편번호</label><br><input type="text" class="dup"  id="sample6_postcode"   name="zip_num"  style="width:400px; " readonly>      
-			    <input type="button" onclick="sample6_execDaumPostcode()" class="dup" value="우편번호 찾기" style="width:140px; float:right; text-align:center"><br>
+			     <label>우편번호</label><br><input type="text" class="dup"  id="sample6_postcode"   name="zip_num" value="${dto.zip_num}"  style="width:400px; " readonly>      
+			    <input type="button" onclick="sample6_execDaumPostcode()" class="dup" value="우편번호 찾기" style="width:140px; float:right; text-align:center" ><br>
 				<label>주소</label><br>
 						<input type="text" class="dup"  id="sample6_address"  size="50" name="address1"  value="${dto.address1}" readonly><br><br>
 				<label>상세주소</label><br>

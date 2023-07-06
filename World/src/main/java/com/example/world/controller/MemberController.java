@@ -340,7 +340,7 @@ public class MemberController {
 			@RequestParam("id") String id,
 			@RequestParam("pwd") String pwd
 			
-			) throws IOException {
+			) {
 		
 			ms.resetNewPwd(id, pwd);
 		    
