@@ -56,3 +56,10 @@ select * from Lworker;
 update lqna set passcheck='Y' where lqseq='35';
 update lqna set pass='1234' where lqseq='35';
 
+
+
+
+
+
+
+

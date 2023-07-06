@@ -67,7 +67,7 @@ $(function(){
 </div>
 <div class="update_buttons">
 	<input type="button" value="공지등록" onclick="go_insertnt()">
-	<input type="reset" value="목록으로" onClick="go_mov('adminnotice')" >
+	<input type="reset" value="목록으로" onClick="go_mov('adminNotice')" >
 </div>
 </div>
 </div>
