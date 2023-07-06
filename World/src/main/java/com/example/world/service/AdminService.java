@@ -273,10 +273,12 @@ public class AdminService {
 		
 	}
 
-	public Cart2VO getAdminOrderList(String name) {
+	
+	
+	public List<Cart2VO> getAdminOrderList(String id) {
 		int result=1;
 		
-		Cart2VO cvo = adao.getAdminOrderList(name, result);
+		List<Cart2VO> cvo = adao.getAdminOrderList(id, result);
 		
 		return cvo;
 	}

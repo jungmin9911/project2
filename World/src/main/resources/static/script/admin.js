@@ -263,6 +263,51 @@ function reInsert(id, useyn){
 
 
 
-function go_adminOrderList(name){
-	location.href="adminOrderList?name=" + name;
+function go_adminOrderList(id, name){
+	location.href="adminOrderList?id=" + id+"&name="+name;
 }
+
+
+
+function showConfirmationPopup(message, callback) {
+    var confirmation = confirm(message);
+
+    if (confirmation) {
+        callback(true); // 예 선택 시 콜백 함수 호출
+    } else {
+        callback(false); // 아니오 선택 시 콜백 함수 호출
+    }
+}
+
+function go_admin_return(name, id) {
+	
+	var count=0;
+	if(document.formm.cseq.length==undefined){
+		//체크박스가 한개인 경우
+		if(document.formm.cseq.checked==true)
+			count++;
+	}else{
+		for(var i=0; i<document.formm.cseq.length; i++){
+			if(document.formm.cseq[i].checked==true)
+			count++;
+		}
+	}
+	if(count ==0){
+			alert("환불할 항목을 선택하세요");
+	}else if(count ==1){
+	    showConfirmationPopup("정말 환불하시겠습니까?", function(result) {
+	        if (result) {
+	            alert("환불이 완료되었습니다");
+	            document.formm.action = "adminRefund?id=" + id+"&name="+name;
+	            document.formm.submit();
+	        } else {
+	            alert("취소되었습니다");
+	            return;
+	        }
+	    });
+    }else{
+		alert("한번에 하나만 환불 가능합니다");
+		return;
+	}
+}
+

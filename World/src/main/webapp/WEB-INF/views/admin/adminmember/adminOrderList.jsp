@@ -1,33 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file ="../header.jsp"%>
 
-<%@ include file="../header.jsp" %>
+<link href="css/admincss.css" rel="stylesheet">
 
-<script src="script/mypage.js"></script>
-<link href="css/world.css" rel="stylesheet">
+<style>
+  .mypage-btn-dede-wrap {position:relative; width:100%; height:60px;}
+.dede:hover, .dede:focus {background: #373737; border-color: #373737; color: #fff;}
+.dede{background-color: #555; color: #fff;display: inline-block;padding: 0 10px;font-size: 12px; font-weight:400; text-align:center;
+  white-space: nowrap;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;
+  -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid transparent;
+  text-transform: uppercase;-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;
+  -webkit-transition: all 0.3s;-moz-transition: all 0.3s;-ms-transition: all 0.3s; -o-transition: all 0.3s;
+  transition: all 0.3s; margin:20px 10px; }
+</style>
 
-<form name="formm" method="post">
+<form name="frm" method="post">
 <section class="notice">
-  <div class="page-title">
-        <div class="container">
-            <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">${orderList.name}님의 주문 내역</h3>
-            <br><h1 style="font-size: 15px;">${message}</h1>
+  <div class="page-titlee">
+        <div class="containerr">
+             <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">${name}님의 주문 내역</h3>
         </div>
     </div>
-    <div class="board-list">
-        <div class="container" style="width:1000px; ">
-        	<div class="mypage-btn-dede-wrap">
-	 			<nav id="sub_mypage" style="float:right;">
-					<ul style= "font-weight:bold;
-							color:#5c10e6;">
-						<li><a href='cartList'>장바구니 이동</a></li>
-					</ul>
-				</nav>
-	    	</div>
-	    	
-            <table class="board-table">
+    <div class="board-listt">
+        <div class="containerr">
+            <table class="board-tablee">
                 <thead>
                 <tr>
-                	<th scope="col" class="th-num">주문일자</th>
+                   <th scope="col" class="th-num">주문일자</th>
                     <th scope="col" class="th-num">주문번호</th>
                     <th scope="col" class="th-date">티켓유형</th>
                     <th scope="col" class="th-date" style="text-align:center;">인원수</th>
@@ -37,11 +37,10 @@
                     <th scope="col" class="th-num">총액</th>
                     <th scope="col" class="th-date">처리 상태</th>
                     <th scope="col" class="th-date">선택</th>
-                
-          
                 </tr>
+                
                 </thead>
-                <tbody>
+     		<tbody>
                 <c:forEach items="${orderList}"  var="cart2VO">
 	                <tr>
 	                	<td><fmt:formatDate value="${cart2VO.indate}" type="date"/></td>
@@ -78,17 +77,15 @@
                 
                 </tbody>
             </table>
-            <div class="mypage-btn-dede-wrap">
+        </div>
+        <div class="mypage-btn-dede-wrap">
 			    <div class="dede" style="float:right;">
-			    	<a href="#"onClick="go_cart_return()"><h3>환불하기</h3></a>
+			    	<a href="#" onClick="go_admin_return('${name}','${id}');"><h3>환불하기</h3></a>
 		    	</div>
         	</div>
-    	</div>
-    </div>
+        
+<br><br><br><br><br>
+</div>
 </section>
 </form>
-<br>
-
-<br><br><br><br><br><br><br>
- 
-<%@ include file="../footer.jsp" %>
+<%@ include file ="../footer.jsp"%>
