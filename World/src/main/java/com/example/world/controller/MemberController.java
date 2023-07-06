@@ -388,6 +388,7 @@ public class MemberController {
 		MemberVO mvo = (MemberVO)session.getAttribute("loginUser");
 		ms.withdrawalMember( mvo.getId() );
 		model.addAttribute("message" , "회원탈퇴가 정상적으로 처리되었습니다");
+		session.removeAttribute("loginUser");
 		return "member/login";
 	}
 	

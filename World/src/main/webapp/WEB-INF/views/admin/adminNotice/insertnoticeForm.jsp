@@ -52,7 +52,7 @@ $(function(){
 		</tr>
 		<tr style="height:250px">
 			<th>내용</th>
-	    	<td width="700" style="vertical-align:top; ">
+	    	<td>
 	   			<input type="hidden" name="ncontent" id="image" >
 	   			<div id="filename"></div>
 	   		</td>

@@ -40,22 +40,17 @@ $(function(){
 <article>
 <div class="findfindd">
 <div class="id_foundd">
-<h1 style="font-size:50px; text-align:center; height:110px;margin-top:40px"> 배너 등록 </h1>  
-
-
-  <form name="frm" action="bannerWrite"  method="post">
-
-	<table class= "baba" >
-
+<h1>배너 등록</h1>  
+<br><hr><br>
+<form name="frm" action="bannerWrite"  method="post">
+	<table class="baba">
 		<tr>
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> <td>
-			<input type="text" name="subject" size="47" height="30px"></td>
-			
+			<th>제목</th>
+			<td><input type="text" name="subject" size="47"></td>
 		</tr>
-		</table>
-	<table class= "baba" >
-	<tr>
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;순위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> <td>
+		<tr>
+			<th>순위</th> 
+			<td>
 				<select name="order_seq" class="pl">
 					<option value="">디스플레이될 순서를 선택하세요 </option>
 					<option value="1">1</option>
@@ -70,35 +65,27 @@ $(function(){
 				</select>
 			</td>
 		</tr>
-		</table>
-		<table class= "baba" >
-		<tr style="height:250px"><th>배너 이미지</th>
-	    	<td width="642" style="vertical-align:top; ">
+		<tr style="height:250px">
+			<th>배너 이미지</th>
+	    	<td>
 	   			<input type="hidden" name="image" id="image" >
 	   			<div id="filename"></div>
-	   			
 	   		</td>
 	   	</tr>
 	   	</table>
-	   	
-    
-	
 </form>
-	<div class="lplp">
-		<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
-					<input type="file" name="fileimage" id="mymy">
-					<input type="button" id="myButton" value="추가">
-		</form>
-		
-	</div>
-	<div class="alal">
-	<input class="btnp" type="submit" value="등록" >
-	<input class="btnp" type="reset" value="취소" ></div>
-	</div>
-	
-	</div>
-	</div>
-	</article>
-	
+<div class="fileUp">
+	<form name="fromm" id="fileupForm" method="post" enctype="multipart/form-data">
+		<input type="file" name="fileimage" id="mymy">
+		<input type="button" id="myButton" value="추가">
+	</form>
+</div>
+<div class="update_buttons">
+	<input type="submit" value="등록" onClick="">
+	<input type="reset" value="취소" onClick="">
+</div>
+</div>
+</div>
+</article>
 <%@ include file="../footer.jsp" %>
 	
