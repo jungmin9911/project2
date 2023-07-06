@@ -237,6 +237,18 @@ function change_order( bseq ){
 	// BSEQ 와 바꾸려는 값을 갖고 change_order 리퀘스트로 이동합니다
 }
 
+function go_insertBanner(){
+	if(document.frm.subject.value==""){
+		alert("제목을 입력해주세요");
+	}else if(document.frm.order_seq.value==""){
+		alert("순서를 정해주세요");
+	}else if(document.frm.image.value==""){
+		alert("이미지를 골라주세요");
+	}else{
+		document.frm.action="bannerWrite";
+		document.frm.submit();
+	}
+}
 function go_deleteBanner(bseq){
 if(confirm('정말 삭제하시겠습니까?')){
 	var url="deleteBanner?bseq=" + bseq; 

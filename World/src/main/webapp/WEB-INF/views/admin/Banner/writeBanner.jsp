@@ -43,7 +43,7 @@ $(function(){
 <h1 style="font-size:50px; text-align:center; height:110px;margin-top:40px"> 배너 등록 </h1>  
 
 
-  <form name="frm" action="bannerWrite"  method="post">
+  <form name="frm"   method="post">
 
 	<table class= "baba" >
 
@@ -92,8 +92,8 @@ $(function(){
 		
 	</div>
 	<div class="alal">
-	<input class="btnp" type="submit" value="등록" >
-	<input class="btnp" type="reset" value="취소" ></div>
+	<input class="btnp" type="submit" value="등록" onclick="go_insertBanner()">
+	<input class="btnp" type="reset" value="목록으로" onclick="go_mov('adminBannerList')" ></div>
 	</div>
 	
 	</div>
