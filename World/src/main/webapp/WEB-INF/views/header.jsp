@@ -25,9 +25,28 @@
 						<li><a href="loginForm">login</a></li>
 						<li><a href="/contract">회원가입</a></li>
 						<li><a href="/admin">관리자</a></li>
+						
 					</c:when>
 					<c:otherwise>
-						<li><a href="cartList">마이페이지</a></li>
+						<li>
+						<div class="dropdown" style="width:100px; font-size:85%;">
+							<button class="dropbtn" 
+									style=" width:100px;
+											padding:0 0 5px 0; 
+											float:right;
+											background:#f7f7f7;
+											"> 
+								<span style="display:block; height:15px;  
+								font-family:'IBM Plex Sans KR', sans-serif;
+								padding: 0 ;
+								font-size:80%;  color:gray; ">마이페이지</span>
+							</button>
+							<div class="dropdown-content" style="min-width:90px;">
+								<a href="cartList">장바구니</a>
+								<a href="orderList">주문내역</a>
+							</div>
+						</div>
+						</li> 
 						<li><a href="logout">logout</a></li>
 						<li><a href="editForm">정보수정</a></li>
 						<li>${loginUser.name}(${loginUser.id})</li>
