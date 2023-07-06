@@ -26,7 +26,7 @@ input {
 <div class="id_found">
    <h2 class="abcde">비밀번호 찾기</h2>
    <h5 style="text-align:center;margin-right:7px;">신원확인 후 재설정이 가능합니다</h5>
-   <form method="post" name="formm" action="world.do">
+   <form method="post" name="formm" >
       <input type="hidden" name="command" value="selectPwd" />
       <table class="find-id">
          <tr>
@@ -54,7 +54,6 @@ input {
       <input type="button" value="찾기" class="button" onclick="find_Pwd();" /></div>
    </form>
     </div>
-    <h2>${message}</h2>
    <br />
    <c:if test="${not empty Lmember}">
       <h2><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원님의 비밀번호는 '${Lmember.pwd}' 입니다.</h2>
