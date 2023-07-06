@@ -14,6 +14,7 @@ import com.example.world.dao.IAdminDao;
 import com.example.world.dto.AdminVo;
 import com.example.world.dto.AttractionVO;
 import com.example.world.dto.BannerVO;
+import com.example.world.dto.Cart2VO;
 import com.example.world.dto.NoticeVO;
 import com.example.world.dto.Paging;
 import com.example.world.dto.QnaVO;
@@ -270,6 +271,14 @@ public class AdminService {
 	public void memberReinsert(String id, String useyn) {
 		adao.memberReinsert(id, useyn);	
 		
+	}
+
+	public Cart2VO getAdminOrderList(String name) {
+		int result=1;
+		
+		Cart2VO cvo = adao.getAdminOrderList(name, result);
+		
+		return cvo;
 	}
 
 

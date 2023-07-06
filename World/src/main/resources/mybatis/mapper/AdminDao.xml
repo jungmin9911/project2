@@ -121,5 +121,24 @@
 		update Lmember set useyn=#{param2} where id=#{param1}
 	</update>
 	
+	<select id="getAdminOrderList" resultType="com.example.world.dto.Cart2VO">
+		select * from cart2  where name=#{param1} and result=#{param2} order by cseq desc
+	</select>
 	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
