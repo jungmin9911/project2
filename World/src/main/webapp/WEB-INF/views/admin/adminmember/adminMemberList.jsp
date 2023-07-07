@@ -52,7 +52,7 @@
 			<tr><td>${memberVO.id}
 					<c:choose>
 			      		<c:when test='${memberVO.useyn=="Y"}'>
-			        		<input type="checkbox" name="useyn" style="width: 10px; height: 10px;" 
+			        		<input type="checkbox" name="useyn" style="width: 10px; height: 10px;" readonly
 			        			onchange="reInsert('${memberVO.id}', '${memberVO.useyn}');">
 				        </c:when>
 				        <c:otherwise>
