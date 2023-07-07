@@ -5,7 +5,7 @@
 <section class="notice">
 <div class="page-title">
 	<div class="container">
-		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px; text-align:center;">공지사항</h3>
+		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px; text-align:center;">모바일 공지사항</h3>
 	</div>
 </div>
 

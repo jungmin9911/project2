@@ -92,12 +92,12 @@ public class AttractionController {
 	        return "mobile/mobileattraction/mobileParade";
 	 }
 	
-	@RequestMapping("/mobileattrActionDetail")
+	@RequestMapping("/mobileAttractionDetail")
 	public String mobileattractionDetail(@RequestParam("aseq") int aseq, Model model) {
 		AttractionVO attractionvo = ats.getAttraction(aseq);
         model.addAttribute("AttractionVO", attractionvo);
 
-        return "mobile/mobileattraction/mobileattrActionDetail";
+        return "mobile/mobileattraction/mobileAttractionDetail";
 	}	
 	
 }
