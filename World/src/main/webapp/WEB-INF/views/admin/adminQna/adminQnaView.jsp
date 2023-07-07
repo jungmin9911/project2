@@ -1,75 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-
+<article>
 <form name="frm" method="post">
-	<input type="hidden" name="lqseq" value="${qnaVO.lqseq}">
-
-
-<section class="fix">
+<input type="hidden" name="lqseq" value="${qnaVO.lqseq}">
+<div class="qna">
 	<div class="qnaimg" style="background-image:url('images/qnaaa.png');"></div>
-		<article class="fix01">
-
-		<h2> QnA 게시판 </h2><h3 style="text-align:center; padding-top:20px;padding-bottom:20px;font-color: #e7e7e7;"> 고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>
-		 <form class="fix02">
-	       <table class="fix03">
-			<tr>
-				<th>제목</th>
-				<td width="500" style="text-align:left;">${qnaVO.title}</td>
-			</tr>
-			<tr>
-				<th>등록일</th>
-				<td align="left" style="text-align:left;">
-				<fmt:formatDate value="${qnaVO.indate}" type="date"/>
-				</td>
-			</tr>
-			<tr>
-				<th>질문내용</th>
-				<td align="left" style="text-align:left;font-size:115%;">
-				<pre>${qnaVO.content}</pre>
-				</td>
-			</tr>
-			<tr>
-				<c:choose>          
-					<c:when test='${qnaVO.rep=="N"}'> <!-- 관리자 답변 전 표시 -->		
-		    			<th>답변내용</th>
-		    			<td colspan="2"><textarea name="reply" rows="2" cols="45"></textarea>
-
-
-		   <!--  				<input type="button" class="btn4" value="저장"
-		   					onClick="location.href='world.do?command=adminQnaRepSave&lqseq=${qnaVO.lqseq}'"></td>
-				-->
-					</c:when>
-
-					<c:otherwise>  <!-- 관리자 답변 후 표시 -->
-						<th>답변내용</th>
-						<td align="left" style="text-align:left;">
-						<pre>${qnaVO.reply}</pre>
-					</c:otherwise>
-				</c:choose>	
-			</tr>	
-		</table><br>
-		<div class="clearr"></div>
-		
-		<div id="buttonss" style="margin:0 0 0 200px; height:70px;" >
+	<div class="qnaBox">
+		<h2> QnA 게시판 </h2>
+		<h3>고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>
+		<div class="fix02">
+			<table class="fix03">
+				<tr>
+					<th>제목</th>
+					<td>${qnaVO.title}</td>
+				</tr>
+				<tr>
+					<th>등록일</th>
+					<td><fmt:formatDate value="${qnaVO.indate}" type="date"/></td>
+				</tr>
+				<tr>
+					<th>질문내용</th>
+					<td>${qnaVO.content}</td>
+				</tr>
+				<tr>
+					<c:choose>          
+						<c:when test='${qnaVO.rep=="N"}'> <!-- 관리자 답변 전 표시 -->		
+			    			<th>답변내용</th>
+			    			<td colspan="2"><textarea name="reply" rows="2" cols="45"></textarea>
+						</c:when>
+						<c:otherwise>  <!-- 관리자 답변 후 표시 -->
+							<th>답변내용</th>
+							<td align="left" style="text-align:left;">
+							<pre>${qnaVO.reply}</pre>
+						</c:otherwise>
+					</c:choose>	
+				</tr>	
+			</table>
+		</div>
+		<br>
+		<div class="buttons" style="height:70px;" >
 			<c:choose>
 				<c:when test='${qnaVO.rep=="N" }'>
-					<input type="button" style="padding :0;" class="purpleBtn center-align" value="저장" onClick="go_rep()">
-					<input type="button" style="padding :0;" value="목록보기" class="purpleBtn center-align" onclick="location.href='/adminQna'">
+					<input type="button" style="padding :0;" class="purpleBtn" value="저장" onClick="go_rep()">
+					<input type="button" style="padding :0;" value="목록보기" class="purpleBtn" onclick="location.href='/adminQna'">
 				</c:when>
 				<c:otherwise>
-					<input type="button" style="padding :0;"  value="목록보기" class="submitt" onclick="location.href='/adminQna'">
+					<input type="button" style="padding :0;" value="목록보기" class="purpleBtn" onclick="location.href='/adminQna'">
 				</c:otherwise>
 			</c:choose>
-
 		</div>
-
-	</form>
-</article>
-</section>
+		<br>
+	</div>
+</div>
 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+</article>
 <%@ include file="../footer.jsp" %>

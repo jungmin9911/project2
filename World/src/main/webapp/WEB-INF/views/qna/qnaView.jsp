@@ -20,7 +20,7 @@
 				</tr>
 				<tr>
 					<th>질문내용</th>
-					<td align="left" style="text-align:left;font-size:115%;">${qnaVO.content}</td>
+					<td align="left" style="text-align:left;">${qnaVO.content}</td>
 				</tr>
 				<tr>
 					<th>답변 내용</th>
