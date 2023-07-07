@@ -10,7 +10,7 @@
    <div class="page-title">
         <div class="container">
             <h3 style="font-size: 28px;color: #333333;font-weight: 400;text-align: center;">장바구니</h3>
-            <br><h1 style="font-size: 15px;">${message}</h1>
+            <br><h1 style="font-size: 15px; text-align:center;">${message}</h1>
         </div>
     </div>  
     
