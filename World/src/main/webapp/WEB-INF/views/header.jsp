@@ -56,7 +56,7 @@
 		</div>
 		<div id="sub_menu">
 			<div class="logo">
-				<a href="webmain">
+				<a href="mobilemain">
 					<img src="images/mainlogo.jpg"/>
 				</a>
 			</div>

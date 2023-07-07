@@ -54,7 +54,7 @@
 	
 	
 	<update id="resetNewPwd" parameterType="com.example.world.dto.MemberVO">
-		update Lmember set pwd=#{pwd} where id=#{id}
+		update Lmember set pwd = #{pwd} where id = #{id}
 	</update>
 
 

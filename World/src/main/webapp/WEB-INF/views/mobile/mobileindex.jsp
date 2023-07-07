@@ -26,11 +26,12 @@
 </style>
 
 
+
 <div id = "main_img">
-	<div id = "view" style="position:relative; width:1950px; overflow:hidden; height:700px; border-radius:20px;">
-		<div id ="imgs" style="position:absolute; width:16000px; height:700px; text-align:left;">
+	<div id = "view" style="position:relative; width:1350px; overflow:hidden; height:700px; border-radius:20px;">
+		<div id ="imgs" style="position:absolute; width:11000px; height:700px; text-align:left;">
 			<c:forEach items="${bannerList}" var="bannerVO">
-				<img src="../images/${bannerVO.image}" style="width:1950px; height:700px; margin:0">
+				<img src="images/banner/${bannerVO.image}" style="width:1350px; object-fit: fill; height:700px; margin:0">
 			</c:forEach>
 		</div>
 	</div>
