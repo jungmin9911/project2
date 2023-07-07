@@ -199,23 +199,18 @@ section.notice {padding:  0;}
 .blind { position: absolute;overflow: hidden;clip: rect(0 0 0 0);margin: -1px;width: 1px;height: 1px;}
 
 /*qnaView*/
-.fix01 h2 {font-family: Verdana; font-size: 30px; text-align:center; color: #373737; padding-top: 15px;padding-bottom: 15px;	
-					border-bottom: 1px dashed gray; }
-.fix01 {float:left;width: 680px;padding-right: 10px;font-family: Verdana; font-size: 1em;	
-		line-height: 1.5em; border:1px dashed #ccc;margin:100px 0 280px 600px; }
-.fix02 {margin: 10px 0 0 36px;width: 680px;}
-.fix02 #buttonss {margin: 30px 50px 30px 120px; }
-.fix02 .submit, .fix02 .cancel {height: 30px;width: 150px;border:1px solid #6317ed; font-weight:bold;
-		position:relative; padding-bottom:10px; background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
-		background-position: center center;	color:#fff;margin: 0 0 0 70px;  }
-		.fix03{margin: 0 auto;}
-.fix03 th, td{  padding: 20px;border: 1px dashed #ccc; margin-top:20px;}
-.fix03 tr{border: 1px dashed gray; padding:20px;}
-.fix03 label { width: 140px; float: left; margin: 5px 0; padding:20px; }
-.clearr {clear: both; }
-.qnaimg{position:relative; width:1200px;  height:333px; display: inline-block;text-align: center;
-		margin: 100px 0 0 380px;}
+.qna{position:relaive; width:100%; height:1100px; margin:0 auto;}
+.qnaimg{position:relative; width:1200px; height:333px; text-align:center; margin:100px auto;}
+.qnaBox{position:relative; width:680px; margin:0 auto; border:1px dashed gray;}
+.qnaBox h2 {font-size:30px; text-align:center; padding:15px; border-bottom:1px dashed gray;}
+.qnaBox h3 {text-align:center; padding:20px;}
+.fix02 {margin:10px auto; width:680px;}
+.fix03 {border:1px dashed gray; margin:0 auto;}
+.fix03 th{width:105px; height:62px; padding: 20px; border: 1px dashed gray;}
+.fix03 td{width:375px; height:62px; padding: 20px; border: 1px dashed gray;}
+.qnaBox .buttons{text-align:center;}
 
+/* 
 .btn4{height: 30px;width: 100px;border:1px solid #6317ed; font-weight:bold;
 		position:relative; padding-bottom:10px; background:rgb(111, 35, 249);border-radius: 28px; box-shadow: 3px 3px 2px #ccc; font-size: 20px; background-repeat: repeat-x; 
 		background-position: center center;	color:#fff;margin: 0 0 0 20px;}
@@ -228,7 +223,7 @@ section.notice {padding:  0;}
 		background-position: center center;	color:#fff;margin: 10px 0 10px 88px;}
 .center-align {
   text-align: center;
-}		
+}	 */	
 		
 /* 서브메뉴 */
 nav#sub_menu { float: left; margin-right: 10px;}
