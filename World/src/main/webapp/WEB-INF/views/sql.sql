@@ -26,7 +26,7 @@ select*from lqna;
 select*from rest_at_view;
 select*from best_at_view;
 
-delete from banner ;
+drop table banner ;
 
 create table banner(
 	bseq number(5),
