@@ -83,7 +83,6 @@
 			    	<a href="#" onClick="go_admin_return('${name}','${id}');"><h3>환불하기</h3></a>
 		    	</div>
         	</div>
-        
 <br><br><br><br><br>
 </div>
 </section>
