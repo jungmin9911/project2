@@ -129,6 +129,25 @@ public class QnaController {
 		return mav;
 	}
 	
+	//모바일-------------------------------------------------------------------------------------------
+	
+	@RequestMapping("/mobileQna")
+	public String mobileQna() {
+		return "mobile/mobileQna/mobileQna";
+	}
+	
+	@RequestMapping("/mobileQnaList")
+	public ModelAndView mobileQnaList( HttpServletRequest request ) {
+		ModelAndView mav = new ModelAndView();
+		
+			HashMap<String, Object> result =  qs.qnaList( request );
+			mav.addObject("qnaList",  (List<QnaVO>)result.get("qnaList")  );
+			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
+			mav.setViewName("mobile/mobileQna/mobileQnaList");
+
+		return mav;
+	}
 	
 	
 }

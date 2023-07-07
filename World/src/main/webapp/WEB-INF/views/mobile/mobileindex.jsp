@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="include/header.jsp" %>
+<%@ include file="header.jsp" %>
 <script type=text/javaScript>
     $(function(){
     	var num=0;
@@ -42,13 +42,14 @@
 	<a href="guide">
  		<img src="images/icons/mainTodayArea_tit_icon.png"/>&nbsp;&nbsp;&nbsp;오늘의 파크 운영시간&nbsp;&nbsp;10:00 ~ 21:00
 	</a>
+	<br><h2>모바일 버전입니다</h2>
 </div>
 
 					<!--  절취선  -->	
 <br>
 <div class="mainbox">                                         <!-- 제일 큰 상자 -->
 	<div class="mainCon mainCon1"><!-- 나에게 꼭 맞는 혜택 -->     <!-- 첫번째 상자  -->
-		<p class="mainTit"><span style="font-weight:bold">자신에게 맞는 혜택</span> 알아볼까요?</p><br>
+		<p class="mainTit"><span style="font-weight:bold">자신에게 맞는 혜택</span> 알아볼까요?</p>	
 		<p class="mainTxt">현재 진행 중인 할인혜택을 알아보세요.</p>
 		 <!-- 두번째 상자 -->
 		<div class="boxArea">                               <!-- 세번째상자 -->
@@ -181,4 +182,4 @@
 		</div> 
 	</div>      
 </div>
-<%@ include file="include/footer.jsp" %>
+<%@ include file="footer.jsp" %>
