@@ -146,8 +146,8 @@ img, fieldset {
 #logina .ar {text-align:center; height:40px; color:red;}
 #logina #buttons input{width:520px; height:70px; border: 1px solid #666; font-size:150%;}
 #logina #buttons input[type=submit]{background : #6317ed; color:white; }
-#logina #kakaoLogo {margin:20px 10px; width:520px; height:70px; border: 1px solid lightgray; 
- display:inline-block; padding:15px; font-size:150%; color:gray;}
+#logina #kakaoLogo {margin:20px 10px; width:520px; height:70px; border: 1px solid yellow; 
+ display:inline-block; padding:15px; font-size:150%; color:black; font-weight:bold;background:#fee500;}
 #logina #content{position:relative; margin:20px; font-size:100%; height:80px; color:gray; font-size:16px;}
 
 

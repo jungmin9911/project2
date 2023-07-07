@@ -50,16 +50,13 @@ public class NoticeController {
 	@RequestMapping("/notice")
 	public ModelAndView notice(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		HttpSession session = request.getSession();
-		MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
-		if(mvo==null) mav.setViewName("member/login"); 
-		else {
+		
 			HashMap<String, Object> result = ns.getNotice(request);
 			mav.addObject("notice", (List<NoticeVO>)result.get("noticeList"));
 			mav.addObject("paging", (Paging)result.get("paging"));
 			mav.addObject("key", (String)result.get("key"));
 			mav.setViewName("notice/notice");
-		}
+		
 		return mav;
 	}
 	
@@ -67,13 +64,10 @@ public class NoticeController {
 	public ModelAndView noticeDetail(HttpServletRequest request, 
 			@RequestParam("nseq") int nseq) {
 		ModelAndView mav = new ModelAndView();
-		HttpSession session = request.getSession();
-		MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
-		if(mvo==null) mav.setViewName("member/login");
-		else {
+		
 			mav.addObject("noticeVO", ns.viewNotice(nseq));
 			mav.setViewName("notice/noticeDetail");
-		}
+		
 		return mav;
 	}
 	
