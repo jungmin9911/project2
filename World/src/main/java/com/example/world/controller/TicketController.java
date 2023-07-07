@@ -221,9 +221,13 @@ public class TicketController {
 		if(mvo==null)
 			mav.setViewName("redirect:/login");
 		else {
+			int page = 1;
+	        session.setAttribute("page", page);
+	        
 			HashMap<String, Object> result =  ms.getorderList( request );
 			mav.addObject("orderList",  (List<Cart2VO>)result.get("orderList")  );
 			mav.addObject("paging", (Paging)result.get("paging") );
+			mav.addObject("key", (String)result.get("key") );
 			mav.setViewName("mypage/orderList");
 		
 		}

@@ -386,6 +386,9 @@ public class MemberController {
 		if(mvo==null)
 			mav.setViewName("redirect:/login");
 		else {
+			int page = 1;
+	        session.setAttribute("page", page);
+	        
 			HashMap<String, Object> result =  ms.getCartList( request );
 			mav.addObject("cartList",  (List<Cart2VO>)result.get("cartList")  );
 			mav.addObject("paging", (Paging)result.get("paging") );

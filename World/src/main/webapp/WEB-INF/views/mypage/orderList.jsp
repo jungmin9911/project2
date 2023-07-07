@@ -96,7 +96,7 @@
 </form>
 <br>
 <jsp:include page="../paging/page.jsp">
-	<jsp:param name="command" value="cartList" />
+	<jsp:param name="command" value="orderList" />
 </jsp:include>
 
 <br><br><br><br><br><br><br>
