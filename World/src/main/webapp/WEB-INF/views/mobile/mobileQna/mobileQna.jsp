@@ -30,7 +30,7 @@ function toggleAnswer(answerId) {
 <article>
 <div class="page-title" style="text-align:center;">
 	<div class="container">
-		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px;">QnA</h3>
+		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px;">모바일 QnA</h3>
 	</div>
 </div>
 <div style="position: relative; text-align: center;">
@@ -39,7 +39,7 @@ function toggleAnswer(answerId) {
     <p style="font-size: 24px; color: white;">
     <h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 30px; padding-top: 50px;"> 더 궁금하신 사항이 있으면 <br>이용문의를 이용하시기 바랍니다.</h3>
 	<div id="buttons" style="float:center">
-		<input type="button" value="이용문의" class="submit" onclick="location.href='qnaList?first=y'" 
+		<input type="button" value="이용문의" class="submit" onclick="location.href='mobileQnaList?first=y'" 
 			style="display:inline-block; font-size: 18px; font-weight:400; font-family:'IBM Plex Sans KR', sans-serif; background: #CCFF99; 
 			border: 2px solid #fff; border-radius: 30px; padding: 14px 58px; margin-top: 40px;">
 	</div>

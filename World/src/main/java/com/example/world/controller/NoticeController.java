@@ -71,4 +71,36 @@ public class NoticeController {
 		return mav;
 	}
 	
+	
+	//모바일 ---------------------------------------------------------------
+	@RequestMapping("/mobileNotice")
+	public ModelAndView mobileNotice(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		
+			HashMap<String, Object> result = ns.getNotice(request);
+			mav.addObject("notice", (List<NoticeVO>)result.get("noticeList"));
+			mav.addObject("paging", (Paging)result.get("paging"));
+			mav.addObject("key", (String)result.get("key"));
+			mav.setViewName("mobile/mobileNotice/mobileNotice");
+		
+		return mav;
+	}
+	
+	@RequestMapping("mobileNoticeDetail")
+	public ModelAndView mobileNoticeDetail(HttpServletRequest request, 
+			@RequestParam("nseq") int nseq) {
+		ModelAndView mav = new ModelAndView();
+		
+			mav.addObject("noticeVO", ns.viewNotice(nseq));
+			mav.setViewName("mobile/mobileNotice/mobileNoticeDetail");
+		
+		return mav;
+	}
+	
+	
+	 @RequestMapping("/mobileEvent01") 
+	 public String event01() { 
+		 return"mobile/mobileNotice/mobileEvent01"; 
+	}
+	
 }

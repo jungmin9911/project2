@@ -78,5 +78,26 @@ public class AttractionController {
 		return mav;
 	}
 	
+	@RequestMapping("/mobileAttractionForm")
+    public String mobileAttractionForm(Model model) {
+		
+        List<AttractionVO> aseqList = ats.getAseqList();
+        model.addAttribute("aseqList", aseqList);
+        return "mobile/mobileattraction/mobileAttractionForm";
+    }
+	
+	@RequestMapping("/mobileParade")
+	 public String mobileParade() {
+		
+	        return "mobile/mobileattraction/mobileParade";
+	 }
+	
+	@RequestMapping("/mobileattrActionDetail")
+	public String mobileattractionDetail(@RequestParam("aseq") int aseq, Model model) {
+		AttractionVO attractionvo = ats.getAttraction(aseq);
+        model.addAttribute("AttractionVO", attractionvo);
+
+        return "mobile/mobileattraction/mobileattrActionDetail";
+	}	
 	
 }
