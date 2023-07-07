@@ -7,6 +7,19 @@
 <title>아이디(ID) 찾기</title>
 <script src="script/member.js"></script>
 <link href="css/world.css" rel="stylesheet">
+<style>
+input {
+  width: 230px;
+  height: 32px;
+  font-size: 10px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+</style>
 </head>
 <body>
 <div class="findfind">
