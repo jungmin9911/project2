@@ -24,10 +24,10 @@ public interface IMemberDao {
 	List<Cart2VO> listCart(Paging paging, String key, String id);
 	MemberVO selectId(String name, String phone);
 	MemberVO selectPwd(String id, String name, String phone);
-	MemberVO resetNewPwd(String id, String pwd);
 	
 	
 	List<Cart2VO> listOrder(Paging paging, String id , int result);
 	int getAllCount2(String string);
+	void resetNewPwd(MemberVO membervo);
 
 }

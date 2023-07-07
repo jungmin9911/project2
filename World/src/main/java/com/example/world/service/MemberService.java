@@ -97,11 +97,6 @@ public class MemberService {
 		return mdao.selectPwd(id,name,phone);
 	}
 
-	public MemberVO resetNewPwd(String id, String pwd) {
-		
-		return mdao.resetNewPwd(id,pwd);
-		
-	}
 
 	public HashMap<String, Object> getorderList(HttpServletRequest request) {
 		
@@ -140,6 +135,12 @@ public class MemberService {
 		
 		
 		return result;
+		
+	}
+
+	public void resetNewPwd(MemberVO membervo) {
+		
+		mdao.resetNewPwd(membervo);
 		
 	}
 }
