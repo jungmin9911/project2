@@ -3,7 +3,7 @@
 <article>
 <div class="page-title">
 	<div class="container">
-		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px; text-align:center;">이달의 혜택</h3>
+		<h3 style="font-family:'IBM Plex Sans KR', sans-serif; font-size: 50px; text-align:center;">모바일 이달의 혜택</h3>
 	</div>
 </div>
 <hr style="width:1100px; margin: 0 auto;"/>
