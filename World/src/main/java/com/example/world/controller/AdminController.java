@@ -196,9 +196,13 @@ public class AdminController {
 		return result;
 	}
 	
-	// 공지사항 추가
+	// 공지사항 추가 
 	@RequestMapping("insertnoticeForm")
-	public String insertnoticeForm( ) {
+	public String insertnoticeForm( Model model,
+									HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("workId");
+		model.addAttribute("id",id);
 		return "admin/adminNotice/insertnoticeForm";
 	}
 	
@@ -340,7 +344,7 @@ public class AdminController {
 							Model model
 						) {
 		
-		String url = "admin/adminattraction/insertAttractionForm";
+		String url = "admin/adminattraction/insertAttractionFrom";
 		if ( result.getFieldError("atname")!= null )
 			model.addAttribute("message", result.getFieldError("atname").getDefaultMessage() );
 		else if ( result.getFieldError("acontent")!= null )
