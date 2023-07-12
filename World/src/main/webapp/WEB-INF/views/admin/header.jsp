@@ -35,11 +35,11 @@
 			
 			<div class="category">
 				<ul class="category_top_menu">	
-					<li><a href="adminAttraction">어트랙션 관리</a></li>
-					<li><a href="adminNotice">공지사항 관리</a></li>
-					<li><a href="adminMember">회원 관리</a></li>
-					<li><a href="adminQna">Q & A 관리</a></li>
-					<li><a href="adminBannerList">배너관리</a></li>
+					<li><a href="adminAttraction?first=y">어트랙션 관리</a></li>
+					<li><a href="adminNotice?first=y">공지사항 관리</a></li>
+					<li><a href="adminMember?first=y">회원 관리</a></li>
+					<li><a href="adminQna?first=y">Q & A 관리</a></li>
+					<li><a href="adminBannerList?first=y">배너관리</a></li>
 				</ul>		
 			</div>
 		</div>
