@@ -93,7 +93,9 @@ CREATE TABLE Lmember
 	PRIMARY KEY (id)
 );
 
-ALTER TABLE Lmember ADD address3 varchar2(1000);
+alter table lmember add provider varchar2(30) default 'normal';
+alter table lmember add useyn varchar2(30) default 'Y';
+ALTER TABLE Lmember ADD address3 varchar2(100);
 
 
 select*from Lqna
@@ -109,7 +111,8 @@ CREATE TABLE Lqna
 	content varchar2(1000),
 	PRIMARY KEY (lqseq)
 );
-
+alter table lqna add passcheck varchar2(10) default 'N';
+alter table lqna add pass varchar2(10);
 
 
 CREATE TABLE Lworker
@@ -131,6 +134,36 @@ CREATE TABLE notice
 	indate date DEFAULT sysdate,
 	PRIMARY KEY (nseq)
 );
+
+create table banner(
+	bseq number(5),
+	subject varchar2(30),
+	ORDER_SEQ number(3) default 1,
+	useyn char(1) default 'Y',
+	indate date default sysdate,
+	image varchar2(30),
+	PRIMARY KEY (bseq)
+);
+
+create sequence banner_seq start with 1;
+
+
+
+-----베스트 놀이기구
+create or replace view best_at_view
+as
+select * from
+(select rownum, aseq, atname, image from attraction  where bestat='Y'  ) 
+where  rownum <=3;
+
+select * from best_at_view;
+
+--------운영 운휴
+create or replace view rest_at_view
+as
+select aseq, atname, image from attraction where aresult='Y';
+
+select * from rest_at_view;
 
 
 

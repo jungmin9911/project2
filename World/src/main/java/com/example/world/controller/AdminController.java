@@ -86,7 +86,7 @@ public class AdminController {
 	    		session.setAttribute("workId", workId);
 	    		
 	    		String name = as.getName(workId);
-	    		session.setAttribute("name", name);
+	    		session.setAttribute("name1", name);
 	    		
 	    		mav.setViewName("redirect:/adminMain");
 		} else if (result == 0) {

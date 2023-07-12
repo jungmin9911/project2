@@ -22,7 +22,7 @@
 		<nav id ="top_menu">
 			<ul>
 				<li><a href="adminLogout">logout</a></li>
-				<li>${name}(${workId})</li>
+				<li>${name1}(${workId})</li>
 			</ul>
 		</nav>
 		
