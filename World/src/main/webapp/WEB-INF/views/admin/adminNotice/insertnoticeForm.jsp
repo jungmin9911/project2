@@ -44,11 +44,11 @@ $(function(){
 	<table class="baba">
 		<tr>
 			<th>관리자 아이디</th> 
-			<td><input type="text" name="id" size="47" value="${noticeVO.id}"></td>
+			<td><input type="text" name="id" size="47" value="${id}"></td>
 		</tr>
 		<tr>
 			<th>제목</th> 
-			<td><input type="text" name="title" size="47" value="${noticeVO.title}"></td>
+			<td><input type="text" name="title" size="47" value=""></td>
 		</tr>
 		<tr style="height:250px">
 			<th>내용</th>
