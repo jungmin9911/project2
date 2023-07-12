@@ -42,8 +42,8 @@
 								font-size:80%;  color:gray; ">마이페이지</span>
 							</button>
 							<div class="dropdown-content" style="min-width:90px;">
-								<a href="cartList">장바구니</a>
-								<a href="orderList">주문내역</a>
+								<a href="cartList?first=y">장바구니</a>
+								<a href="orderList?first=y">주문내역</a>
 							</div>
 						</div>
 						</li> 
@@ -56,7 +56,7 @@
 		</div>
 		<div id="sub_menu">
 			<div class="logo">
-				<a href="mobilemain">
+				<a href="webmain">
 					<img src="images/mainlogo.jpg"/>
 				</a>
 			</div>
@@ -93,8 +93,8 @@
 						<span>소통서비스</span>
 				    </button>
 				    <div class="dropdown-content">
-						<a href="notice">공지사항</a>
-						<a href="qna">Q&amp;A</a>
+						<a href="notice?first=y">공지사항</a>
+						<a href="qna?first=y">Q&amp;A</a>
 				    </div>
 				</div>
 			</div>
