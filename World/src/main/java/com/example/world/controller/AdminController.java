@@ -96,10 +96,6 @@ public class AdminController {
 	    		mav.addObject("message", "아이디를 확인하세요.");
 	    		mav.setViewName("admin/adminLogin/adminLoginForm");
 		}	
-		
-		
-		// d
-		
 		return mav;
 	}	
 	
@@ -213,7 +209,7 @@ public class AdminController {
 							Model model
 						) {
 		
-		String url = "admin/adminattraction/insertAttractionForm";
+		String url = "admin/adminNotice/insertnoticeForm";
 		if(result.getFieldError("title")!=null)
 			model.addAttribute("message", result.getFieldError("title").getDefaultMessage());
 		else if(result.getFieldError("ncontent")!=null)
