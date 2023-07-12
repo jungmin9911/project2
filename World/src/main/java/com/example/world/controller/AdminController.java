@@ -48,7 +48,6 @@ public class AdminController {
 	@Autowired
 	ServletContext context;
 	
-	
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admin/adminLogin/adminLoginForm";
