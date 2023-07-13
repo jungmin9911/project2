@@ -5,7 +5,7 @@
 <article>
 <form method="post" name="formm">
 <div class="att_Detail_title">
-   	<div id="att_Detail_text">${AttractionVO.atname}</div>
+   	<div id="att_Detail_text">모바일 ${AttractionVO.atname}</div>
    	<div id="att_Detail_exp">${AttractionVO.acontent}</div>
    	<div id="att_Detail_tag">
    		<ul>
