@@ -1,5 +1,5 @@
 # project2
-🎠 놀이공원 사이트 만들기
+🎠 놀이공원 사이트 만들기 (2차)
 
 [1차 프로젝트 PPT](https://docs.google.com/presentation/d/1dkdmh-xC7IU50ywNZ_UrtC7Sk1K-V_mg5U9JrxVFeYU/edit?usp=sharing)
 - MVC2 Model2 아키텍처를 이용하여 만든 프로젝트
